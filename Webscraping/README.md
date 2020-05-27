@@ -1,3 +1,20 @@
+# Webscraping
+
+## Basic Starter Code
+```r
+library(rvest)
+library(tidyverse)
+
+h <- read_html("https://en.wikipedia.org/wiki/Current_members_of_the_United_States_House_of_Representatives")
+
+reps <- h %>%
+    html_node("#mw-content-text > div > table:nth-child(18)") %>%
+    html_table()
+
+    reps <- reps[,c(1:2,4:9)] %>%
+        as_tibble()
+		
+```
 ## Using APIs and web scrapers to gather data
 This module of the course provides tools to gather data from the web through the use of web scraping and APIs.
 
