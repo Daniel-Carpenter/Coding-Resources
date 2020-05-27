@@ -2,7 +2,7 @@ PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [H
 
 # Basics for coding optimization problems
 This document will give the reader an introduction to numerical optimization and the various trade-offs associated with the most common optimization algorithms. We will also cover how to code and evaluate an optimization problem in R. At the end, we will discuss what the cost function looks like for the most well-known statistical models and ML algorithms
-
+ 
 ## Basics of functional optimization
 
 - All statistical estimators are either minima of some error (aka "cost") function or maxima of some likelihood function

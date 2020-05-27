@@ -1,6 +1,6 @@
 PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).
 
-# Unsupervised learning
+# Unsupervised learning 
 Through the course so far, we have restricted our attention to statistical models where there is an outcome variable Y and explanatory variables X. Such a setting is known as "supervised learning" because the outcome is "supervising" or "teaching" the out-of-sample X's.
 
 In **unsupervised learning** we do not observe Y for any of our training examples. We simply have a data set that contains the features (X matrix). How can we learn anything in this case? What can we infer from patterns in the X's? These are the fundamental questions of unsupervised learning.

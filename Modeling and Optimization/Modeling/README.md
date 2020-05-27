@@ -2,7 +2,7 @@ PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [H
 
 # Some notes on simulation and its link with optimization & data science
 These notes introduce the concept of *simulation* as a potentially useful tool in a data scientist's belt.
-
+ 
 ## What is simulation?
 Simulation can mean a lot of different things, depending on the discipline. 
 

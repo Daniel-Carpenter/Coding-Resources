@@ -1,13 +1,13 @@
 PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). This repo is unlinked with my personal additions.
 
-## Git and GitHub tutorial
+## Git and GitHub tutorial 
 
 * Git and GitHub tutorial tutorial on using [Git and GitHub.com](https://github.com/tyleransom/DScourseS20/blob/master/Productivity/git_tutorial.pdf) (reproduced with permission from [Rick Evans](https://github.com/rickecon) at U Chicago). 
 * [Git](https://xkcd.com/1597/)
 * [Git Commit](https://xkcd.com/1296/)
 
 
-### Main Git Commands
+### Main Git Commands 
 
 | Functionality                                               | Git Command                                                      |
 |-------------------------------------------------------------|------------------------------------------------------------------|
