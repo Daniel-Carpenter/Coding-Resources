@@ -163,4 +163,3 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 		* [Find C(A) and N(A)](https://www.mathdetail.com/solution.php)
 		* [Determine if cols form linearly independent set](https://www.youtube.com/watch?v=Vb15ChrXZHs)
 		* [Show Vectors as Linear Combination](https://www.google.com/search?q=how+to+show+that+something+is+a+linear+combination+of+other+vectors&oq=how+to+show+that+something+is+a+linear+combination+&aqs=chrome.1.69i57j33.10895j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_g_imXuugMIyqsgWn6qQw47)
-
