@@ -1,6 +1,7 @@
 PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). This repo is unlinked with my personal additions.
 
 ## Visualization and User Interfaces
+
 ### ggplot2 Quick Code for Copying and Pasting
 ```r
 library(tidyverse)
@@ -34,6 +35,7 @@ ggplot(
 	ggsave("imageTitle.pdf", path = "", width = 10, height = 7)	
 ```
 	
+	
 ### ggplot2 Plus Shiny [from Wickham](https://mastering-shiny.org/action-graphics.html#cached-plots)
 ```r
 library(shiny)
@@ -59,15 +61,18 @@ server <- function(input, output, session) {
 	cacheKeyExpr = list(input$x, input$y))
 ```
 
+
 ## Some Useful Packages for LaTeX Tables
 
 * [Explainations of Packages for Regression LaTeX Tables](https://declaredesign.org/r/estimatr/articles/regression-tables.html)
+
 
 ### Setup with Regressions
 ```r
 library(estimatr)
 library(magrittr)
 ```
+
 
 ### LaTeX Table Packages
 ```r
@@ -88,6 +93,7 @@ library(magrittr)
 	texreg(est, include.ci = FALSE)
 ```
 
+
 ## Git and Command Line
 ### Git from the Command Line
 | Functionality                                               | Git Command                                                      |
@@ -96,7 +102,8 @@ library(magrittr)
 | Add and Commit all Changes                                  | `git add -A`                                                     |
 | Push committed changes updstream                            | `git push origin master`                                         |
 		
-		
+	
+	
 ### Command Line Functions
 | Command                                              | Unix                                                                                                         | DOS                                                                                                                              |
 |------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -110,6 +117,7 @@ library(magrittr)
 | Connect to remote machine via secure shell           | `ssh -p <port number> <user@hostname>`                                                                         | `<path to PuTTY.exe> -ssh <username@host> <port number>  `                                                                         |
 | Transfer files to a remote machine (via Secure Copy) | `scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>` | `pscp -scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>`              |
 | Submit a batch script                                | `srun <filename.sh>`                                                                                           | unlikely to do this. If need to, see [here](https://stackoverflow.com/questions/26522789/how-to-run-sh-on-windows-command-prompt) |
+
 
 
 ### Resources
@@ -127,6 +135,7 @@ df <- df %>%
 	group_by(x) %>%
 	summarise(y = sum(y))
 ```
+
 
 ### Optimize with `Rglpk` Package
 ```r
@@ -151,25 +160,31 @@ max <- TRUE
 Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 ```
 
+
 ## Other Useful Links
+	
 	
 ### R Books
 * [Advanced R ed. 1 | Wickham](http://adv-r.had.co.nz/)
 * [Advanced R ed. 2 | Wickham](https://adv-r.hadley.nz/)
 * [R for Data Science | Wickham](https://r4ds.had.co.nz/)
 * [Data Analytics in R | Interactive Zybook](https://learn.zybooks.com/zybook/FundamentalsOfDataAnalyticsRR2)
-		
+	
+
 ### R Packages
 * [Mastering Shiny](https://mastering-shiny.org/)
+
 
 ### R Notes
 * [R data wrangling cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 * [R tidyverse](https://www.tidyverse.org)
-		
+	
+	
 ### LaTeX
 * [LaTeX math symbols](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
 * [Typesetting equations in TeX](http://moser-isi.ethz.ch/docs/typeset_equations.pdf)
 * [Beamer Templates](https://www.overleaf.com/gallery/tagged/presentation)
+
 
 ### Linear Algebra
 #### Books
@@ -179,6 +194,7 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 * The Master Algorithm ([Amazon link](https://www.amazon.com/Master-Algorithm-Ultimate-Learning-Machine-ebook/dp/B012271YB2))
 * Julia for Data Science ([Amazon link](https://www.amazon.com/Julia-Data-Science-Zacharias-Voulgaris/dp/1634621301))
 * Data Science at the Command Line ([Free eBook](https://www.datascienceatthecommandline.com/))
+	
 	
 #### Reference Notes
 * [Everything Matrix](https://matrixcalc.org/en/)
@@ -192,10 +208,13 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 * [Determine if cols form linearly independent set](https://www.youtube.com/watch?v=Vb15ChrXZHs)
 * [Show Vectors as Linear Combination](https://www.google.com/search?q=how+to+show+that+something+is+a+linear+combination+of+other+vectors&oq=how+to+show+that+something+is+a+linear+combination+&aqs=chrome.1.69i57j33.10895j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_g_imXuugMIyqsgWn6qQw47)
 
+
 ### Other Notes
 * [Notes on Machine Learning & Artificial Intelligence](https://chrisalbon.com) by Chris Albon
 * [Machine Learning "Mind Map"](https://github.com/dformoso/machine-learning-mindmap/blob/master/Machine%20Learning.pdf)
 * [Julia vs. Python for Data Science](https://www.infoworld.com/article/3241107/python/julia-vs-python-julia-language-rises-for-data-science.html)
+
+
 
 ## Schedule from ([Tyler Ransom](http://tyleransom.github.io)'s [DScourseS20](https://github.com/tyleransom/DScourseS20).
 |Topic|
