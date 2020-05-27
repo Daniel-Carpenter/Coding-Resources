@@ -218,8 +218,6 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 |Writing and optimizing functions in R, Python, and Julia ([Notes](https://github.com/tyleransom/DScourseS20/blob/master/ModelingOptimization/OptimizationCodingBasics.md))|
 |Writing and optimizing functions in R, Python, and Julia ([Notes](https://github.com/tyleransom/DScourseS20/blob/master/ModelingOptimization/OptimizationCodingBasics.md))|
 |Debugging strategies and simulations ([Notes](https://github.com/tyleransom/DScourseS20/blob/master/ModelingOptimization/SimulationNotes.md))|
-|No class (Spring break)|
-|No class (Spring break)|
 |Intro to Machine Learning ([Notes](https://github.com/tyleransom/DScourseS20/blob/master/MachineLearning/README.md#machine-learning))|
 |Supervised ML: Regularization, measuring model fit, tuning with cross-validation, the elastic net model ([Notes](https://github.com/tyleransom/DScourseS20/blob/master/MachineLearning/README.md#bias-variance-tradeoff))|
 |Supervised ML: The 5 Tribes of Machine Learning ([Notes](https://github.com/tyleransom/DScourseS20/blob/master/MachineLearning/README.md#the-5-tribes-of-machine-learning))|
@@ -229,8 +227,4 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 |Structural modeling: static discrete choice ([Slides](https://github.com/tyleransom/DScourseS20/blob/master/Structural/discreteChoiceSlides.pdf))|
 |Structural modeling: dynamic discrete choice ([Slides](https://github.com/tyleransom/DScourseS20/blob/master/Structural/discreteChoiceSlides.pdf))|
 |Structural modeling: dynamic discrete choice ([Slides](https://github.com/tyleransom/DScourseS20/blob/master/Structural/discreteChoiceSlides.pdf))|
-|Final Project presentations ([Rubric](https://github.com/tyleransom/DScourseS20/blob/master/FinalProject/README.md))|
-|Final Project presentations ([Rubric](https://github.com/tyleransom/DScourseS20/blob/master/FinalProject/README.md))|
-|Final Project presentations ([Rubric](https://github.com/tyleransom/DScourseS20/blob/master/FinalProject/README.md))|
-|Final Exam (in class, 1:30-3:30pm)|
 
