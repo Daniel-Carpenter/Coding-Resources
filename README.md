@@ -36,7 +36,7 @@ ggplot(
 ```
 	
 	
-	
+
 ### ggplot2 Plus Shiny [from Wickham](https://mastering-shiny.org/action-graphics.html#cached-plots)
 ```r
 library(shiny)
@@ -63,11 +63,9 @@ server <- function(input, output, session) {
 ```
 
 
-
 ## Some Useful Packages for LaTeX Tables
 
 * [Explainations of Packages for Regression LaTeX Tables](https://declaredesign.org/r/estimatr/articles/regression-tables.html)
-
 
 
 ### Setup with Regressions
@@ -75,7 +73,6 @@ server <- function(input, output, session) {
 library(estimatr)
 library(magrittr)
 ```
-
 
 
 ### LaTeX Table Packages
@@ -98,9 +95,7 @@ library(magrittr)
 ```
 
 
-
 ## Git and Command Line
-
 ### Git from the Command Line
 | Functionality                                               | Git Command                                                      |
 |-------------------------------------------------------------|------------------------------------------------------------------|
@@ -108,7 +103,6 @@ library(magrittr)
 | Add and Commit all Changes                                  | `git add -A`                                                     |
 | Push committed changes updstream                            | `git push origin master`                                         |
 		
-	
 	
 	
 ### Command Line Functions
@@ -127,14 +121,12 @@ library(magrittr)
 
 
 
-
 ### Resources
 * [Pimp my Editor](http://slides.com/nicklang/pimp-my-editor#/) (Sublime Text focused, but may similar plug-ins/features available in Npp, Atom, or Vim)
 * [Unix commands](https://files.fosswire.com/2007/08/fwunixref.pdf)
 * [DOS commands](https://en.wikipedia.org/wiki/List_of_DOS_commands)
 * [Git Basics](https://www.youtube.com/watch?v=U8GBXvdmHT4)
 * [Git Workflows](http://blog.endpoint.com/2014/05/git-workflows-that-work.html)
-
 
 
 ## Some Functions
@@ -144,7 +136,6 @@ df <- df %>%
 	group_by(x) %>%
 	summarise(y = sum(y))
 ```
-
 
 
 ### Optimize with `Rglpk` Package
@@ -171,9 +162,7 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 ```
 
 
-
 ## Other Useful Links
-	
 	
 	
 ### R Books
@@ -182,11 +171,9 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 * [R for Data Science | Wickham](https://r4ds.had.co.nz/)
 * [Data Analytics in R | Interactive Zybook](https://learn.zybooks.com/zybook/FundamentalsOfDataAnalyticsRR2)
 	
-	
 
 ### R Packages
 * [Mastering Shiny](https://mastering-shiny.org/)
-
 
 
 ### R Notes
@@ -194,12 +181,10 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 * [R tidyverse](https://www.tidyverse.org)
 	
 	
-	
 ### LaTeX
 * [LaTeX math symbols](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
 * [Typesetting equations in TeX](http://moser-isi.ethz.ch/docs/typeset_equations.pdf)
 * [Beamer Templates](https://www.overleaf.com/gallery/tagged/presentation)
-
 
 
 ### Linear Algebra
@@ -210,7 +195,6 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 * The Master Algorithm ([Amazon link](https://www.amazon.com/Master-Algorithm-Ultimate-Learning-Machine-ebook/dp/B012271YB2))
 * Julia for Data Science ([Amazon link](https://www.amazon.com/Julia-Data-Science-Zacharias-Voulgaris/dp/1634621301))
 * Data Science at the Command Line ([Free eBook](https://www.datascienceatthecommandline.com/))
-	
 	
 	
 #### Reference Notes
@@ -226,12 +210,10 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 * [Show Vectors as Linear Combination](https://www.google.com/search?q=how+to+show+that+something+is+a+linear+combination+of+other+vectors&oq=how+to+show+that+something+is+a+linear+combination+&aqs=chrome.1.69i57j33.10895j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_g_imXuugMIyqsgWn6qQw47)
 
 
-
 ### Other Notes
 * [Notes on Machine Learning & Artificial Intelligence](https://chrisalbon.com) by Chris Albon
 * [Machine Learning "Mind Map"](https://github.com/dformoso/machine-learning-mindmap/blob/master/Machine%20Learning.pdf)
 * [Julia vs. Python for Data Science](https://www.infoworld.com/article/3241107/python/julia-vs-python-julia-language-rises-for-data-science.html)
-
 
 
 
