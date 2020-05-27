@@ -1,4 +1,7 @@
+PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). This repo is unlinked with my personal additions.
 
+## Visualization and User Interfaces
+	### ggplot2 Quick Code for Copying and Pasting
 	```r
 	library(tidyverse)
 	library(ggthemes)
