@@ -1,7 +1,7 @@
 PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). This repo is unlinked with my personal additions.
 
 ## Visualization and User Interfaces
-	### ggplot2 Quick Code for Copying and Pasting
+### ggplot2 Quick Code for Copying and Pasting
 	```r
 	library(tidyverse)
 	library(ggthemes)
@@ -34,7 +34,7 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 		ggsave("imageTitle.pdf", path = "", width = 10, height = 7)
 	```
 	
-	### ggplot2 Plus Shiny [from Wickham](https://mastering-shiny.org/action-graphics.html#cached-plots)
+### ggplot2 Plus Shiny [from Wickham](https://mastering-shiny.org/action-graphics.html#cached-plots)
 	```r
 	library(shiny)
 
@@ -59,7 +59,7 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 	  cacheKeyExpr = list(input$x, input$y))
 	 ```
 	 
-	## Some Useful Packages for LaTeX Tables
+## Some Useful Packages for LaTeX Tables
 	```r
 	library(stargazer)
 	library(xtable)
@@ -67,7 +67,7 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 	```
 
 ## Git and Command Line
-	### Git from the Command Line
+### Git from the Command Line
 		| Functionality                                               | Git Command                                                      |
 		|-------------------------------------------------------------|------------------------------------------------------------------|
 		| Pull to Fork                                                | `git pull`                                                       |
@@ -75,7 +75,7 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 		| Push committed changes updstream                            | `git push origin master`                                         |
 		
 		
-	### Command Line Functions
+### Command Line Functions
 		| Command                                              | Unix                                                                                                         | DOS                                                                                                                              |
 		|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 		| Change directory                                     | `cd <directory path>` (could be relative path)                                                                 | `cd `                                                                                                                              |
@@ -89,7 +89,7 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 		| Transfer files to a remote machine (via Secure Copy) | `scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>` | `pscp -scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>`              |
 		| Submit a batch script                                | `srun <filename.sh>`                                                                                           | unlikely to do this. If need to, see [here](https://stackoverflow.com/questions/26522789/how-to-run-sh-on-windows-command-prompt) |
 
-	### Resources
+### Resources
 	* [Pimp my Editor](http://slides.com/nicklang/pimp-my-editor#/) (Sublime Text focused, but may similar plug-ins/features available in Npp, Atom, or Vim)
 	* [Unix commands](https://files.fosswire.com/2007/08/fwunixref.pdf)
 	* [DOS commands](https://en.wikipedia.org/wiki/List_of_DOS_commands)
@@ -98,14 +98,14 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 
 ## Some Functions
 
-	### Group By
+### Group By
 	```r
 	df <- df %>%
         group_by(x) %>%
         summarise(y = sum(y))
 	```
 
-	### Optimize with `Rglpk` Package
+### Optimize with `Rglpk` Package
 	```r
 	library(Rglpk)
 	
@@ -131,27 +131,27 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 
 ## Other Useful Links
 	
-	### R Books
+### R Books
 	* [Advanced R ed. 1 | Wickham](http://adv-r.had.co.nz/)
 	* [Advanced R ed. 2 | Wickham](https://adv-r.hadley.nz/)
 	* [R for Data Science | Wickham](https://r4ds.had.co.nz/)
 	* [Data Analytics in R | Interactive Zybook](https://learn.zybooks.com/zybook/FundamentalsOfDataAnalyticsRR2)
 		
-	### R Packages
+### R Packages
 	* [Mastering Shiny](https://mastering-shiny.org/)
 		
-	### LaTeX
+### LaTeX
 	* [LaTeX math symbols](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
 	* [Typesetting equations in TeX](http://moser-isi.ethz.ch/docs/typeset_equations.pdf)
 	* [Beamer Templates](https://www.overleaf.com/gallery/tagged/presentation)
 	
-	### Linear Algebra
+### Linear Algebra
 		#### Books
 		* [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
 		* [No bullshit guide to linear algebra](https://minireference.com/static/excerpts/noBSguide2LA_preview.pdf)
 		* [Linear Algebra | Interactive Zybook](https://learn.zybooks.com/zybook/LinearAlgebraR58)
 		
-		#### Reference Notes
+#### Reference Notes
 		* [Everything Matrix](https://matrixcalc.org/en/)
 		* [Least Squares](https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf)
 		* [Steps to Solving Eigenvalues and Eigenvectors](https://matrixcalc.org/en/vectors.html#eigenvectors%28%7B%7B3,4%7D,%7B4,9%7D%7D%29)
