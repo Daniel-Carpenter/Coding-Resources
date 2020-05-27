@@ -1,3 +1,5 @@
+*THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
+
 # Structural Economics
 The last part of our course will focus on how we can combine the tools of economic theory, econometrics, and machine learning to build better empirical economic models. Much of the content of this session comes from various lectures given by [Susan Athey](https://www.gsb.stanford.edu/faculty-research/faculty/susan-athey), who is an economics professor at Stanford and who is the foremost expert in these matters. A nice podcast on the topic is available [here (11/16/2012 episode)](https://itunes.apple.com/us/podcast/uw-cse-colloquia-university-washington-computer-science/id431501588?mt=2&i=1000124767619).
 
