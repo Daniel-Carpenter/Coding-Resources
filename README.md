@@ -121,7 +121,7 @@ library(magrittr)
 
 
 
-### Resources
+### Git and Command Line Resources
 * [Pimp my Editor](http://slides.com/nicklang/pimp-my-editor#/) (Sublime Text focused, but may similar plug-ins/features available in Npp, Atom, or Vim)
 * [Unix commands](https://files.fosswire.com/2007/08/fwunixref.pdf)
 * [DOS commands](https://en.wikipedia.org/wiki/List_of_DOS_commands)
@@ -130,7 +130,7 @@ library(magrittr)
 
 
 ## Some Functions
-### Group By
+### `group_by`
 ```r
 df <- df %>%
 	group_by(x) %>%
