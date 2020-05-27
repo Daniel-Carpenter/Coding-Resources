@@ -1,6 +1,6 @@
 # Quick Resources Below
 
-PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). This repo is unlinked with my personal additions.
+*PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). This repo is unlinked with my personal additions.*
 
 ## Visualization and User Interfaces
 
@@ -175,18 +175,18 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 	
 
 ### R Packages
-* [Mastering Shiny](https://mastering-shiny.org/)
+* [Mastering **Shiny**](https://mastering-shiny.org/)
 
 
 ### R Notes
-* [R data wrangling cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-* [R tidyverse](https://www.tidyverse.org)
+* [R **data wrangling** cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+* [R **tidyverse**](https://www.tidyverse.org)
 	
 	
 ### LaTeX
 * [LaTeX math symbols](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
 * [Typesetting equations in TeX](http://moser-isi.ethz.ch/docs/typeset_equations.pdf)
-* [Beamer Templates](https://www.overleaf.com/gallery/tagged/presentation)
+* [**Beamer** Templates](https://www.overleaf.com/gallery/tagged/presentation)
 
 
 ### Linear Algebra
@@ -201,15 +201,15 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 	
 #### Reference Notes
 * [Everything Matrix](https://matrixcalc.org/en/)
-* [Least Squares](https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf)
-* [Steps to Solving Eigenvalues and Eigenvectors](https://matrixcalc.org/en/vectors.html#eigenvectors%28%7B%7B3,4%7D,%7B4,9%7D%7D%29)
-* [Steps to Solving Pseudoinverse of a Matrix](https://atozmath.com/MatrixEv.aspx?q=pseudoinverse&q1=2%2c-1%3b4%2c-2%3b-2%2c1%60pseudoinverse%60&dm=F&dp=8&do=1#PrevPart)
-* [SVM (Principal Component Analysis)](https://github.com/tyleransom/DScourseS20/blob/master/MachineLearning/UnsupervisedLearning.md)
-* [Find Basis and dimension of Matrix](https://learn.zybooks.com/zybook/LinearAlgebraR58/chapter/4/section/4?content_resource_id=37834906)
-* [Quick Guide to When Matrix Multiplation is Undefined](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:properties-of-matrix-multiplication/a/matrix-multiplication-dimensions)
-* [Find C(A) and N(A)](https://www.mathdetail.com/solution.php)
-* [Determine if cols form linearly independent set](https://www.youtube.com/watch?v=Vb15ChrXZHs)
-* [Show Vectors as Linear Combination](https://www.google.com/search?q=how+to+show+that+something+is+a+linear+combination+of+other+vectors&oq=how+to+show+that+something+is+a+linear+combination+&aqs=chrome.1.69i57j33.10895j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_g_imXuugMIyqsgWn6qQw47)
+* [**Least Squares**](https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf)
+* [Steps to Solving **Eigenvalues and Eigenvectors**](https://matrixcalc.org/en/vectors.html#eigenvectors%28%7B%7B3,4%7D,%7B4,9%7D%7D%29)
+* [Steps to Solving **Pseudoinverse** of a Matrix](https://atozmath.com/MatrixEv.aspx?q=pseudoinverse&q1=2%2c-1%3b4%2c-2%3b-2%2c1%60pseudoinverse%60&dm=F&dp=8&do=1#PrevPart)
+* [SVM (**Principal Component Analysis**)](https://github.com/tyleransom/DScourseS20/blob/master/MachineLearning/UnsupervisedLearning.md)
+* [Find **Basis and dimension** of Matrix](https://learn.zybooks.com/zybook/LinearAlgebraR58/chapter/4/section/4?content_resource_id=37834906)
+* [Quick Guide to When Matrix Multiplation is **Undefined**](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:properties-of-matrix-multiplication/a/matrix-multiplication-dimensions)
+* [Find **C(A)** and **N(A)**](https://www.mathdetail.com/solution.php)
+* [Determine if cols form **linearly independent set**](https://www.youtube.com/watch?v=Vb15ChrXZHs)
+* [Show Vectors as **Linear Combination**](https://www.google.com/search?q=how+to+show+that+something+is+a+linear+combination+of+other+vectors&oq=how+to+show+that+something+is+a+linear+combination+&aqs=chrome.1.69i57j33.10895j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_g_imXuugMIyqsgWn6qQw47)
 
 
 ### Other Notes
