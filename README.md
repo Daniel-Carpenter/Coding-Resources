@@ -2,8 +2,7 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 
 ## Git and GitHub tutorial
 
-Git and GitHub tutorial tutorial on using [Git and GitHub.com](https://github.com/tyleransom/DScourseS20/blob/master/Productivity/git_tutorial.pdf) (reproduced with permission from [Rick Evans](https://github.com/rickecon) at U Chicago). Git is a powerful version control software that comes natively installed on many machines and is widely used. GitHub.com is the most widely used online platform for hosting open source projects and integrating with Git software. Git has a significant learning curve, but it is essential for large collaborations that involve software development.
-
+* Git and GitHub tutorial tutorial on using [Git and GitHub.com](https://github.com/tyleransom/DScourseS20/blob/master/Productivity/git_tutorial.pdf) (reproduced with permission from [Rick Evans](https://github.com/rickecon) at U Chicago). 
 * [Git](https://xkcd.com/1597/)
 * [Git Commit](https://xkcd.com/1296/)
 
@@ -12,8 +11,8 @@ Git and GitHub tutorial tutorial on using [Git and GitHub.com](https://github.co
 
 | Functionality                                               | Git Command                                                      |
 |-------------------------------------------------------------|------------------------------------------------------------------|
-| Pull to Fork                                                | `git pull`                                                       |                                                                                                                            |
-| Add and Commit all Changes                                  | `git add -A`                                                     |                                                                                                                              |
+| Pull to Fork                                                | `git pull`                                                       |
+| Add and Commit all Changes                                  | `git add -A`                                                     |
 | Push committed changes updstream                            | `git push origin master`      
 
 
