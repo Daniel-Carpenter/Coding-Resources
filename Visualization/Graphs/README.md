@@ -1,6 +1,6 @@
 ## ggplot2 Quick Code for Copying and Pasting
 
-```
+```r
 library(tidyverse)
 library(ggthemes)
 
@@ -34,7 +34,7 @@ ggplot(
 
 ## More Examples
 
-```
+```r
 library(tidyverse)
 library(ggthemes)
 
