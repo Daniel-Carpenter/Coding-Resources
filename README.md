@@ -1,4 +1,4 @@
-PLEASE NOTE THAT THIS REPO IS FROM TYLER RANSOM'S REPOSITORY LOCATED (https://github.com/tyleransom/DScourseS20), with LaTeX source code [HERE]
+PLEASE NOTE THAT THIS REPO IS FROM [TYLER RANSOM](http://tyleransom.github.io)'S REPOSITORY LOCATED [HERE](https://github.com/tyleransom/DScourseS20)
 
 # Software Support
 
