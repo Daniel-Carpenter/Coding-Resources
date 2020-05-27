@@ -3,68 +3,67 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 ## Visualization and User Interfaces
 ### ggplot2 Quick Code for Copying and Pasting
 ```r
-	library(tidyverse)
-	library(ggthemes)
+library(tidyverse)
+library(ggthemes)
 
-	ggplot(
-	  # Date Frame
-			data = ,
+ggplot(
+  # Date Frame
+	data = ,
 			
-	  # X and Y Variables
-			aes(
-			   x = ,
-			   y = ,
-		color = )) +
+  # X and Y Variables
+		aes(
+		   x = ,
+		   y = ,
+	color = )) +
 	  
-	  # Graph Type
-		geom_point() +
+  # Graph Type
+	geom_point() +
 	  
-	  # Theme
-		theme_minimal() +
+  # Theme
+	theme_minimal() +
 	  
-	  # Labels
-		labs(title = "",
-			 subtitle = "",
-			 caption = "",
-			 tag = "Figure 1",
-			 x = "",
-			 y = "")
+  # Labels
+	labs(title = "",
+		 subtitle = "",
+		 caption = "",
+		 tag = "Figure 1",
+		 x = "",
+		 y = "")
 	  
-	  # Save Image
-		ggsave("imageTitle.pdf", path = "", width = 10, height = 7)
-		
+  # Save Image
+	ggsave("imageTitle.pdf", path = "", width = 10, height = 7)	
 ```
 	
 ### ggplot2 Plus Shiny [from Wickham](https://mastering-shiny.org/action-graphics.html#cached-plots)
 ```r
-	library(shiny)
+library(shiny)
 
-	ui <- fluidPage(
-	  selectInput("x", "X Axis Title", 
-					choices = names(df), 
-					selected = "carat"),
-	  selectInput("y", "Y Axis Title", 
-					choices = names(df), 
-					selected = "price"),
-	  plotOutput("plot")
+ui <- fluidPage(
+	selectInput("x", "X Axis Title", 
+				choices = names(df), 
+				selected = "carat"),
+	selectInput("y", "Y Axis Title", 
+				choices = names(df), 
+				selected = "price"),
+	plotOutput("plot")
 	)
 
-	server <- function(input, output, session) {
-	  output$plot <- renderCachedPlot(
-	  {
+server <- function(input, output, session) {
+	output$plot <- renderCachedPlot(
+	{
 		ggplot(df, 
 				aes(.data[[input$x]], 
 					.data[[input$y]])) + 
 					geom_point()
-	  },
-	  cacheKeyExpr = list(input$x, input$y))
+	},
+	cacheKeyExpr = list(input$x, input$y))
 ```
 	 
 ## Some Useful Packages for LaTeX Tables
 ```r
-	library(stargazer)
-	library(xtable)
-	library(huxtable)
+library(stargazer)
+library(xtable)
+library(huxtable)
 ```
 
 ## Git and Command Line
@@ -90,6 +89,7 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 | Transfer files to a remote machine (via Secure Copy) | `scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>` | `pscp -scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>`              |
 | Submit a batch script                                | `srun <filename.sh>`                                                                                           | unlikely to do this. If need to, see [here](https://stackoverflow.com/questions/26522789/how-to-run-sh-on-windows-command-prompt) |
 
+
 ### Resources
 * [Pimp my Editor](http://slides.com/nicklang/pimp-my-editor#/) (Sublime Text focused, but may similar plug-ins/features available in Npp, Atom, or Vim)
 * [Unix commands](https://files.fosswire.com/2007/08/fwunixref.pdf)
@@ -97,36 +97,36 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 * [Git Basics](https://www.youtube.com/watch?v=U8GBXvdmHT4)
 * [Git Workflows](http://blog.endpoint.com/2014/05/git-workflows-that-work.html)
 
+
 ## Some Functions
 ### Group By
 ```r
-	df <- df %>%
-        group_by(x) %>%
-        summarise(y = sum(y))
+df <- df %>%
+	group_by(x) %>%
+	summarise(y = sum(y))
 ```
 
 ### Optimize with `Rglpk` Package
 ```r
-	library(Rglpk)
+library(Rglpk)
 	
-	# Objecttive Function
-	obj <- c(2, 4, 3)
+# Objecttive Function
+obj <- c(2, 4, 3)
 	
-	# Input Matrix
-	mat <- matrix(c(3, 2, 1, 4, 1, 3, 2, 2, 2), nrow = 3)
+# Input Matrix
+mat <- matrix(c(3, 2, 1, 4, 1, 3, 2, 2, 2), nrow = 3)
 	
-	# Constraint Direction
-	dir <- c("<=", "<=", "<=")
+# Constraint Direction
+dir <- c("<=", "<=", "<=")
 	
-	# Constraint Values
-	rhs <- c(60, 40, 80)
+# Constraint Values
+rhs <- c(60, 40, 80)
 	
-	# Maximize?
-	max <- TRUE
+# Maximize?
+max <- TRUE
 	
-	# Solve
-	Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
-
+# Solve
+Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 ```
 
 ## Other Useful Links
