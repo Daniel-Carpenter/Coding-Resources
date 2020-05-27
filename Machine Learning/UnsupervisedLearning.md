@@ -1,3 +1,5 @@
+PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).
+
 # Unsupervised learning
 Through the course so far, we have restricted our attention to statistical models where there is an outcome variable Y and explanatory variables X. Such a setting is known as "supervised learning" because the outcome is "supervising" or "teaching" the out-of-sample X's.
 

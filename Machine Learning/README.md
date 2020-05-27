@@ -1,3 +1,5 @@
+PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).
+
 # Machine Learning
 
 The next unit of this class will cover machine learning. But first, let's discuss the difference between Machine Learning and Artificial Intelligence (AI).

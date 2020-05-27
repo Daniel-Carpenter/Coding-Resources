@@ -1,4 +1,4 @@
-PLEASE NOTE THAT THIS REPO LARGELY CONISTS OF CODE FROM [TYLER RANSOM](http://tyleransom.github.io)'S REPOSITORY LOCATED [HERE](https://github.com/tyleransom/DScourseS20)
+PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).
 
 # Software Support
 

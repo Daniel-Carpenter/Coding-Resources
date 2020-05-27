@@ -1,3 +1,5 @@
+PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).
+
 # Guide to SQL
 Structured Query Language (SQL) is a commonly language for processing relational databases. Below is a beginner's guide to using SQL.
 

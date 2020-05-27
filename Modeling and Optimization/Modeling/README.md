@@ -1,3 +1,5 @@
+PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).
+
 # Some notes on simulation and its link with optimization & data science
 These notes introduce the concept of *simulation* as a potentially useful tool in a data scientist's belt.
 
