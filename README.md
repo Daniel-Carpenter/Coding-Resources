@@ -53,6 +53,9 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 
 ## Other Useful Links
 
+* [Advanced R ed. 1](http://adv-r.had.co.nz/)
+* [Advanced R ed. 2](https://adv-r.hadley.nz/)
+* [Mastering Shiny](https://mastering-shiny.org/)
 * [LaTeX math symbols](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
 * [Typesetting equations in TeX](http://moser-isi.ethz.ch/docs/typeset_equations.pdf)
 * [Pimp my Editor](http://slides.com/nicklang/pimp-my-editor#/) (Sublime Text focused, but may similar plug-ins/features available in Npp, Atom, or Vim)
