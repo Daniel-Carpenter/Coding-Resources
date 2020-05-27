@@ -65,10 +65,7 @@ server <- function(input, output, session) {
 ```
 
 
-## Some Useful Packages for LaTeX Regression Outputs (and Tables)
-
-* [Explainations of Packages for Regression LaTeX Tables](https://declaredesign.org/r/estimatr/articles/regression-tables.html)
-
+## Some Useful Packages for LaTeX Regression Outputs and Tables [Source Here](https://declaredesign.org/r/estimatr/articles/regression-tables.html)
 
 ### Setup with Regressions
 ```r
