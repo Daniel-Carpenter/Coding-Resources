@@ -190,16 +190,13 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 
 
 ### Linear Algebra
-#### Books
+#### Linear Algebra Books
 * [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
 * [No bullshit guide to linear algebra](https://minireference.com/static/excerpts/noBSguide2LA_preview.pdf)
 * [Linear Algebra | Interactive Zybook](https://learn.zybooks.com/zybook/LinearAlgebraR58)
-* The Master Algorithm ([Amazon link](https://www.amazon.com/Master-Algorithm-Ultimate-Learning-Machine-ebook/dp/B012271YB2))
-* Julia for Data Science ([Amazon link](https://www.amazon.com/Julia-Data-Science-Zacharias-Voulgaris/dp/1634621301))
-* Data Science at the Command Line ([Free eBook](https://www.datascienceatthecommandline.com/))
+* The Master Algorithm ([Amazon link](https://www.amazon.com/Master-Algorithm-Ultimate-Learning-Machine-ebook/dp/B012271YB2))	
 	
-	
-#### Reference Notes
+#### Linear Algebra Reference Notes
 * [Everything Matrix](https://matrixcalc.org/en/)
 * [**Least Squares**](https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf)
 * [Steps to Solving **Eigenvalues and Eigenvectors**](https://matrixcalc.org/en/vectors.html#eigenvectors%28%7B%7B3,4%7D,%7B4,9%7D%7D%29)
@@ -212,14 +209,16 @@ Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 * [Show Vectors as **Linear Combination**](https://www.google.com/search?q=how+to+show+that+something+is+a+linear+combination+of+other+vectors&oq=how+to+show+that+something+is+a+linear+combination+&aqs=chrome.1.69i57j33.10895j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_g_imXuugMIyqsgWn6qQw47)
 
 
-### Other Notes
+### Other Notes on Data Science, Programming, and Statistical Coding
 * [Notes on Machine Learning & Artificial Intelligence](https://chrisalbon.com) by Chris Albon
 * [Machine Learning "Mind Map"](https://github.com/dformoso/machine-learning-mindmap/blob/master/Machine%20Learning.pdf)
 * [Julia vs. Python for Data Science](https://www.infoworld.com/article/3241107/python/julia-vs-python-julia-language-rises-for-data-science.html)
+* Julia for Data Science ([Amazon link](https://www.amazon.com/Julia-Data-Science-Zacharias-Voulgaris/dp/1634621301))
+* Data Science at the Command Line ([Free eBook](https://www.datascienceatthecommandline.com/))
 
 
 
-## Schedule from ([Tyler Ransom](http://tyleransom.github.io)'s [DScourseS20](https://github.com/tyleransom/DScourseS20).
+## Materials from ([Tyler Ransom](http://tyleransom.github.io)'s [DScourseS20](https://github.com/tyleransom/DScourseS20).
 |Topic|
 |--------------------------------------------------------------|
 |What is data science / big data / why is it important? ([Slides](https://github.com/tyleransom/DScourseS20/blob/master/CourseIntro/WhatIsDataScience.pdf))|
