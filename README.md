@@ -11,8 +11,8 @@ Git and GitHub tutorial tutorial on using [Git and GitHub.com](https://github.co
 ### Main Git Commands
 | Functionality                                               | Git Command                                                      |
 |-------------------------------------------------------------|------------------------------------------------------------------|
-| Pull to Fork                                                | `git pull`                                                                   | `cd `                                                                                                                              |
-| Add and Commit all Changes                                  | `git add -A`                                                                  | `cd `                                                                                                                              |
+| Pull to Fork                                                | `git pull`                                                       |                                                                                                                            |
+| Add and Commit all Changes                                  | `git add -A`                                                     |                                                                                                                              |
 | Push committed changes updstream                            | `git push origin master`      
 
 
@@ -31,12 +31,12 @@ Git and GitHub tutorial tutorial on using [Git and GitHub.com](https://github.co
 | Create a new tag                                            | `git tag -a v<version number> -m "message with new tag"`           |
 | Pull changes from remote repo onto local machine            | `git fetch upstream`                                               |
 | Merge changes from remote into active local branch          | `git merge upstream/<branch name>`                                 |
-| Clone a remote repository                                   | `git clone <url to remote repo>`   
+| Clone a remote repository                                   | `git clone <url to remote repo>`                                   |
 
 ## Command Line
 
 | Command                                              | Unix                                                                                                         | DOS                                                                                                                              |
-|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|                                                            | `cd `                                                                                                                              |
+|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|                                                                                                                                    |
 | Change directory                                     | `cd <directory path>` (could be relative path)                                                                 | `cd `                                                                                                                              |
 | List files in directory                              | `ls  `                                                                                                         | `dir`                                                                                                                              |
 | Move up one level in directory structure             | `cd .. `                                                                                                       | `cd ..`                                                                                                                            |
@@ -46,7 +46,7 @@ Git and GitHub tutorial tutorial on using [Git and GitHub.com](https://github.co
 | Kill a running process                               | `kill <process id>`                                                                                            | `Taskkill /PID <process id> /F  `                                                                                                  |
 | Connect to remote machine via secure shell           | `ssh -p <port number> <user@hostname>`                                                                         | `<path to PuTTY.exe> -ssh <username@host> <port number>  `                                                                         |
 | Transfer files to a remote machine (via Secure Copy) | `scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>` | `pscp -scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>`              |
-| Submit a batch script                                | `srun <filename.sh>`                                                                                           | unlikely to do this. If need to, see [here](https://stackoverflow.com/questions/26522789/how-to-run-sh-on-windows-command-prompt) |                               |
+| Submit a batch script                                | `srun <filename.sh>`                                                                                           | unlikely to do this. If need to, see [here](https://stackoverflow.com/questions/26522789/how-to-run-sh-on-windows-command-prompt)  |
 
 
 ## Other Useful Links
