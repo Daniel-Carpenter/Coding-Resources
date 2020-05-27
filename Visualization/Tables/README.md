@@ -1,4 +1,4 @@
-## Some Useful Packages
+## Some Useful Packages for Tables
 
 ```r
 library(stargazer)

@@ -1,6 +1,6 @@
-PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). This repo is unlinked with my personal additions.
+THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).
 
-## Git and GitHub tutorial 
+## Git and GitHub Tutorial 
 
 * Git and GitHub tutorial tutorial on using [Git and GitHub.com](https://github.com/tyleransom/DScourseS20/blob/master/Productivity/git_tutorial.pdf) (reproduced with permission from [Rick Evans](https://github.com/rickecon) at U Chicago). 
 * [Git](https://xkcd.com/1597/)
@@ -13,7 +13,7 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 |-------------------------------------------------------------|------------------------------------------------------------------|
 | Pull to Fork                                                | `git pull`                                                       |
 | Add and Commit all Changes                                  | `git add -A`                                                     |
-| Push committed changes updstream                            | `git push origin master`      
+| Push committed changes updstream                            | `git push origin master`                                         |
 
 
 ### Other Git Commands
