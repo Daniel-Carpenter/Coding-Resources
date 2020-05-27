@@ -4,10 +4,7 @@ PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.githu
 ## Command Line
 
 | Command                                              | Unix                                                                                                         | DOS                                                                                                                              |
-|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Main Combo                                           | `git pull`                                                                  | `cd `                                                                                                                              |
-|                                                      | `git add -A`                                                                  | `cd `                                                                                                                              |
-|                                                      | `git push origin master`                                                                  | `cd `                                                                                                                              |
+|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|                                                            | `cd `                                                                                                                              |
 | Change directory                                     | `cd <directory path>` (could be relative path)                                                                 | `cd `                                                                                                                              |
 | List files in directory                              | `ls  `                                                                                                         | `dir`                                                                                                                              |
 | Move up one level in directory structure             | `cd .. `                                                                                                       | `cd ..`                                                                                                                            |
@@ -27,6 +24,14 @@ Git and GitHub tutorial tutorial on using [Git and GitHub.com](https://github.co
 * [Git](https://xkcd.com/1597/)
 * [Git Commit](https://xkcd.com/1296/)
 
+### Main Git Commands
+| Functionality                                               | Git Command                                                      |
+| Pull to Fork                                                | `git pull`                                                                   | `cd `                                                                                                                              |
+| Add and Commit all Changes                                  | `git add -A`                                                                  | `cd `                                                                                                                              |
+| Push committed changes updstream                            | `git push origin master`      
+
+
+### Other Git Commands
 | Functionality                                               | Git Command                                                      |
 |-------------------------------------------------------------|------------------------------------------------------------------|
 | See active branch and uncommitted changes for tracked files | `git status -uno`                                                  |
