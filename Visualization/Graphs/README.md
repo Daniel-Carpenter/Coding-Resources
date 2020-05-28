@@ -1,36 +1,36 @@
 ## ggplot2 Quick Code for Copying and Pasting
-
 ```r
-library(tidyverse)
-library(ggthemes)
+library(tidyverse) 	# Includes ggplot2
+library(ggthemes)	# Optional Themes
 
 ggplot(
-  # Date Frame
-        data = ,
-        
+  # Data Frame
+	data = ,
+			
   # X and Y Variables
-        aes(
-           x = ,
-           y = ,
-    color = )) +
-  
+		aes(
+		   x = ,
+		   y = ,
+	color = )) +
+	  
   # Graph Type
-    geom_point() +
-  
-  # Theme
-    theme_minimal() +
-  
-  # Labels
-    labs(title = "",
-         subtitle = "",
-         caption = "",
-         tag = "Figure 1",
-         x = "",
-         y = "")
-  
+	geom_point() +
+	  
+  # Graph Theme
+	theme_minimal() +
+	  
+  # Graph Labels
+	labs(title = "",
+		 subtitle = "",
+		 caption = "",
+		 tag = "Figure 1",
+		 x = "",
+		 y = "")
+	  
   # Save Image
-    ggsave("imageTitle.pdf", path = "", width = 10, height = 7)
+	ggsave("imageTitle.pdf", path = "", width = 10, height = 7)	
 ```
+	
 
 ## More Examples
 
