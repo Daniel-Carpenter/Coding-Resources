@@ -47,14 +47,14 @@ library(shiny)
 library(ggthemes)	# Optional Themes
 
 # Select a dataset
-	df <- mtcars 
+df <- mtcars 
 
 # Create User Interface
-	ui <- fluidPage(
-		# x Axis Input Validation
-			selectInput("x", "X Axis Title", 
-						choices = names(df), 	# Variable names to include in validation (var names from df)
-						selected = "wt), 	# Default variable selected in validation
+ui <- fluidPage(
+  # x Axis Input Validation
+  selectInput("x", "X Axis Title", 
+              choices = names(df), 	# Variable names to include in validation (var names from df)
+              selected = "wt"), 	# Default variable selected in validation
 		# y Axis Input Validation
 			selectInput("y", "Y Axis Title", 
 						choices = names(df), 	# Variable names to include in validation (var names from df)
@@ -64,21 +64,22 @@ library(ggthemes)	# Optional Themes
 			)
 
 # Create Server (Where you generate output, called in User Interface)
-	server <- function(input, output, session) {
-		# Create Plot using ggplot2
-			output$plot <- renderCachedPlot(
-			{
-				ggplot(
-				# Data Frame 
-					df, 
-					aes(
-				# X and Y Variables
-						.data[[input$x]], 
-						.data[[input$y]]))
-				# Graph Type
-					+ geom_point()
-				# Graph Theme
-					+ theme_minimal() 
+	server <- function(input, output, session) 
+	  {
+  		# Create Plot using ggplot2
+  			output$plot <- renderCachedPlot(
+  			{
+  				ggplot(
+  				# Data Frame 
+  					df, 
+  					aes(
+  				# X and Y Variables
+  						.data[[input$x]], 
+  						.data[[input$y]]))
+  				# Graph Type
+  					+ geom_point()
+  				# Graph Theme
+  					+ theme_minimal() 
 			},
 			cacheKeyExpr = list(input$x, input$y))
 ```
