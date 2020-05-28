@@ -5,6 +5,9 @@
 ## Visualization and User Interfaces
 
 ### ggplot2 Quick Code for Copying and Pasting
+
+* [ggplot2 Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/GGPlot%20Cheat%20Sheet.pdf) 
+
 ```r
 library(tidyverse) 	# Includes ggplot2
 library(ggthemes)	# Optional Themes
@@ -39,6 +42,7 @@ ggplot(
 	
 ### Shiny Starter Code [from Wickham](https://mastering-shiny.org/action-workflow.html#getting-help)
 * [Link to Wickham's Shiny Tutorial](https://mastering-shiny.org/)
+* [Shiny Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Shiny%20Cheat%20Sheet.pdf)
 
 ```r
 library(shiny)
