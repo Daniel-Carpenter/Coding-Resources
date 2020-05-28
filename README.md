@@ -63,8 +63,8 @@ library(ggthemes)	# Optional Themes
 				
 		# Color Input Validation
 			selectInput("color", "Define the color of the data points ", 
-			choices = names(df),	# Variable names to include in validation (var names from df)
-			selected = "cyl"),	# Default variable selected in validation
+				choices = names(df),	# Variable names to include in validation (var names from df)
+				selected = "cyl"),	# Default variable selected in validation
 			
 		# Call plot from "server" below
                    plotOutput("plot")			#  Name you define after "output$" in "server" below
