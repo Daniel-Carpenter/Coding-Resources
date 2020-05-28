@@ -6,8 +6,8 @@
 
 ### ggplot2 Quick Code for Copying and Pasting
 ```r
-library(tidyverse)
-library(ggthemes)
+library(tidyverse) 	# Includes ggplot2
+library(ggthemes)	# Optional Themes
 
 ggplot(
   # Data Frame
@@ -22,10 +22,10 @@ ggplot(
   # Graph Type
 	geom_point() +
 	  
-  # Theme
+  # Graph Theme
 	theme_minimal() +
 	  
-  # Labels
+  # Graph Labels
 	labs(title = "",
 		 subtitle = "",
 		 caption = "",
@@ -42,7 +42,9 @@ ggplot(
 ### ggplot2 Plus Shiny [from Wickham](https://mastering-shiny.org/action-graphics.html#cached-plots)
 #### Example Includes Regression 
 ```r
+library(tidyverse) 	# Includes ggplot2
 library(shiny)
+library(ggthemes)	# Optional Themes
 
 # Select a dataset
 	df <- mtcars 
@@ -66,11 +68,17 @@ library(shiny)
 		# Create Plot using ggplot2
 			output$plot <- renderCachedPlot(
 			{
-				ggplot(df, 
+				ggplot(
+				# Data Frame 
+					df, 
 					aes(
+				# X and Y Variables
 						.data[[input$x]], 
-						.data[[input$y]])) 
+						.data[[input$y]]))
+				# Graph Type
 					+ geom_point()
+				# Graph Theme
+					+ theme_minimal() 
 			},
 			cacheKeyExpr = list(input$x, input$y))
 ```
