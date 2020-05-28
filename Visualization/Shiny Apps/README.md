@@ -2,27 +2,29 @@
 
 * [Link to Wickham's Shiny Tutorial](https://mastering-shiny.org/)
 
-## The Basics [from Wickham](https://mastering-shiny.org/basic-app.html#reactive-expr)
+## Starter Code [from Wickham](https://mastering-shiny.org/action-workflow.html#getting-help)
 ```r
 library(shiny)
 
-server <- function(input, output, session) 
-{
-  dataset <- reactive(
-  {
-    get(input$dataset, "package:datasets")
-  })
-
-  output$summary <- renderPrint(
-  {
-    summary(dataset())
-  })
-  
-  output$table <- renderTable(
-  {
-    dataset()
-  })
-}
+# INPUT: Create the User Interface and Inputs -------------------------------------------------
+	ui <- fluidPage(
+		  selectInput("n", "N", 1:10),
+		  plotOutput("plot")
+			)
+	
+# CREATE SERVER (Where you generate output, called in User Interface) ------------------------------
+	server <- function(input, output, session) 
+	{
+	# Create Plot
+		  output$plot <- renderPlot(
+		  {
+		    n <- input$n * 2
+		    plot(head(cars, n))
+		  })
+	}
+	
+# LAUNCH APP ----------------------------------------------------------------------------------------
+	shinyApp(ui, server)
 
 ```
 
