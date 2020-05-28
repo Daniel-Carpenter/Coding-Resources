@@ -4,7 +4,7 @@
 
 ## Visualization and User Interfaces
 
-### ggplot2 Quick Code for Copying and Pasting
+### ggplot2 Starter Code
 
 * [ggplot2 Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/GGPlot%20Cheat%20Sheet.pdf) 
 
