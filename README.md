@@ -10,7 +10,7 @@ library(tidyverse)
 library(ggthemes)
 
 ggplot(
-  # Date Frame
+  # Data Frame
 	data = ,
 			
   # X and Y Variables
