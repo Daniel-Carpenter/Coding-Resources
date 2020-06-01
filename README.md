@@ -2,6 +2,11 @@
 
 *PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). This repo is unlinked with my personal additions.*
 
+## Tidyverse
+* [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/R%20Cheat%20Sheet.pdf)
+* [In Depth Notes](https://raw.githack.com/uo-ec607/lectures/master/05-tidyverse/html_document/05-tidyverse.html#tidyverse_basics)
+* [`tidyr`'s Tutorial](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
+
 ## Visualization and User Interfaces
 
 ### ggplot2 Starter Code
