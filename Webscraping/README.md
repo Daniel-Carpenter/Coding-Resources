@@ -17,6 +17,11 @@ reps <- h %>%
         as_tibble()
 		
 ```
+
+## Other Resources
+* [Server Side Webscraping](https://raw.githack.com/uo-ec607/lectures/master/06-web-css/06-web-css.html)
+* [Client Side Webscraping](https://raw.githack.com/uo-ec607/lectures/master/07-web-apis/07-web-apis.html) 
+
 ## Using APIs and web scrapers to gather data
 This module of the course provides tools to gather data from the web through the use of web scraping and APIs.
 
