@@ -1,6 +1,6 @@
 # Quick Resources Below
 
-*PLEASE NOTE THAT THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). This repo is unlinked with my personal additions.*
+*PLEASE NOTE THAT THIS REPO HAS SOME EXAMPLES AND MANY CONCEPTUAL NOTES FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). I have indicated when it is not my own work. Othwerwise, this repo is unlinked with my personal additions for my personal reference.*
 
 ## Data Cleaning
 ### `tidyverse`
