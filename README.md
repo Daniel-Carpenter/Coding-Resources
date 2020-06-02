@@ -16,6 +16,9 @@
 * [Joining Tibbles and Dataframes Together](https://rpubs.com/williamsurles/293454) 
 
 
+### Useful Packages
+* `lubridate` [Cheat Sheet - Using and Altering **Dates**](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf)
+
 ### Pulling in Data
 * `readr` [Cheat Sheet - Importing Data](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Importing%20Data%20Cheat%20Sheet.pdf)
 * `R.cache` Package - In-Memory Data Loading [documentation here](https://cran.r-project.org/web/packages/R.cache/R.cache.pdf)
@@ -28,8 +31,6 @@ library(R.cache)
 	df <- evalWithMemoization(read.csv("fileNameGoesHere.csv"))
 	
 ````
-
-* `lubridate` [Cheat Sheet - Using and Altering **Dates**](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf)
 
 ## Visualization and User Interfaces
 
