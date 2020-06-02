@@ -28,7 +28,8 @@ library(R.cache)
 
 # 'evalWithMemoization()' Function Stores the Data Read in your Cache Memory
 # This method makes rerunning code much faster for large files
-	df <- evalWithMemoization(read.csv("fileNameGoesHere.csv"))
+
+df <- evalWithMemoization(read.csv("fileNameGoesHere.csv"))
 	
 ````
 
