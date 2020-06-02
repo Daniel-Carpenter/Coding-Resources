@@ -2,20 +2,23 @@
 
 *PLEASE NOTE THAT THIS REPO HAS SOME EXAMPLES AND MANY CONCEPTUAL NOTES FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). I have indicated when it is not my own work. Othwerwise, this repo is unlinked with my personal additions for my personal reference.*
 
+
 ## Data Cleaning and Mutation
+
 ### `tidyverse`
 * `tidyverse` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/R%20Cheat%20Sheet.pdf)
 * `tidyverse` [In Depth Notes](https://raw.githack.com/uo-ec607/lectures/master/05-tidyverse/html_document/05-tidyverse.html#tidyverse_basics)
 * `tidyr`'s [Tutorial](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
 
+
 ### `dplyr`
-* `dplyr` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/dplyr%20Cheat%20Sheet.pdf)
+* `dplyr` [Cheat Sheet - Reshaping, Summarising, Grouping, etc.](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/dplyr%20Cheat%20Sheet.pdf)
 * [Joining Tibbles and Dataframes Together](https://rpubs.com/williamsurles/293454) 
 
-### Other Data Tasks
-#### Setup
+
+### Pulling in Data
 * `readr` [Cheat Sheet - Importing Data](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Importing%20Data%20Cheat%20Sheet.pdf)
-* `R.cache` In-Memory Data Loading
+* `R.cache` Package - In-Memory Data Loading [documentation here](https://cran.r-project.org/web/packages/R.cache/R.cache.pdf)
 
 ```r
 library(R.cache)
@@ -160,13 +163,6 @@ library(magrittr)
 
 
 ## Some Functions
-### `group_by`
-```r
-df <- df %>%
-	group_by(x) %>%
-	summarise(y = sum(y))
-```
-
 
 ### Optimize with `Rglpk` Package
 ```r
