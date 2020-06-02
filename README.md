@@ -4,23 +4,23 @@
 
 ## Data Cleaning
 ### `tidyverse`
-* [`tidyverse` Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/R%20Cheat%20Sheet.pdf)
-* [`tidyverse` In Depth Notes](https://raw.githack.com/uo-ec607/lectures/master/05-tidyverse/html_document/05-tidyverse.html#tidyverse_basics)
-* [`tidyr`'s Tutorial](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
+* `tidyverse` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/R%20Cheat%20Sheet.pdf)
+* `tidyverse` [In Depth Notes](https://raw.githack.com/uo-ec607/lectures/master/05-tidyverse/html_document/05-tidyverse.html#tidyverse_basics)
+* `tidyr`'s [Tutorial](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
 
 ### `dplyr`
-* [`dplyr` Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/dplyr%20Cheat%20Sheet.pdf)
+* `dplyr` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/dplyr%20Cheat%20Sheet.pdf)
 * [Joining Tibbles and Dataframes Together](https://rpubs.com/williamsurles/293454) 
 
 ### Other Data Cleaning
 * [Importing Data Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Importing%20Data%20Cheat%20Sheet.pdf)
-* [Using and Altering **Dates** with `lubridate`](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf)
+* [Using and Altering **Dates** with] `lubridate`(https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf)
 
 ## Visualization and User Interfaces
 
 ### Graphs - `ggplot2` Starter Code
 
-* [`ggplot2` Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/GGPlot%20Cheat%20Sheet.pdf) 
+* `ggplot2` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/GGPlot%20Cheat%20Sheet.pdf) 
 
 ```r
 library(tidyverse) 	# Includes ggplot2
@@ -56,7 +56,7 @@ ggplot(
 	
 ### User Interfaces - `shiny` Starter Code [from Wickham](https://mastering-shiny.org/action-workflow.html#getting-help)
 * [Link to Wickham's `shiny` Tutorial](https://mastering-shiny.org/)
-* [`shiny` Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Shiny%20Cheat%20Sheet.pdf)
+* `shiny` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Shiny%20Cheat%20Sheet.pdf)
 
 ```r
 library(shiny)
