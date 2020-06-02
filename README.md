@@ -13,8 +13,8 @@
 * [Joining Tibbles and Dataframes Together](https://rpubs.com/williamsurles/293454) 
 
 ### Other Data Cleaning
-* [Importing Data](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Importing%20Data%20Cheat%20Sheet.pdf)
-* [Dates](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf)
+* [Importing Data Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Importing%20Data%20Cheat%20Sheet.pdf)
+* [Using and Altering **Dates** with `lubridate`](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf)
 
 ## Visualization and User Interfaces
 
