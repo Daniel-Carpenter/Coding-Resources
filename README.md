@@ -14,7 +14,7 @@
 
 ### Other Data Cleaning
 * [Importing Data Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Importing%20Data%20Cheat%20Sheet.pdf)
-* [Using and Altering **Dates** with] `lubridate`(https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf)
+* [Using and Altering **Dates** with](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf) `lubridate`
 
 ## Visualization and User Interfaces
 
