@@ -2,7 +2,7 @@
 
 *PLEASE NOTE THAT THIS REPO HAS SOME EXAMPLES AND MANY CONCEPTUAL NOTES FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). I have indicated when it is not my own work. Othwerwise, this repo is unlinked with my personal additions for my personal reference.*
 
-## Data Cleaning
+## Data Cleaning and Mutation
 ### `tidyverse`
 * `tidyverse` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/R%20Cheat%20Sheet.pdf)
 * `tidyverse` [In Depth Notes](https://raw.githack.com/uo-ec607/lectures/master/05-tidyverse/html_document/05-tidyverse.html#tidyverse_basics)
@@ -12,8 +12,20 @@
 * `dplyr` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/dplyr%20Cheat%20Sheet.pdf)
 * [Joining Tibbles and Dataframes Together](https://rpubs.com/williamsurles/293454) 
 
-### Other Data Cleaning
+### Other Data Tasks
+#### Setup
 * `readr` [Cheat Sheet - Importing Data](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Importing%20Data%20Cheat%20Sheet.pdf)
+* `R.cache` In-Memory Data Loading
+
+```r
+library(R.cache)
+
+# 'evalWithMemoization()' Function Stores the Data Read in your Cache Memory
+# This method makes rerunning code much faster for large files
+	df <- evalWithMemoization(read.csv("fileNameGoesHere.csv"))
+	
+````
+
 * `lubridate` [Cheat Sheet - Using and Altering **Dates**](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf)
 
 ## Visualization and User Interfaces
