@@ -3,9 +3,8 @@
 * *Also taken from [Chris Albon](https://github.com/chrisalbon)'s [archived GitHub repository](https://github.com/chrisalbon/mlai) on machine learning and artifical intelligence.*
 * Otherwise, they are [Daniel Carpenter](https://github.com/Daniel-Carpenter)'s additions OR edits
 
-# Guide to SQL
-Structured Query Language (SQL) is a commonly language for processing relational databases. Below is a beginner's guide to using SQL.
-
+# SQL Help Scripts
+* [My Educator Book (not free)](https://app.myeducator.com/reader/web/1376e/) 
 
 ## Basic Scripting Examples
 
