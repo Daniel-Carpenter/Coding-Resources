@@ -1,10 +1,10 @@
 ## Source Notes
 * *THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
-* *Also taken from [Chris Albon](https://github.com/chrisalbon)'s [archived GitHub repositORy](https://github.com/chrisalbon/mlai) on machine learning and artifical intelligence.*
+* *Also taken from [Chris Albon](https://github.com/chrisalbon)'s [archived GitHub repository](https://github.com/chrisalbon/mlai) on machine learning and artifical intelligence.*
 * Otherwise, they are [Daniel Carpenter](https://github.com/Daniel-Carpenter)'s additions OR edits
 
 # Guide to SQL
-Structured Query Language (SQL) is a commonly language fOR processing relational databases. Below is a beginner's guide to using SQL.
+Structured Query Language (SQL) is a commonly language for processing relational databases. Below is a beginner's guide to using SQL.
 
 
 ## Basic Scripting Examples
@@ -17,8 +17,8 @@ Structured Query Language (SQL) is a commonly language fOR processing relational
 --  Select all
 SELECT *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 ```
 
 
@@ -31,7 +31,7 @@ FROM criminals
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>412</td>
@@ -59,7 +59,7 @@ FROM criminals
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -84,8 +84,8 @@ FROM criminals
 --  Select all unique
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 ```
 
 
@@ -98,7 +98,7 @@ FROM criminals
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>412</td>
@@ -110,7 +110,7 @@ FROM criminals
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -140,9 +140,9 @@ Create a one-way frequency table as follows:
 ```sql
 SELECT var1, COUNT(*) FROM datname GROUP BY var1;
 ```
-This will then list the unique categORies and counts fOR each categORy
+This will then list the unique categories and counts for each category
 
-### Compute summary statistics of a variable OR fORmula of variables
+### Compute summary statistics of a variable OR formula of variables
 ```sql
 SELECT FUNCTION(var1) FROM datname;
 ```
@@ -155,15 +155,15 @@ where the following are functions:
 * `MAX`: maximum
 
 ### Summary statistics of functions of variables
-FOR example:
+For example:
 ```sql
 SELECT FUNCTION(var1 + var2) FROM datname;
 ```
-would apply the `AVG` OR `SUM` OR `MIN` to the sum of `var1` and `var2`. MORe complex functions (like square root) are not suppORted in SQLite, so something like
+would apply the `AVG` OR `SUM` OR `MIN` to the sum of `var1` and `var2`. More complex functions (like square root) are not supported in SQLite, so something like
 ```sql
 SELECT AVG(SQRT(var1)) FROM datname;
 ```
-will not wORk.
+will not work.
 
 But
 ```sql
@@ -180,8 +180,8 @@ will. `AS` acts as an alias.
 --  Select name and average age,
 SELECT city, avg(age)
 
---  from the table 'criminals',
-FROM criminals
+--  from the table 'dataTable',
+FROM dataTable
 
 -- after grouping by city
 GROUP BY city
@@ -216,8 +216,8 @@ GROUP BY city
 --  Select name and average age,
 SELECT city, max(age)
 
---  from the table 'criminals',
-FROM criminals
+--  from the table 'dataTable',
+FROM dataTable
 
 -- after grouping by city
 GROUP BY city
@@ -252,8 +252,8 @@ GROUP BY city
 --  Select name and average age,
 SELECT city, count(name)
 
---  from the table 'criminals',
-FROM criminals
+--  from the table 'dataTable',
+FROM dataTable
 
 -- after grouping by city
 GROUP BY city
@@ -290,8 +290,8 @@ GROUP BY city
 --  Select name and average age,
 SELECT city, total(age)
 
---  from the table 'criminals',
-FROM criminals
+--  from the table 'dataTable',
+FROM dataTable
 
 -- after grouping by city
 GROUP BY city
@@ -443,13 +443,13 @@ Returns all rows whose merge-on id appears in **both** tables.
 SELECT *
 
 -- Left table
-FROM criminals
+FROM dataTable
 
 -- Right table
-INNER JOIN crimes
+INNER JOIN otherDataTable
 
--- Merged on `pid` in the criminals table and `pid_arrested` in the crimes table
-ON criminals.pid=crimes.pid_arrested;
+-- Merged on `pid` in the dataTable table and `pid_arrested` in the otherDataTable table
+ON dataTable.pid=otherDataTable.pid_arrested;
 ```
 
 
@@ -462,7 +462,7 @@ ON criminals.pid=crimes.pid_arrested;
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
         <th>cid</th>
         <th>crime</th>
         <th>city_1</th>
@@ -562,7 +562,7 @@ ON criminals.pid=crimes.pid_arrested;
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -626,13 +626,13 @@ Returns all rows from the left table but only the rows from the right left that 
 SELECT *
 
 -- Left table
-FROM criminals
+FROM dataTable
 
 -- Right table
-LEFT JOIN crimes
+LEFT JOIN otherDataTable
 
--- Merged on `pid` in the criminals table and `pid_arrested` in the crimes table
-ON criminals.pid=crimes.pid_arrested;
+-- Merged on `pid` in the dataTable table and `pid_arrested` in the otherDataTable table
+ON dataTable.pid=otherDataTable.pid_arrested;
 ```
 
 
@@ -645,7 +645,7 @@ ON criminals.pid=crimes.pid_arrested;
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
         <th>cid</th>
         <th>crime</th>
         <th>city_1</th>
@@ -745,7 +745,7 @@ ON criminals.pid=crimes.pid_arrested;
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -799,7 +799,7 @@ ON criminals.pid=crimes.pid_arrested;
 
 
 
-_Note: FULL OUTER and RIGHT JOIN are not shown here because they are not suppORted by the version of SQL (SQLite) used in this tutORial._
+_Note: FULL OUTER and RIGHT JOIN are not shown here because they are not supported by the version of SQL (SQLite) used in this tutorial._
 
 
 
@@ -813,15 +813,15 @@ _Note: FULL OUTER and RIGHT JOIN are not shown here because they are not suppORt
 --  Select name and age,
 SELECT name, age
 
---  from the table 'criminals',
-FROM criminals
+--  from the table 'dataTable',
+FROM dataTable
 
 --  where age is greater than,
 WHERE age > 
      --  select age,
     (SELECT age
-     --  from criminals
-     FROM criminals
+     --  from dataTable
+     FROM dataTable
      --  where the name is 'James Smith'
      WHERE name == 'James Smith')
 ```
@@ -847,7 +847,7 @@ WHERE age >
         <td>49</td>
     </tr>
     <tr>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
     </tr>
     <tr>
@@ -860,7 +860,7 @@ WHERE age >
 
 ### Subquery Example 1
 ```sql
--- Did mORe men OR women wORk in January 2018 and from which company did these employees (that wORked in January) ORiginate?
+-- Did more men OR women work in January 2018 and from which company did these employees (that worked in January) originate?
 
 SELECT 
  e.company, 
@@ -890,18 +890,18 @@ GROUP BY e.company, e.gender;
 ### Subquery Example 2
 
 ```sql
--- Which stORe had the most employees? Please include the city and state.
+-- Which store had the most employees? Please include the city and state.
 
 SELECT 
  s.city, s.state, 
  COUNT (e.employee_id) AS Emp_COUNT
 
 FROM 
- StORes AS s, 
+ Stores AS s, 
  employee_info AS e
 
 WHERE 
- s.stORe_id = e.stORe_id
+ s.store_id = e.store_id
 
 GROUP BY s.city, s.state
  HAVING COUNT (e.employee_id) = (
@@ -912,11 +912,11 @@ GROUP BY s.city, s.state
      s.state, 
      COUNT (e.employee_id) AS emp_count
     FROM 
-     StORes AS s, 
+     Stores AS s, 
      employee_info AS e
 
     WHERE 
-     s.stORe_id = e.stORe_id
+     s.store_id = e.store_id
 
     GROUP BY 
      s.city, s.state));
@@ -932,8 +932,8 @@ GROUP BY s.city, s.state
 -- Select city name
 SELECT city 
 
--- From criminals table
-FROM criminals
+-- From dataTable table
+FROM dataTable
 
 -- Then combine with
 UNION
@@ -941,8 +941,8 @@ UNION
 -- Select city names
 SELECT city 
 
--- From crimes table
-FROM crimes;
+-- From otherDataTable table
+FROM otherDataTable;
 ```
 
 
@@ -975,8 +975,8 @@ FROM crimes;
 -- Select city name
 SELECT city 
 
--- From criminals table
-FROM criminals
+-- From dataTable table
+FROM dataTable
 
 -- Then combine with
 UNION ALL
@@ -984,8 +984,8 @@ UNION ALL
 -- Select city names
 SELECT city 
 
--- From crimes table
-FROM crimes;
+-- From otherDataTable table
+FROM otherDataTable;
 ```
 
 
@@ -1067,8 +1067,8 @@ FROM crimes;
 --  Select all unique
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- Where age is greater than 20 and city is San Francisco
 WHERE age > 20 AND city == 'San Francisco'
@@ -1084,11 +1084,11 @@ WHERE age > 20 AND city == 'San Francisco'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1105,8 +1105,8 @@ WHERE age > 20 AND city == 'San Francisco'
 --  Select all unique
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- Where age is greater than 20 and city is San Francisco
 WHERE age > 20 OR city == 'San Francisco'
@@ -1122,11 +1122,11 @@ WHERE age > 20 OR city == 'San Francisco'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1149,7 +1149,7 @@ WHERE age > 20 OR city == 'San Francisco'
 
 ```sql
 -- Delete all rows
-DELETE FROM criminals
+DELETE FROM dataTable
 
 -- if the age is less than 18
 WHERE age < 18
@@ -1164,8 +1164,8 @@ WHERE age < 18
 --  Select name and average age,
 SELECT name, age
 
---  from the table 'criminals',
-FROM criminals
+--  from the table 'dataTable',
+FROM dataTable
 
 -- if age is not a null value
 WHERE name IS NOT NULL
@@ -1184,7 +1184,7 @@ WHERE name IS NOT NULL
         <td>15</td>
     </tr>
     <tr>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
     </tr>
     <tr>
@@ -1202,8 +1202,8 @@ WHERE name IS NOT NULL
 --  Select all
 SELECT *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- Only return the first two rows
 LIMIT 2;
@@ -1219,7 +1219,7 @@ LIMIT 2;
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1247,8 +1247,8 @@ LIMIT 2;
 --  Select all
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- Where age is greater than 30
 WHERE age > 30
@@ -1264,11 +1264,11 @@ WHERE age > 30
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1285,8 +1285,8 @@ WHERE age > 30
 --  Select all
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- Where age is greater than 23
 WHERE age >= 23
@@ -1302,7 +1302,7 @@ WHERE age >= 23
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>632</td>
@@ -1314,7 +1314,7 @@ WHERE age >= 23
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1331,8 +1331,8 @@ WHERE age >= 23
 --  Select all
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- Where age is greater than 23
 WHERE age = 23
@@ -1348,7 +1348,7 @@ WHERE age = 23
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>632</td>
@@ -1369,8 +1369,8 @@ WHERE age = 23
 --  Select all
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- Where age is greater than 23
 WHERE age <> 23
@@ -1386,7 +1386,7 @@ WHERE age <> 23
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1406,7 +1406,7 @@ WHERE age <> 23
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1422,7 +1422,7 @@ WHERE age <> 23
     </tr>
 </table>
 
-## Conditional "Like" % OperatOR
+## Conditional "Like" % Operator
 
 ### View Rows Where Name Begins with 'J'
 
@@ -1431,8 +1431,8 @@ WHERE age <> 23
 --  Select all
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- Where name starts with 'J'
 WHERE name LIKE 'J%'
@@ -1448,7 +1448,7 @@ WHERE name LIKE 'J%'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1477,8 +1477,8 @@ WHERE name LIKE 'J%'
 --  Select all
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- Where name contains the string 'ames'
 WHERE name LIKE '%ames%'
@@ -1494,7 +1494,7 @@ WHERE name LIKE '%ames%'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1515,8 +1515,8 @@ WHERE name LIKE '%ames%'
 --  Select all
 SELECT *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- If name starts with G
 WHERE name LIKE 'G%'
@@ -1532,11 +1532,11 @@ WHERE name LIKE 'G%'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -1553,8 +1553,8 @@ WHERE name LIKE 'G%'
 --  Select all
 SELECT *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
 -- If name starts ends with o
 WHERE name LIKE '%o'
@@ -1570,7 +1570,7 @@ WHERE name LIKE '%o'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>162</td>
@@ -1582,7 +1582,7 @@ WHERE name LIKE '%o'
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -1592,18 +1592,18 @@ WHERE name LIKE '%o'
 
 
 
-### Select Rows with Names Starting with Any Character, Then `ORdon`
+### Select Rows with Names Starting with Any Character, Then `ordon`
 
 
 ```sql
 --  Select all
 SELECT *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
--- If name starts with any character then continues with 'ORdon'
-WHERE name LIKE '_ORdon%'
+-- If name starts with any character then continues with 'ordon'
+WHERE name LIKE '_ordon%'
 ```
 
 
@@ -1616,11 +1616,11 @@ WHERE name LIKE '_ORdon%'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -1637,8 +1637,8 @@ WHERE name LIKE '_ORdon%'
 -- Select everything
 SELECT *
 
--- From the table 'criminals'
-FROM criminals
+-- From the table 'dataTable'
+FROM dataTable
 
 -- Where the city is any of these cities
 WHERE city IN ('Santa Rosa', 'Petaluma');
@@ -1654,7 +1654,7 @@ WHERE city IN ('Santa Rosa', 'Petaluma');
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1690,7 +1690,7 @@ WHERE city IN ('Santa Rosa', 'Petaluma');
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -1716,8 +1716,8 @@ WHERE city IN ('Santa Rosa', 'Petaluma');
 -- Select everything
 SELECT *
 
--- From the table 'criminals'
-FROM criminals
+-- From the table 'dataTable'
+FROM dataTable
 
 -- Where 
 WHERE age BETWEEN 12 AND 18
@@ -1733,7 +1733,7 @@ WHERE age BETWEEN 12 AND 18
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1746,20 +1746,20 @@ WHERE age BETWEEN 12 AND 18
 </table>
 
 
-## SORT
+## SorT
 
-### SORt by Ascending Age AND Then Alphabetically by Name
+### Sort by Ascending Age AND Then Alphabetically by Name
 
 
 ```sql
 --  Select all unique
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
--- SORt by ascending age
-ORDER BY age ASC, name
+-- Sort by ascending age
+orDER BY age ASC, name
 ```
 
 
@@ -1772,77 +1772,7 @@ ORDER BY age ASC, name
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill James</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Stacy Miller</td>
-        <td>23</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>GORdon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### SORt by Ascending Age
-
-
-```sql
---  Select all unique
-SELECT distinct *
-
--- From the criminals table
-FROM criminals
-
--- SORt by ascending age
-ORDER BY age ASC
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1878,7 +1808,7 @@ ORDER BY age ASC
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1888,18 +1818,18 @@ ORDER BY age ASC
 
 
 
-### SORt by Descending Age
+### Sort by Ascending Age
 
 
 ```sql
 --  Select all unique
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
--- SORt by descending age
-ORDER BY age DESC
+-- Sort by ascending age
+orDER BY age ASC
 ```
 
 
@@ -1912,11 +1842,81 @@ ORDER BY age DESC
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>512</td>
+        <td>Bill Byson</td>
+        <td>21</td>
+        <td>M</td>
+        <td>Petaluma</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>234</td>
+        <td>Bill James</td>
+        <td>22</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Stacy Miller</td>
+        <td>23</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### Sort by Descending Age
+
+
+```sql
+--  Select all unique
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Sort by descending age
+orDER BY age DESC
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1958,18 +1958,18 @@ ORDER BY age DESC
 
 
 
-### SORt Alphabetically
+### Sort Alphabetically
 
 
 ```sql
 --  Select all unique
 SELECT distinct *
 
--- From the criminals table
-FROM criminals
+-- From the dataTable table
+FROM dataTable
 
--- SORt by name
-ORDER BY name
+-- Sort by name
+orDER BY name
 ```
 
 
@@ -1982,7 +1982,7 @@ ORDER BY name
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minOR</th>
+        <th>minor</th>
     </tr>
     <tr>
         <td>512</td>
@@ -2002,7 +2002,7 @@ ORDER BY name
     </tr>
     <tr>
         <td>901</td>
-        <td>GORdon Ado</td>
+        <td>Gordon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -2049,8 +2049,8 @@ FROM criminals_1;
 -- Create a index called uid
 CREATE INDEX uid
 
--- FOR the table 'criminals' and the column 'pid'
-ON criminals (pid)
+-- For the table 'dataTable' and the column 'pid'
+ON dataTable (pid)
 ```
 
 
@@ -2068,7 +2068,7 @@ Supposing one has a file called `test.sql`, one can execute it by typing `.read 
 To read data into SQL (e.g. from a CSV OR tab-delimited raw file), there are actually two steps:
 
 1. Create a SQL table which will hold the data
-2. Read the raw data file into SQL's memORy
+2. Read the raw data file into SQL's memory
 
 To do step 1, type the following:
 ```sql
@@ -2084,7 +2084,7 @@ where `datname` is whatever you want to call your database in SQL.
 To do step 2, type the following:
 ```sql
 .mode csv
-.impORt /path/to/file.csv datname
+.import /path/to/file.csv datname
 ```
 
 ### Saving data while using SQL
