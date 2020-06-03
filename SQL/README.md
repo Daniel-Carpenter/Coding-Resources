@@ -414,7 +414,7 @@ SELECT datetime(1171904533, 'unixepoch', 'localtime');
 
 
 ```sql
--- Select the the day of this week (0 = Sunday, 4 = Thursday)
+-- Select the the day of this week (0  =  Sunday, 4  =  Thursday)
 SELECT strftime('%w','now');
 ```
 
@@ -449,7 +449,7 @@ FROM dataTable
 INNER JOIN otherDataTable
 
 -- Merged on `pid` in the dataTable table and `pid_arrested` in the otherDataTable table
-ON dataTable.pid=otherDataTable.pid_arrested;
+ON dataTable.pid = otherDataTable.pid_arrested;
 ```
 
 
@@ -632,7 +632,7 @@ FROM dataTable
 LEFT JOIN otherDataTable
 
 -- Merged on `pid` in the dataTable table and `pid_arrested` in the otherDataTable table
-ON dataTable.pid=otherDataTable.pid_arrested;
+ON dataTable.pid = otherDataTable.pid_arrested;
 ```
 
 
@@ -877,7 +877,7 @@ FROM
   Payroll AS p 
   
  WHERE 
-  p.employee_id = e.employee_id 
+  p.employee_id  =  e.employee_id 
   AND p.period >= #1/1/2018# 
   AND p.period < #2/1/2018# 
  
@@ -901,10 +901,10 @@ FROM
  employee_info AS e
 
 WHERE 
- s.store_id = e.store_id
+ s.store_id  =  e.store_id
 
 GROUP BY s.city, s.state
- HAVING COUNT (e.employee_id) = (
+ HAVING COUNT (e.employee_id)  =  (
   SELECT MAX(emp_count)
   FROM (
     SELECT 
@@ -916,7 +916,7 @@ GROUP BY s.city, s.state
      employee_info AS e
 
     WHERE 
-     s.store_id = e.store_id
+     s.store_id  =  e.store_id
 
     GROUP BY 
      s.city, s.state));
@@ -1335,7 +1335,7 @@ SELECT distinct *
 FROM dataTable
 
 -- Where age is greater than 23
-WHERE age = 23
+WHERE age  =  23
 ```
 
 
@@ -1362,7 +1362,7 @@ WHERE age = 23
 
 
 
-### View Rows Where Age is Not 23
+### View Rows Where Age is NOT 23
 
 
 ```sql
@@ -1746,7 +1746,7 @@ WHERE age BETWEEN 12 AND 18
 </table>
 
 
-## SorT
+## Sort
 
 ### Sort by Ascending Age AND Then Alphabetically by Name
 
