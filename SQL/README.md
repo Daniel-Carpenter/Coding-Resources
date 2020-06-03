@@ -337,7 +337,7 @@ WHERE MONTH(SaleDate) = 12
 
 
 
-### View Rows Where Age is Greater Than 20 `AND` City is San Francisco
+### View Rows `WHERE` Age is Greater Than 20 `AND` City is San Francisco
 
 
 ```sql
@@ -375,7 +375,7 @@ WHERE age > 20 AND city == 'San Francisco'
 
 
 
-### View Rows Where Age is Greater Than 20 `OR` City is San Francisco
+### View Rows `WHERE` Age is Greater Than 20 `OR` City is San Francisco
 
 
 ```sql
@@ -434,7 +434,7 @@ WHERE age < 18
 
 
 
-### Select Name `AND` Ages Only When the Name is Known
+### `SELECT` Name `AND` Ages Only When the Name is Known
 
 
 ```sql
@@ -517,7 +517,7 @@ LIMIT 2;
 </table>
 
 
-### View Rows Where Age is Greater Than 30
+### View Rows `WHERE` Age is Greater Than 30
 
 
 ```sql
@@ -555,7 +555,7 @@ WHERE age > 30
 
 
 
-### View Rows Where Age is Greater Than `OR` Equal To 23
+### View Rows `WHERE` Age is Greater Than `OR` Equal To 23
 
 
 ```sql
@@ -601,7 +601,7 @@ WHERE age >= 23
 
 
 
-### View Rows Where Age is 23
+### View Rows `WHERE` Age is 23
 
 
 ```sql
@@ -639,7 +639,7 @@ WHERE age  =  23
 
 
 
-### View Rows Where Age is `NOT` 23
+### View Rows `WHERE` Age is `NOT` 23
 
 
 ```sql
@@ -719,7 +719,7 @@ WHERE Color is NULL
 
 ## Conditional "Like" `%` Operator
 
-### `%` View Rows Where Name Begins with 'J'
+### `%` View Rows `WHERE` Name Begins with 'J'
 
 
 ```sql
@@ -765,7 +765,7 @@ WHERE name LIKE 'J%'
 
 
 
-### `%` View Rows `WHERE` Name Contains the String 'ames'
+### `%` `SELECT` Rows `WHERE` Name Contains the String 'ames'
 
 
 ```sql
@@ -803,7 +803,7 @@ WHERE name LIKE '%ames%'
 
 
 
-### `%` Select Rows with Names Starting with `G`
+### `%` `SELECT` Rows with Names Starting with `G`
 
 
 ```sql
@@ -841,7 +841,7 @@ WHERE name LIKE 'G%'
 
 
 
-### `%` Select Rows with Names Ending with `o`
+### `%` `SELECT` Rows with Names Ending with `o`
 
 
 ```sql
@@ -887,7 +887,7 @@ WHERE name LIKE '%o'
 
 
 
-### `%` Select Rows with Names Starting with Any Character, Then `ordon`
+### `%` `SELECT` Rows with Names Starting with Any Character, Then `ordon`
 
 
 ```sql
@@ -927,7 +927,7 @@ WHERE name LIKE '_ordon%'
 
 ## Conditional - IN 
 
-### Select Rows That Contain An Item `IN` a List
+### `SELECT` Rows That Contain An Item `IN` a List
 
 
 ```sql
@@ -1017,7 +1017,7 @@ WHERE grouping IN ('Red Shoe',
 
 ## BETWEEN
 
-### Select Every Row Where Age is `BETWEEN` Two Values
+### `SELECT` Every Row `WHERE` Age is `BETWEEN` Two Values
 
 
 ```sql
@@ -1908,7 +1908,7 @@ _Note: FULL OUTER and RIGHT JOIN are not shown here because they are not support
 
 ```
 
-### Select Based On the Result Of a Select (Subquery)
+### `SELECT` Based On the Result Of a `SELECT` (Subquery)
 
 
 ```sql
@@ -2090,7 +2090,7 @@ GROUP BY s.city, s.state
 
 ## `UNION`S
 
-### `UNION` - View All Unique City Names From Both Tables
+### `UNION` - View All Unique City Names `FROM` Both Tables
 
 
 ```sql
@@ -2133,7 +2133,7 @@ FROM otherDataTable;
 
 
 
-### `UNION ALL` - View All City Names From Both Tables
+### `UNION ALL` - View All City Names `FROM` Both Tables
 
 
 ```sql
