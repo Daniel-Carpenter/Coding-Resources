@@ -5054,4 +5054,71 @@ GROUP BY city
     </tr>
 </table>
 
+### Subqueries (nested SELECT)
+
+#### Example 1
+```sql
+-- Did more men or women work in January 2018 and from which company did these employees (that worked in January) Originate?
+
+SELECT 
+ e.company, 
+ e.gender, 
+ count(e.employee_id) AS [Count]
+FROM 
+(SELECT DISTINCT 
+  e.employee_id, 
+  e.gender, 
+  e.company 
+ 
+ FROM 
+  employee_info AS e, 
+  Payroll AS p 
+  
+ WHERE 
+  p.employee_id = e.employee_id 
+  AND p.period >= #1/1/2018# 
+  AND p.period < #2/1/2018# 
+ 
+ GROUP BY e.employee_id, e.gender, e.company)  AS [%$##@_Alias]
+
+GROUP BY e.company, e.gender;
+
+```
+
+#### Example 2
+
+```sql
+-- Which store had the most employees? Please include the city and state.
+
+SELECT 
+ s.city, s.state, 
+ COUNT (e.employee_id) AS Emp_Count
+
+FROM 
+ Stores AS s, 
+ employee_info AS e
+
+WHERE 
+ s.store_id = e.store_id
+
+GROUP BY s.city, s.state
+ HAVING COUNT (e.employee_id) = (
+  SELECT MAX(emp_count)
+  FROM (
+    SELECT 
+     s.city, 
+     s.state, 
+     COUNT (e.employee_id) AS emp_count
+    FROM 
+     Stores AS s, 
+     employee_info AS e
+
+    WHERE 
+     s.store_id = e.store_id
+
+    GROUP BY 
+     s.city, s.state));
+
+```
+
 
