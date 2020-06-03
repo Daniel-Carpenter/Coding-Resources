@@ -1,56 +1,11 @@
 ## Source Notes
 * *THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
-* *Also taken from [Chris Albon](https://github.com/chrisalbon)'s [archived GitHub repository](https://github.com/chrisalbon/mlai) on machine learning and artifical intelligence.
-* Otherwise, they are [Daniel Carpenter](https://github.com/Daniel-Carpenter)'s additions or edits
+* *Also taken from [Chris Albon](https://github.com/chrisalbon)'s [archived GitHub repositORy](https://github.com/chrisalbon/mlai) on machine learning and artifical intelligence.*
+* Otherwise, they are [Daniel Carpenter](https://github.com/Daniel-Carpenter)'s additions OR edits
 
 # Guide to SQL
-Structured Query Language (SQL) is a commonly language for processing relational databases. Below is a beginner's guide to using SQL.
+Structured Query Language (SQL) is a commonly language fOR processing relational databases. Below is a beginner's guide to using SQL.
 
-### Command Line
-### Opening SQL
-One can open SQL from the command line by typing `sqlite3` at the prompt.
-
-### Exiting out of SQL
-SQL **commands** are prepended with a "." so to exit SQL, type `.quit`
-
-### Executing a SQL script
-Supposing one has a file called `test.sql`, one can execute it by typing `.read test.sql` at the prompt (inside SQL).
-
-### Reading data into SQL
-To read data into SQL (e.g. from a CSV or tab-delimited raw file), there are actually two steps:
-
-1. Create a SQL table which will hold the data
-2. Read the raw data file into SQL's memory
-
-To do step 1, type the following:
-```sql
-CREATE TABLE datname(
-  "var1" CHAR,
-  "var2" INTEGER,
-  ...
-  "varN" REAL 
-);
-where `datname` is whatever you want to call your database in SQL.
-```
-
-To do step 2, type the following:
-```sql
-.mode csv
-.import /path/to/file.csv datname
-```
-
-### Saving data while using SQL
-If one wants to save a database in SQL, the file extension is `.sqlite3` (but in principle you can use whatever you want). The way to save data is to issue the `.dump` command:
-
-```sql
-.output datname.sqlite3
-.dump
-```
-The result will be a text file with SQL code in it that will recreate the table you dumped.
-
-
-
-***
 
 ## Basic Scripting Examples
 
@@ -76,7 +31,7 @@ FROM criminals
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -104,7 +59,7 @@ FROM criminals
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -143,7 +98,7 @@ FROM criminals
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -155,7 +110,7 @@ FROM criminals
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -176,91 +131,6 @@ To print N observations of your database, type
 ```sql
 SELECT * FROM datname LIMIT N;
 ```
-### View Two Tables at once
-
-
-```sql
--- Select everything
-SELECT *
-
--- From the table 'criminals'
-FROM criminals
-```
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill James</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Stacy Miller</td>
-        <td>23</td>
-        <td>F</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>621</td>
-        <td>Betty Bob</td>
-        <td>None</td>
-        <td>F</td>
-        <td>Petaluma</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>162</td>
-        <td>Jaden Ado</td>
-        <td>49</td>
-        <td>M</td>
-        <td>None</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>411</td>
-        <td>Bob Iton</td>
-        <td>None</td>
-        <td>M</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
 
 
 ## Aggregate Functions
@@ -270,9 +140,9 @@ Create a one-way frequency table as follows:
 ```sql
 SELECT var1, COUNT(*) FROM datname GROUP BY var1;
 ```
-This will then list the unique categories and counts for each category
+This will then list the unique categORies and counts fOR each categORy
 
-### Compute summary statistics of a variable or formula of variables
+### Compute summary statistics of a variable OR fORmula of variables
 ```sql
 SELECT FUNCTION(var1) FROM datname;
 ```
@@ -285,15 +155,15 @@ where the following are functions:
 * `MAX`: maximum
 
 ### Summary statistics of functions of variables
-For example:
+FOR example:
 ```sql
 SELECT FUNCTION(var1 + var2) FROM datname;
 ```
-would apply the `AVG` or `SUM` or `MIN` to the sum of `var1` and `var2`. More complex functions (like square root) are not supported in SQLite, so something like
+would apply the `AVG` OR `SUM` OR `MIN` to the sum of `var1` and `var2`. MORe complex functions (like square root) are not suppORted in SQLite, so something like
 ```sql
 SELECT AVG(SQRT(var1)) FROM datname;
 ```
-will not work.
+will not wORk.
 
 But
 ```sql
@@ -303,7 +173,7 @@ will. `AS` acts as an alias.
 
 
 
-### View AVG Ages By City
+### View AVG Ages by City
 
 
 ```sql
@@ -339,7 +209,7 @@ GROUP BY city
 
 
 
-### View Max Age By City
+### View Max Age by City
 
 
 ```sql
@@ -375,7 +245,7 @@ GROUP BY city
 
 
 
-### View COUNT Of Criminals By City
+### View COUNT Of Criminals by City
 
 
 ```sql
@@ -413,7 +283,7 @@ GROUP BY city
 
 
 
-### View SUM Age By City
+### View SUM Age by City
 
 
 ```sql
@@ -474,7 +344,7 @@ SELECT date('now');
 
 
 
-### Get Current Date And Time
+### Get Current Date AND Time
 
 
 ```sql
@@ -496,7 +366,7 @@ SELECT datetime('now', 'unixepoch');
 
 
 
-### Compute A UNIX timestamp into a date and time
+### Compute a UNIX timestamp into a date and time
 
 
 ```sql
@@ -518,7 +388,7 @@ SELECT datetime(1169229733, 'unixepoch');
 
 
 
-### Compute A UNIX timestamp into a date and time and convert to the local timezone.
+### Compute a UNIX timestamp into a date and time and convert to the local timezone.
 
 
 ```sql
@@ -540,7 +410,7 @@ SELECT datetime(1171904533, 'unixepoch', 'localtime');
 
 
 
-### Compute The Day Of The Week
+### Compute the Day Of the Week
 
 
 ```sql
@@ -592,7 +462,7 @@ ON criminals.pid=crimes.pid_arrested;
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
         <th>cid</th>
         <th>crime</th>
         <th>city_1</th>
@@ -692,7 +562,7 @@ ON criminals.pid=crimes.pid_arrested;
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -775,7 +645,7 @@ ON criminals.pid=crimes.pid_arrested;
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
         <th>cid</th>
         <th>crime</th>
         <th>city_1</th>
@@ -875,7 +745,7 @@ ON criminals.pid=crimes.pid_arrested;
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -929,14 +799,14 @@ ON criminals.pid=crimes.pid_arrested;
 
 
 
-_Note: FULL OUTER and RIGHT JOIN are not shown here because they are not supported by the version of SQL (SQLite) used in this tutorial._
+_Note: FULL OUTER and RIGHT JOIN are not shown here because they are not suppORted by the version of SQL (SQLite) used in this tutORial._
 
 
 
-## Subqueries (nested SELECT)
+## Subqueries (basically a nested SELECT)
 
 
-### Select Based On The Result Of A Select (SUBQUERY)
+### Select Based On the Result Of a Select (Subquery)
 
 
 ```sql
@@ -977,7 +847,7 @@ WHERE age >
         <td>49</td>
     </tr>
     <tr>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
     </tr>
     <tr>
@@ -988,9 +858,9 @@ WHERE age >
 
 
 
-### Example 1
+### Subquery Example 1
 ```sql
--- Did more men or women work in January 2018 and from which company did these employees (that worked in January) Originate?
+-- Did mORe men OR women wORk in January 2018 and from which company did these employees (that wORked in January) ORiginate?
 
 SELECT 
  e.company, 
@@ -1017,21 +887,21 @@ GROUP BY e.company, e.gender;
 
 ```
 
-### Example 2
+### Subquery Example 2
 
 ```sql
--- Which store had the most employees? Please include the city and state.
+-- Which stORe had the most employees? Please include the city and state.
 
 SELECT 
  s.city, s.state, 
  COUNT (e.employee_id) AS Emp_COUNT
 
 FROM 
- Stores AS s, 
+ StORes AS s, 
  employee_info AS e
 
 WHERE 
- s.store_id = e.store_id
+ s.stORe_id = e.stORe_id
 
 GROUP BY s.city, s.state
  HAVING COUNT (e.employee_id) = (
@@ -1042,121 +912,16 @@ GROUP BY s.city, s.state
      s.state, 
      COUNT (e.employee_id) AS emp_count
     FROM 
-     Stores AS s, 
+     StORes AS s, 
      employee_info AS e
 
     WHERE 
-     s.store_id = e.store_id
+     s.stORe_id = e.stORe_id
 
     GROUP BY 
      s.city, s.state));
 
 ```
-
-
-
-
-```sql
--- Select everything
-SELECT *
-
--- From the table 'crimes'
-FROM crimes
-```
-
-    Done.
-
-
-
-
-
-<table>
-    <tr>
-        <th>cid</th>
-        <th>crime</th>
-        <th>city</th>
-        <th>pid_arrested</th>
-        <th>cash_stolen</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>fraud</td>
-        <td>Santa Rosa</td>
-        <td>412</td>
-        <td>40000</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>burglary</td>
-        <td>Petaluma</td>
-        <td>234</td>
-        <td>2000</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>burglary</td>
-        <td>Santa Rosa</td>
-        <td>632</td>
-        <td>2000</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>larcony</td>
-        <td>Petaluma</td>
-        <td>621</td>
-        <td>3500</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>burglary</td>
-        <td>Santa Rosa</td>
-        <td>162</td>
-        <td>1000</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>larcony</td>
-        <td>Petaluma</td>
-        <td>901</td>
-        <td>50000</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>fraud</td>
-        <td>San Francisco</td>
-        <td>412</td>
-        <td>60000</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>burglary</td>
-        <td>Santa Rosa</td>
-        <td>512</td>
-        <td>7000</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>burglary</td>
-        <td>San Francisco</td>
-        <td>411</td>
-        <td>3000</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>robbery</td>
-        <td>Santa Rosa</td>
-        <td>632</td>
-        <td>2500</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>robbery</td>
-        <td>Santa Rosa</td>
-        <td>512</td>
-        <td>3000</td>
-    </tr>
-</table>
-
 
 ## UNIONS
 
@@ -1295,7 +1060,7 @@ FROM crimes;
 
 
 
-### View Rows Where Age Is Greater Than 20 And City Is San Francisco
+### View Rows Where Age is Greater Than 20 AND City is San Francisco
 
 
 ```sql
@@ -1319,11 +1084,11 @@ WHERE age > 20 AND city == 'San Francisco'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1333,7 +1098,7 @@ WHERE age > 20 AND city == 'San Francisco'
 
 
 
-### View Rows Where Age Is Greater Than 20 or City Is San Francisco
+### View Rows Where Age is Greater Than 20 OR City is San Francisco
 
 
 ```sql
@@ -1357,11 +1122,11 @@ WHERE age > 20 OR city == 'San Francisco'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1379,7 +1144,7 @@ WHERE age > 20 OR city == 'San Francisco'
 
 
 
-### Drop Row Based On A Conditional
+### Drop Row Based On a Conditional
 
 
 ```sql
@@ -1392,7 +1157,7 @@ WHERE age < 18
 
 
 
-### Select Name And Ages Only When The Name Is Known
+### Select Name AND Ages Only When the Name is Known
 
 
 ```sql
@@ -1419,7 +1184,7 @@ WHERE name IS NOT NULL
         <td>15</td>
     </tr>
     <tr>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
     </tr>
     <tr>
@@ -1430,7 +1195,7 @@ WHERE name IS NOT NULL
 
 
 
-### Drop Row Based On A Conditional
+### Drop Row Based On a Conditional
 
 
 ```sql
@@ -1454,7 +1219,7 @@ LIMIT 2;
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1475,7 +1240,7 @@ LIMIT 2;
 </table>
 
 
-### View Rows Where Age Is Greater Than 30
+### View Rows Where Age is Greater Than 30
 
 
 ```sql
@@ -1499,11 +1264,11 @@ WHERE age > 30
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1513,7 +1278,7 @@ WHERE age > 30
 
 
 
-### View Rows Where Age Is Greater Than Or Equal To 23
+### View Rows Where Age is Greater Than OR Equal To 23
 
 
 ```sql
@@ -1537,7 +1302,7 @@ WHERE age >= 23
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>632</td>
@@ -1549,7 +1314,7 @@ WHERE age >= 23
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1559,7 +1324,7 @@ WHERE age >= 23
 
 
 
-### View Rows Where Age Is 23
+### View Rows Where Age is 23
 
 
 ```sql
@@ -1583,7 +1348,7 @@ WHERE age = 23
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>632</td>
@@ -1597,7 +1362,7 @@ WHERE age = 23
 
 
 
-### View Rows Where Age Is Not 23
+### View Rows Where Age is Not 23
 
 
 ```sql
@@ -1621,7 +1386,7 @@ WHERE age <> 23
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1641,7 +1406,7 @@ WHERE age <> 23
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -1657,9 +1422,9 @@ WHERE age <> 23
     </tr>
 </table>
 
-## Conditional "Like" % Operator
+## Conditional "Like" % OperatOR
 
-### View Rows Where Name Begins With 'J'
+### View Rows Where Name Begins with 'J'
 
 
 ```sql
@@ -1683,7 +1448,7 @@ WHERE name LIKE 'J%'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1705,7 +1470,7 @@ WHERE name LIKE 'J%'
 
 
 
-### View Rows Where Name Contains The String 'ames'
+### View Rows Where Name Contains the String 'ames'
 
 
 ```sql
@@ -1729,7 +1494,7 @@ WHERE name LIKE '%ames%'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1743,7 +1508,7 @@ WHERE name LIKE '%ames%'
 
 
 
-### Select Rows With Names Starting With `G`
+### Select Rows with Names Starting with `G`
 
 
 ```sql
@@ -1767,11 +1532,11 @@ WHERE name LIKE 'G%'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -1781,7 +1546,7 @@ WHERE name LIKE 'G%'
 
 
 
-### Select Rows With Names Ending With `o`
+### Select Rows with Names Ending with `o`
 
 
 ```sql
@@ -1805,7 +1570,7 @@ WHERE name LIKE '%o'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>162</td>
@@ -1817,7 +1582,7 @@ WHERE name LIKE '%o'
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -1827,7 +1592,7 @@ WHERE name LIKE '%o'
 
 
 
-### Select Rows With Names Starting With Any Character, Then `ordon`
+### Select Rows with Names Starting with Any Character, Then `ORdon`
 
 
 ```sql
@@ -1837,8 +1602,8 @@ SELECT *
 -- From the criminals table
 FROM criminals
 
--- If name starts with any character then continues with 'ordon'
-WHERE name LIKE '_ordon%'
+-- If name starts with any character then continues with 'ORdon'
+WHERE name LIKE '_ORdon%'
 ```
 
 
@@ -1851,11 +1616,11 @@ WHERE name LIKE '_ordon%'
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -1865,7 +1630,7 @@ WHERE name LIKE '_ordon%'
 
 ## Conditional - IN 
 
-### Select Rows That Contain An Item In A List
+### Select Rows That Contain An Item In a List
 
 
 ```sql
@@ -1889,7 +1654,7 @@ WHERE city IN ('Santa Rosa', 'Petaluma');
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1925,7 +1690,7 @@ WHERE city IN ('Santa Rosa', 'Petaluma');
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>Santa Rosa</td>
@@ -1944,7 +1709,7 @@ WHERE city IN ('Santa Rosa', 'Petaluma');
 
 ## BETWEEN
 
-### Select Every Row Where Age Is Between Two Values
+### Select Every Row Where Age is Between Two Values
 
 
 ```sql
@@ -1968,7 +1733,7 @@ WHERE age BETWEEN 12 AND 18
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -1983,7 +1748,7 @@ WHERE age BETWEEN 12 AND 18
 
 ## SORT
 
-### Sort By Ascending Age And Then Alphabetically By Name
+### SORt by Ascending Age AND Then Alphabetically by Name
 
 
 ```sql
@@ -1993,7 +1758,7 @@ SELECT distinct *
 -- From the criminals table
 FROM criminals
 
--- Sort by ascending age
+-- SORt by ascending age
 ORDER BY age ASC, name
 ```
 
@@ -2007,7 +1772,7 @@ ORDER BY age ASC, name
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -2043,7 +1808,7 @@ ORDER BY age ASC, name
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -2053,7 +1818,7 @@ ORDER BY age ASC, name
 
 
 
-### Sort By Ascending Age
+### SORt by Ascending Age
 
 
 ```sql
@@ -2063,7 +1828,7 @@ SELECT distinct *
 -- From the criminals table
 FROM criminals
 
--- Sort by ascending age
+-- SORt by ascending age
 ORDER BY age ASC
 ```
 
@@ -2077,7 +1842,7 @@ ORDER BY age ASC
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>412</td>
@@ -2113,7 +1878,7 @@ ORDER BY age ASC
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -2123,7 +1888,7 @@ ORDER BY age ASC
 
 
 
-### Sort By Descending Age
+### SORt by Descending Age
 
 
 ```sql
@@ -2133,7 +1898,7 @@ SELECT distinct *
 -- From the criminals table
 FROM criminals
 
--- Sort by descending age
+-- SORt by descending age
 ORDER BY age DESC
 ```
 
@@ -2147,11 +1912,11 @@ ORDER BY age DESC
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -2193,7 +1958,7 @@ ORDER BY age DESC
 
 
 
-### Sort Alphabetically
+### SORt Alphabetically
 
 
 ```sql
@@ -2203,7 +1968,7 @@ SELECT distinct *
 -- From the criminals table
 FROM criminals
 
--- Sort by name
+-- SORt by name
 ORDER BY name
 ```
 
@@ -2217,7 +1982,7 @@ ORDER BY name
         <th>age</th>
         <th>sex</th>
         <th>city</th>
-        <th>minor</th>
+        <th>minOR</th>
     </tr>
     <tr>
         <td>512</td>
@@ -2237,7 +2002,7 @@ ORDER BY name
     </tr>
     <tr>
         <td>901</td>
-        <td>Gordon Ado</td>
+        <td>GORdon Ado</td>
         <td>32</td>
         <td>F</td>
         <td>San Francisco</td>
@@ -2277,16 +2042,61 @@ FROM criminals_1;
 ```
 
 
-### Create An Index Using The Column 'pid' As The Unique ID
+### Create An Index Using the Column 'pid' As the Unique ID
 
 
 ```sql
 -- Create a index called uid
 CREATE INDEX uid
 
--- For the table 'criminals' and the column 'pid'
+-- FOR the table 'criminals' and the column 'pid'
 ON criminals (pid)
 ```
+
+
+## SQL in the Command Line
+### Opening SQL
+One can open SQL from the command line by typing `sqlite3` at the prompt.
+
+### Exiting out of SQL
+SQL **commands** are prepended with a "." so to exit SQL, type `.quit`
+
+### Executing a SQL script
+Supposing one has a file called `test.sql`, one can execute it by typing `.read test.sql` at the prompt (inside SQL).
+
+### Reading data into SQL
+To read data into SQL (e.g. from a CSV OR tab-delimited raw file), there are actually two steps:
+
+1. Create a SQL table which will hold the data
+2. Read the raw data file into SQL's memORy
+
+To do step 1, type the following:
+```sql
+CREATE TABLE datname(
+  "var1" CHAR,
+  "var2" INTEGER,
+  ...
+  "varN" REAL 
+);
+where `datname` is whatever you want to call your database in SQL.
+```
+
+To do step 2, type the following:
+```sql
+.mode csv
+.impORt /path/to/file.csv datname
+```
+
+### Saving data while using SQL
+If one wants to save a database in SQL, the file extension is `.sqlite3` (but in principle you can use whatever you want). the way to save data is to issue the `.dump` command:
+
+```sql
+.output datname.sqlite3
+.dump
+```
+the result will be a text file with SQL code in it that will recreate the table you dumped.
+
+
 
 
 
