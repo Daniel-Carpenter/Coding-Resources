@@ -129,7 +129,7 @@ FROM dataTable
 ### Printing N observations of your database
 To print N observations of your database, type
 ```sql
-SELECT * FROM datname LIMIT N;
+SELECT * FROM dataTable LIMIT N;
 ```
 
 
@@ -138,13 +138,13 @@ SELECT * FROM datname LIMIT N;
 ### Create a one-way frequency table
 Create a one-way frequency table as follows:
 ```sql
-SELECT var1, COUNT(*) FROM datname GROUP BY var1;
+SELECT var1, COUNT(*) FROM dataTable GROUP BY var1;
 ```
 This will then list the unique categories and counts for each category
 
 ### Compute summary statistics of a variable OR formula of variables
 ```sql
-SELECT FUNCTION(var1) FROM datname;
+SELECT FUNCTION(var1) FROM dataTable;
 ```
 where the following are functions:
 
@@ -157,17 +157,17 @@ where the following are functions:
 ### Summary statistics of functions of variables
 For example:
 ```sql
-SELECT FUNCTION(var1 + var2) FROM datname;
+SELECT FUNCTION(var1 + var2) FROM dataTable;
 ```
 would apply the `AVG` OR `SUM` OR `MIN` to the sum of `var1` and `var2`. More complex functions (like square root) are not supported in SQLite, so something like
 ```sql
-SELECT AVG(SQRT(var1)) FROM datname;
+SELECT AVG(SQRT(var1)) FROM dataTable;
 ```
 will not work.
 
 But
 ```sql
-SELECT (var1-var2) AS tempvarname FROM datname;
+SELECT (var1-var2) AS tempvarname FROM dataTable;
 ```
 will. `AS` acts as an alias.
 
@@ -2221,13 +2221,13 @@ FROM otherDataTable;
 
 ```sql
 -- Insert into the empty table
-INSERT INTO criminals_2
+INSERT INTO dataTable
 
 -- Everything
 SELECT * 
 
 -- From the first table
-FROM criminals_1;
+FROM otherDataTable;
 ```
 
 
@@ -2261,26 +2261,26 @@ To read data into SQL (e.g. from a CSV OR tab-delimited raw file), there are act
 
 To do step 1, type the following:
 ```sql
-CREATE TABLE datname(
+CREATE TABLE dataTable(
   "var1" CHAR,
   "var2" INTEGER,
   ...
   "varN" REAL 
 );
-where `datname` is whatever you want to call your database in SQL.
+where `dataTable` is whatever you want to call your database in SQL.
 ```
 
 To do step 2, type the following:
 ```sql
 .mode csv
-.import /path/to/file.csv datname
+.import /path/to/file.csv dataTable
 ```
 
 ### Saving data while using SQL
 If one wants to save a database in SQL, the file extension is `.sqlite3` (but in principle you can use whatever you want). the way to save data is to issue the `.dump` command:
 
 ```sql
-.output datname.sqlite3
+.output dataTable.sqlite3
 .dump
 ```
 the result will be a text file with SQL code in it that will recreate the table you dumped.
