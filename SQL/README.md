@@ -1,5 +1,5 @@
 ## Source Notes
-* *THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
+* *THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'dat MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
 * *Also taken from [Chris Albon](https://github.com/chrisalbon)'s [archived GitHub repository](https://github.com/chrisalbon/mlai) on machine learning and artifical intelligence.*
 * Otherwise, they are [Daniel Carpenter](https://github.com/Daniel-Carpenter)'s additions OR edits
 
@@ -319,6 +319,1066 @@ GROUP BY city
     </tr>
 </table>
 
+### ROUND Function
+```sql
+SELECT ROUND(AVG(Shipping + Tax),2) AS AvgShipTax
+FROM dataTable
+WHERE MONTH(SaleDate) = 12
+
+```
+
+
+
+## Conditional Statements - WHERE Clause
+
+
+
+### View Rows Where Age is Greater Than 20 AND City is San Francisco
+
+
+```sql
+--  Select all unique
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 20 and city is San Francisco
+WHERE age > 20 AND city == 'San Francisco'
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### View Rows Where Age is Greater Than 20 OR City is San Francisco
+
+
+```sql
+--  Select all unique
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 20 and city is San Francisco
+WHERE age > 20 OR city == 'San Francisco'
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>512</td>
+        <td>Bill Byson</td>
+        <td>21</td>
+        <td>M</td>
+        <td>Petaluma</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### Drop Row Based On a Conditional
+
+
+```sql
+-- Delete all rows
+DELETE FROM dataTable
+
+-- if the age is less than 18
+WHERE age < 18
+```
+
+
+
+### Select Name AND Ages Only When the Name is Known
+
+
+```sql
+--  Select name and average age,
+SELECT name, age
+
+--  from the table 'dataTable',
+FROM dataTable
+
+-- if age is not a null value
+WHERE name IS NOT NULL
+```
+
+
+
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+    </tr>
+    <tr>
+        <td>James Smith</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Gordon Ado</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>Bill Byson</td>
+        <td>21</td>
+    </tr>
+</table>
+
+
+
+### Drop Row Based On a Conditional
+
+
+```sql
+--  Select all
+SELECT *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Only return the first two rows
+LIMIT 2;
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>234</td>
+        <td>Bill James</td>
+        <td>22</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+### View Rows Where Age is Greater Than 30
+
+
+```sql
+--  Select all
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 30
+WHERE age > 30
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### View Rows Where Age is Greater Than OR Equal To 23
+
+
+```sql
+--  Select all
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 23
+WHERE age >= 23
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Jack Killer</td>
+        <td>23</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### View Rows Where Age is 23
+
+
+```sql
+--  Select all
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 23
+WHERE age  =  23
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Jack Killer</td>
+        <td>23</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### View Rows Where Age is NOT 23
+
+
+```sql
+--  Select all
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 23
+WHERE age <> 23
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>234</td>
+        <td>Bill Bayes</td>
+        <td>22</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>512</td>
+        <td>Bill Byson</td>
+        <td>21</td>
+        <td>M</td>
+        <td>Petaluma</td>
+        <td>0</td>
+    </tr>
+</table>
+
+### All three operators as well as the necessary parentheses (AND, OR, NOT)
+```sql
+SELECT *
+FROM dataTable
+WHERE grouping = 'Red Shoe'
+ OR grouping = 'boots'
+ AND NOT otherDataTableName = 'Nike'
+ OR otherDataTableName = 'Puma'
+
+```
+
+### Conditional NULL 
+```sql
+SELECT *
+FROM dataTable
+WHERE Color is NULL
+```
+
+## Conditional "Like" % Operator
+
+### View Rows Where Name Begins with 'J'
+
+
+```sql
+--  Select all
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where name starts with 'J'
+WHERE name LIKE 'J%'
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Jack Killer</td>
+        <td>23</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### View Rows Where Name Contains the String 'ames'
+
+
+```sql
+--  Select all
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where name contains the string 'ames'
+WHERE name LIKE '%ames%'
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+</table>
+
+
+
+### Select Rows with Names Starting with `G`
+
+
+```sql
+--  Select all
+SELECT *
+
+-- From the dataTable table
+FROM dataTable
+
+-- If name starts with G
+WHERE name LIKE 'G%'
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### Select Rows with Names Ending with `o`
+
+
+```sql
+--  Select all
+SELECT *
+
+-- From the dataTable table
+FROM dataTable
+
+-- If name starts ends with o
+WHERE name LIKE '%o'
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>162</td>
+        <td>Jaden Ado</td>
+        <td>49</td>
+        <td>M</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### Select Rows with Names Starting with Any Character, Then `ordon`
+
+
+```sql
+--  Select all
+SELECT *
+
+-- From the dataTable table
+FROM dataTable
+
+-- If name starts with any character then continues with 'ordon'
+WHERE name LIKE '_ordon%'
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+## Conditional - IN 
+
+### Select Rows That Contain An Item In a List
+
+
+```sql
+-- Select everything
+SELECT *
+
+-- From the table 'dataTable'
+FROM dataTable
+
+-- Where the city is any of these cities
+WHERE city IN ('Santa Rosa', 'Petaluma');
+```
+
+### Another Example of IN Operator
+```sql
+SELECT *
+FROM dataTable
+WHERE grouping IN ('Red Shoe',
+ 'sandals',
+ 'heels',
+ 'boots')
+
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>234</td>
+        <td>Bill James</td>
+        <td>22</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Stacy Miller</td>
+        <td>23</td>
+        <td>F</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>621</td>
+        <td>Betty Bob</td>
+        <td>None</td>
+        <td>F</td>
+        <td>Petaluma</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>512</td>
+        <td>Bill Byson</td>
+        <td>21</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+## BETWEEN
+
+### Select Every Row Where Age is Between Two Values
+
+
+```sql
+-- Select everything
+SELECT *
+
+-- From the table 'dataTable'
+FROM dataTable
+
+-- Where 
+WHERE age BETWEEN 12 AND 18
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+</table>
+
+
+## Conditional Statements - HAVING Clause
+* Use this when you need to filter the variable you created from the aggregate functions
+
+### HAVING Example 1
+```sql
+-- Filter out MaxListPrice with less that 50 count
+
+	SELECT grouping,	
+		MAX(price) AS MaxListPrice
+	FROM dataTable
+	GROUP BY grouping
+	HAVING COUNT(*) > 50
+
+```
+
+### HAVING Example 2
+```sql
+-- Similar to above with ORDER BY integration
+
+	SELECT grouping,
+	 AVG(price)
+	FROM dataTable
+	WHERE Color = 'Yellow'
+	GROUP BY grouping
+	HAVING MAX(price) <= 100
+	ORDER BY grouping DESC
+```
+
+
+## Sort
+
+### Sort by Ascending Age AND Then Alphabetically by Name
+
+```sql
+--  Select all unique
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Sort by ascending age
+orDER BY age ASC, name
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>512</td>
+        <td>Bill Byson</td>
+        <td>21</td>
+        <td>M</td>
+        <td>Petaluma</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>234</td>
+        <td>Bill James</td>
+        <td>22</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Stacy Miller</td>
+        <td>23</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### Sort by Ascending Age
+
+
+```sql
+--  Select all unique
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Sort by ascending age
+orDER BY age ASC
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>512</td>
+        <td>Bill Byson</td>
+        <td>21</td>
+        <td>M</td>
+        <td>Petaluma</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>234</td>
+        <td>Bill James</td>
+        <td>22</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Stacy Miller</td>
+        <td>23</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### Sort by Descending Age
+
+
+```sql
+--  Select all unique
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Sort by descending age
+orDER BY age DESC
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Stacy Miller</td>
+        <td>23</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>234</td>
+        <td>Bill James</td>
+        <td>22</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>512</td>
+        <td>Bill Byson</td>
+        <td>21</td>
+        <td>M</td>
+        <td>Petaluma</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+</table>
+
+
+
+### Sort Alphabetically
+
+
+```sql
+--  Select all unique
+SELECT distinct *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Sort by name
+orDER BY name
+```
+
+
+
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>512</td>
+        <td>Bill Byson</td>
+        <td>21</td>
+        <td>M</td>
+        <td>Petaluma</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>234</td>
+        <td>Bill James</td>
+        <td>22</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Stacy Miller</td>
+        <td>23</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+## Strings
+
+### SUBSTRING Example (`LEFT()`, `RIGHT`() in Excel)
+```sql
+Select ID, Name, 
+	SUBSTRING(ColumnName,1,15) AS "Smaller Word", 
+	LEN(ColumnName) AS "Desc Length", 
+	SUBSTRING(ColumnName2,1,20) AS "Smaller Description"
+	From dataTable
+
+```
+
+### Find Word in Column
+```sql
+-- Show results that include 'Leather' in Composition Column at least one time
+Select dataTableID, dataTableName, Composition 
+	FROM dataTable
+	WHERE Charindex ('Leather', Composition) >= 1
+	
+```
 
 ## Dates
 
@@ -366,6 +1426,51 @@ SELECT datetime('now', 'unixepoch');
 
 
 
+### Compute the Day Of the Week
+
+
+```sql
+-- Select the the day of this week (0  =  Sunday, 4  =  Thursday)
+SELECT strftime('%w','now');
+```
+
+
+
+
+<table>
+    <tr>
+        <th>strftime(&#x27;%w&#x27;,&#x27;now&#x27;)</th>
+    </tr>
+    <tr>
+        <td>4</td>
+    </tr>
+</table>
+
+
+### Conditional with Dates Example 1
+```sql
+SELECT *
+FROM dataTable
+WHERE grouping = 'Red Shoe'
+AND MONTH(SaleDate) = 4
+ 
+```
+
+### Conditional with Dates Example 2
+```sql
+SELECT dataTable.*
+FROM dataTable
+ JOIN otherDataTable
+ ON dataTable.SaleId = otherDataTable.SaleId
+ JOIN dataTableBrief
+ ON otherDataTable.ID = dataTableBrief.ID
+WHERE grouping = 'Red Shoe'
+ AND MONTH(SaleDate) BETWEEN 10 AND 12
+ AND YEAR(SaleDate) = 2015
+ ```
+
+
+
 ### Compute a UNIX timestamp into a date and time
 
 
@@ -409,26 +1514,6 @@ SELECT datetime(1171904533, 'unixepoch', 'localtime');
 </table>
 
 
-
-### Compute the Day Of the Week
-
-
-```sql
--- Select the the day of this week (0  =  Sunday, 4  =  Thursday)
-SELECT strftime('%w','now');
-```
-
-
-
-
-<table>
-    <tr>
-        <th>strftime(&#x27;%w&#x27;,&#x27;now&#x27;)</th>
-    </tr>
-    <tr>
-        <td>4</td>
-    </tr>
-</table>
 
 
 ## JOIN Tables
@@ -805,6 +1890,19 @@ _Note: FULL OUTER and RIGHT JOIN are not shown here because they are not support
 
 ## Subqueries (basically a nested SELECT)
 
+### Simple Example of Subquery
+
+```sql
+-- Goal: Shoe grouping that have facilityID in OK
+
+	SELECT grouping
+	FROM dataTable
+	WHERE facilityID IN
+	 (SELECT facilityID
+	 FROM otherDataTable
+	 WHERE State = 'OK')
+
+```
 
 ### Select Based On the Result Of a Select (Subquery)
 
@@ -825,9 +1923,6 @@ WHERE age >
      --  where the name is 'James Smith'
      WHERE name == 'James Smith')
 ```
-
-
-
 
 <table>
     <tr>
@@ -857,8 +1952,74 @@ WHERE age >
 </table>
 
 
+### Subquery in SELECT Clause
+```sql
+SELECT patronID,
+ firstName,
+ lastName,
+ (SELECT SUM (quantity * price)
+ FROM otherDataTable oDat
+	 JOIN dataTable dat
+ ON oDat.primaryKey = dat.primaryKey
+ WHERE dat.patronID = C.patronID) AS countOfSold
+FROM dataTable C
 
-### Subquery Example 1
+```
+
+
+### Subquery in FROM Clause
+```sql
+SELECT C.patronID,
+ firstName,
+ lastName,
+ countOfSold
+FROM dataTable C
+ JOIN (SELECT patronID,
+ SUM(quantity * price) AS countOfSold
+	 FROM dataTable dat
+		JOIN otherDataTable oDat
+ ON dat.primaryKey = oDat.primaryKey
+ GROUP BY patronID) SumQuery
+ ON C.patronID = SumQuery.patronID
+```
+
+###  Subqueries in HAVING Clause
+```sql
+SELECT grouping,
+ AVG(price)
+FROM dataTable
+WHERE Color = 'Yellow'
+GROUP BY grouping
+HAVING AVG(price) <
+   (SELECT AVG(price)
+    FROM dataTable
+    WHERE Color = 'Yellow')
+```
+
+### Subqueries and Aggregate Functions
+```sql
+SELECT firstName, lastName, taxBracket
+FROM staffTable sT JOIN staffWages sW ON sT.staffID = sW.staffID
+WHERE taxBracket >
+ (SELECT AVG(taxBracket)
+ FROM staffWages)
+```
+
+### Correlated Subqueries
+```sql
+-- Find dataTable that has higher list price based on condition than other product
+SELECT  facilityID, 
+        dataTableID, 
+        dataTableName, 
+        price 
+FROM    dataTable dT1  
+WHERE   price > 	(SELECT AVG(price)
+						FROM   dataTable dT2 
+                        WHERE  dT2.facilityID = dT1.facilityID)
+ORDER BY facilityID
+```
+
+### Subquery - Longer Example 1
 ```sql
 -- Did more men OR women work in January 2018 and from which company did these employees (that worked in January) originate?
 
@@ -887,7 +2048,7 @@ GROUP BY e.company, e.gender;
 
 ```
 
-### Subquery Example 2
+### Subquery - Longer Example 2
 
 ```sql
 -- Which store had the most employees? Please include the city and state.
@@ -1051,978 +2212,6 @@ FROM otherDataTable;
     </tr>
     <tr>
         <td>Santa Rosa</td>
-    </tr>
-</table>
-
-
-
-## Conditional Statements
-
-
-
-### View Rows Where Age is Greater Than 20 AND City is San Francisco
-
-
-```sql
---  Select all unique
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 20 and city is San Francisco
-WHERE age > 20 AND city == 'San Francisco'
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### View Rows Where Age is Greater Than 20 OR City is San Francisco
-
-
-```sql
---  Select all unique
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 20 and city is San Francisco
-WHERE age > 20 OR city == 'San Francisco'
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### Drop Row Based On a Conditional
-
-
-```sql
--- Delete all rows
-DELETE FROM dataTable
-
--- if the age is less than 18
-WHERE age < 18
-```
-
-
-
-### Select Name AND Ages Only When the Name is Known
-
-
-```sql
---  Select name and average age,
-SELECT name, age
-
---  from the table 'dataTable',
-FROM dataTable
-
--- if age is not a null value
-WHERE name IS NOT NULL
-```
-
-
-
-
-<table>
-    <tr>
-        <th>name</th>
-        <th>age</th>
-    </tr>
-    <tr>
-        <td>James Smith</td>
-        <td>15</td>
-    </tr>
-    <tr>
-        <td>Gordon Ado</td>
-        <td>32</td>
-    </tr>
-    <tr>
-        <td>Bill Byson</td>
-        <td>21</td>
-    </tr>
-</table>
-
-
-
-### Drop Row Based On a Conditional
-
-
-```sql
---  Select all
-SELECT *
-
--- From the dataTable table
-FROM dataTable
-
--- Only return the first two rows
-LIMIT 2;
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill James</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-### View Rows Where Age is Greater Than 30
-
-
-```sql
---  Select all
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 30
-WHERE age > 30
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### View Rows Where Age is Greater Than OR Equal To 23
-
-
-```sql
---  Select all
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 23
-WHERE age >= 23
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Jack Killer</td>
-        <td>23</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### View Rows Where Age is 23
-
-
-```sql
---  Select all
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 23
-WHERE age  =  23
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Jack Killer</td>
-        <td>23</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### View Rows Where Age is NOT 23
-
-
-```sql
---  Select all
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 23
-WHERE age <> 23
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill Bayes</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-</table>
-
-## Conditional "Like" % Operator
-
-### View Rows Where Name Begins with 'J'
-
-
-```sql
---  Select all
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Where name starts with 'J'
-WHERE name LIKE 'J%'
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Jack Killer</td>
-        <td>23</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### View Rows Where Name Contains the String 'ames'
-
-
-```sql
---  Select all
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Where name contains the string 'ames'
-WHERE name LIKE '%ames%'
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-</table>
-
-
-
-### Select Rows with Names Starting with `G`
-
-
-```sql
---  Select all
-SELECT *
-
--- From the dataTable table
-FROM dataTable
-
--- If name starts with G
-WHERE name LIKE 'G%'
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### Select Rows with Names Ending with `o`
-
-
-```sql
---  Select all
-SELECT *
-
--- From the dataTable table
-FROM dataTable
-
--- If name starts ends with o
-WHERE name LIKE '%o'
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>162</td>
-        <td>Jaden Ado</td>
-        <td>49</td>
-        <td>M</td>
-        <td>None</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### Select Rows with Names Starting with Any Character, Then `ordon`
-
-
-```sql
---  Select all
-SELECT *
-
--- From the dataTable table
-FROM dataTable
-
--- If name starts with any character then continues with 'ordon'
-WHERE name LIKE '_ordon%'
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-</table>
-
-## Conditional - IN 
-
-### Select Rows That Contain An Item In a List
-
-
-```sql
--- Select everything
-SELECT *
-
--- From the table 'dataTable'
-FROM dataTable
-
--- Where the city is any of these cities
-WHERE city IN ('Santa Rosa', 'Petaluma');
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill James</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Stacy Miller</td>
-        <td>23</td>
-        <td>F</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>621</td>
-        <td>Betty Bob</td>
-        <td>None</td>
-        <td>F</td>
-        <td>Petaluma</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-## BETWEEN
-
-### Select Every Row Where Age is Between Two Values
-
-
-```sql
--- Select everything
-SELECT *
-
--- From the table 'dataTable'
-FROM dataTable
-
--- Where 
-WHERE age BETWEEN 12 AND 18
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-</table>
-
-
-## Sort
-
-### Sort by Ascending Age AND Then Alphabetically by Name
-
-
-```sql
---  Select all unique
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Sort by ascending age
-orDER BY age ASC, name
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill James</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Stacy Miller</td>
-        <td>23</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### Sort by Ascending Age
-
-
-```sql
---  Select all unique
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Sort by ascending age
-orDER BY age ASC
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill James</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Stacy Miller</td>
-        <td>23</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### Sort by Descending Age
-
-
-```sql
---  Select all unique
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Sort by descending age
-orDER BY age DESC
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Stacy Miller</td>
-        <td>23</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill James</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-</table>
-
-
-
-### Sort Alphabetically
-
-
-```sql
---  Select all unique
-SELECT distinct *
-
--- From the dataTable table
-FROM dataTable
-
--- Sort by name
-orDER BY name
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill James</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Stacy Miller</td>
-        <td>23</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
     </tr>
 </table>
 
