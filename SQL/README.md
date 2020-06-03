@@ -81,7 +81,7 @@ FROM dataTable
 
 ```sql
 --  Select all unique
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
@@ -342,7 +342,7 @@ WHERE MONTH(SaleDate) = 12
 
 ```sql
 --  Select all unique
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
@@ -380,7 +380,7 @@ WHERE age > 20 AND city == 'San Francisco'
 
 ```sql
 --  Select all unique
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
@@ -522,7 +522,7 @@ LIMIT 2;
 
 ```sql
 --  Select all
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
@@ -560,7 +560,7 @@ WHERE age > 30
 
 ```sql
 --  Select all
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
@@ -606,7 +606,7 @@ WHERE age >= 23
 
 ```sql
 --  Select all
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
@@ -644,7 +644,7 @@ WHERE age  =  23
 
 ```sql
 --  Select all
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
@@ -724,7 +724,7 @@ WHERE Color is NULL
 
 ```sql
 --  Select all
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
@@ -770,7 +770,7 @@ WHERE name LIKE 'J%'
 
 ```sql
 --  Select all
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
@@ -1089,13 +1089,13 @@ WHERE age BETWEEN 12 AND 18
 
 ```sql
 --  Select all unique
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
 
 -- Sort by ascending age
-orDER BY age ASC, name
+ORDER BY age ASC, name
 ```
 
 
@@ -1159,13 +1159,13 @@ orDER BY age ASC, name
 
 ```sql
 --  Select all unique
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
 
 -- Sort by ascending age
-orDER BY age ASC
+ORDER BY age ASC
 ```
 
 
@@ -1229,13 +1229,13 @@ orDER BY age ASC
 
 ```sql
 --  Select all unique
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
 
 -- Sort by descending age
-orDER BY age DESC
+ORDER BY age DESC
 ```
 
 
@@ -1299,13 +1299,13 @@ orDER BY age DESC
 
 ```sql
 --  Select all unique
-SELECT distinct *
+SELECT DISTINCT *
 
 -- From the dataTable table
 FROM dataTable
 
 -- Sort by name
-orDER BY name
+ORDER BY name
 ```
 
 
@@ -1363,7 +1363,7 @@ orDER BY name
 </table>
 
 
-## Working with `STRINGS`
+## Working with Strings
 
 ### `SUBSTRING` Example (`LEFT()`, `RIGHT`() in Excel)
 ```sql
