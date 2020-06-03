@@ -12,7 +12,6 @@ Structured Query Language (SQL) is a commonly language for processing relational
 
 ### View All Rows
 
-
 ```sql
 --  Select all
 SELECT *
@@ -77,7 +76,7 @@ FROM dataTable
 
 
 
-### View DISTINCT Rows
+### View `DISTINCT` Rows
 
 
 ```sql
@@ -126,10 +125,11 @@ FROM dataTable
     </tr>
 </table>
 
-### Printing N observations of your database
+### Printing `N` observations of your database
 To print N observations of your database, type
 ```sql
-SELECT * FROM dataTable LIMIT N;
+SELECT * 
+FROM dataTable LIMIT N;
 ```
 
 
@@ -138,13 +138,15 @@ SELECT * FROM dataTable LIMIT N;
 ### Create a one-way frequency table
 Create a one-way frequency table as follows:
 ```sql
-SELECT var1, COUNT(*) FROM dataTable GROUP BY var1;
+SELECT var1, COUNT(*) 
+FROM dataTable GROUP BY var1;
 ```
 This will then list the unique categories and counts for each category
 
-### Compute summary statistics of a variable OR formula of variables
+### Compute summary statistics of a variable `OR` formula of variables
 ```sql
-SELECT FUNCTION(var1) FROM dataTable;
+SELECT FUNCTION(var1) 
+FROM dataTable;
 ```
 where the following are functions:
 
@@ -157,11 +159,13 @@ where the following are functions:
 ### Summary statistics of functions of variables
 For example:
 ```sql
-SELECT FUNCTION(var1 + var2) FROM dataTable;
+SELECT FUNCTION(var1 + var2) 
+FROM dataTable;
 ```
 would apply the `AVG` OR `SUM` OR `MIN` to the sum of `var1` and `var2`. More complex functions (like square root) are not supported in SQLite, so something like
 ```sql
-SELECT AVG(SQRT(var1)) FROM dataTable;
+SELECT AVG(SQRT(var1)) 
+FROM dataTable;
 ```
 will not work.
 
@@ -173,7 +177,7 @@ will. `AS` acts as an alias.
 
 
 
-### View AVG Ages by City
+### View `AVG` Ages by City
 
 
 ```sql
@@ -209,7 +213,7 @@ GROUP BY city
 
 
 
-### View Max Age by City
+### View `MAX` Age by City
 
 
 ```sql
@@ -245,7 +249,7 @@ GROUP BY city
 
 
 
-### View COUNT Of Criminals by City
+### View `COUNT` Of Criminals by City
 
 
 ```sql
@@ -283,7 +287,7 @@ GROUP BY city
 
 
 
-### View SUM Age by City
+### View `SUM` Age by City
 
 
 ```sql
@@ -319,7 +323,7 @@ GROUP BY city
     </tr>
 </table>
 
-### ROUND Function
+### `ROUND` Function
 ```sql
 SELECT ROUND(AVG(Shipping + Tax),2) AS AvgShipTax
 FROM dataTable
@@ -329,11 +333,11 @@ WHERE MONTH(SaleDate) = 12
 
 
 
-## Conditional Statements - WHERE Clause
+## Conditional Statements - `WHERE` Clause
 
 
 
-### View Rows Where Age is Greater Than 20 AND City is San Francisco
+### View Rows Where Age is Greater Than 20 `AND` City is San Francisco
 
 
 ```sql
@@ -371,7 +375,7 @@ WHERE age > 20 AND city == 'San Francisco'
 
 
 
-### View Rows Where Age is Greater Than 20 OR City is San Francisco
+### View Rows Where Age is Greater Than 20 `OR` City is San Francisco
 
 
 ```sql
@@ -430,7 +434,7 @@ WHERE age < 18
 
 
 
-### Select Name AND Ages Only When the Name is Known
+### Select Name `AND` Ages Only When the Name is Known
 
 
 ```sql
@@ -551,7 +555,7 @@ WHERE age > 30
 
 
 
-### View Rows Where Age is Greater Than OR Equal To 23
+### View Rows Where Age is Greater Than `OR` Equal To 23
 
 
 ```sql
@@ -635,7 +639,7 @@ WHERE age  =  23
 
 
 
-### View Rows Where Age is NOT 23
+### View Rows Where Age is `NOT` 23
 
 
 ```sql
@@ -695,7 +699,7 @@ WHERE age <> 23
     </tr>
 </table>
 
-### All three operators as well as the necessary parentheses (AND, OR, NOT)
+### All three operators as well as the necessary parentheses (`AND`, `OR`, `NOT`)
 ```sql
 SELECT *
 FROM dataTable
@@ -706,16 +710,16 @@ WHERE grouping = 'Red Shoe'
 
 ```
 
-### Conditional NULL 
+### Conditional `NULL`
 ```sql
 SELECT *
 FROM dataTable
 WHERE Color is NULL
 ```
 
-## Conditional "Like" % Operator
+## Conditional "Like" `%` Operator
 
-### View Rows Where Name Begins with 'J'
+### `%` View Rows Where Name Begins with 'J'
 
 
 ```sql
@@ -761,7 +765,7 @@ WHERE name LIKE 'J%'
 
 
 
-### View Rows Where Name Contains the String 'ames'
+### `%` View Rows `WHERE` Name Contains the String 'ames'
 
 
 ```sql
@@ -799,7 +803,7 @@ WHERE name LIKE '%ames%'
 
 
 
-### Select Rows with Names Starting with `G`
+### `%` Select Rows with Names Starting with `G`
 
 
 ```sql
@@ -837,7 +841,7 @@ WHERE name LIKE 'G%'
 
 
 
-### Select Rows with Names Ending with `o`
+### `%` Select Rows with Names Ending with `o`
 
 
 ```sql
@@ -883,7 +887,7 @@ WHERE name LIKE '%o'
 
 
 
-### Select Rows with Names Starting with Any Character, Then `ordon`
+### `%` Select Rows with Names Starting with Any Character, Then `ordon`
 
 
 ```sql
@@ -923,7 +927,7 @@ WHERE name LIKE '_ordon%'
 
 ## Conditional - IN 
 
-### Select Rows That Contain An Item In a List
+### Select Rows That Contain An Item `IN` a List
 
 
 ```sql
@@ -937,7 +941,7 @@ FROM dataTable
 WHERE city IN ('Santa Rosa', 'Petaluma');
 ```
 
-### Another Example of IN Operator
+### Another Example of `IN` Operator
 ```sql
 SELECT *
 FROM dataTable
@@ -1013,7 +1017,7 @@ WHERE grouping IN ('Red Shoe',
 
 ## BETWEEN
 
-### Select Every Row Where Age is Between Two Values
+### Select Every Row Where Age is `BETWEEN` Two Values
 
 
 ```sql
@@ -1050,10 +1054,10 @@ WHERE age BETWEEN 12 AND 18
 </table>
 
 
-## Conditional Statements - HAVING Clause
+## Conditional Statements - `HAVING` Clause
 * Use this when you need to filter the variable you created from the aggregate functions
 
-### HAVING Example 1
+### `HAVING` Example 1
 ```sql
 -- Filter out MaxListPrice with less that 50 count
 
@@ -1065,7 +1069,7 @@ WHERE age BETWEEN 12 AND 18
 
 ```
 
-### HAVING Example 2
+### `HAVING` Example 2
 ```sql
 -- Similar to above with ORDER BY integration
 
@@ -1079,9 +1083,9 @@ WHERE age BETWEEN 12 AND 18
 ```
 
 
-## Sort
+## `ORDER BY`
 
-### Sort by Ascending Age AND Then Alphabetically by Name
+### `ORDER BY` Ascending Age AND Then Alphabetically by Name
 
 ```sql
 --  Select all unique
@@ -1150,7 +1154,7 @@ orDER BY age ASC, name
 
 
 
-### Sort by Ascending Age
+### `ORDER BY` Ascending Age
 
 
 ```sql
@@ -1220,7 +1224,7 @@ orDER BY age ASC
 
 
 
-### Sort by Descending Age
+### `ORDER BY` Descending Age
 
 
 ```sql
@@ -1290,7 +1294,7 @@ orDER BY age DESC
 
 
 
-### Sort Alphabetically
+### `ORDER BY` Alphabetically
 
 
 ```sql
@@ -1359,9 +1363,9 @@ orDER BY name
 </table>
 
 
-## Strings
+## Working with `STRINGS`
 
-### SUBSTRING Example (`LEFT()`, `RIGHT`() in Excel)
+### `SUBSTRING` Example (`LEFT()`, `RIGHT`() in Excel)
 ```sql
 Select ID, Name, 
 	SUBSTRING(ColumnName,1,15) AS "Smaller Word", 
@@ -1371,7 +1375,7 @@ Select ID, Name,
 
 ```
 
-### Find Word in Column
+### Find Word in Column with `Charindex`
 ```sql
 -- Show results that include 'Leather' in Composition Column at least one time
 Select dataTableID, dataTableName, Composition 
@@ -1382,7 +1386,7 @@ Select dataTableID, dataTableName, Composition
 
 ## Dates
 
-### Get Current Date
+### Get Current `date`
 
 
 ```sql
@@ -1404,7 +1408,7 @@ SELECT date('now');
 
 
 
-### Get Current Date AND Time
+### Get Current Date `AND` Time with `datetime`
 
 
 ```sql
@@ -1426,7 +1430,7 @@ SELECT datetime('now', 'unixepoch');
 
 
 
-### Compute the Day Of the Week
+### Compute the Day Of the `week()`
 
 
 ```sql
@@ -1447,7 +1451,7 @@ SELECT strftime('%w','now');
 </table>
 
 
-### Conditional with Dates Example 1
+### Conditional with Dates Example 1 - `MONTH`
 ```sql
 SELECT *
 FROM dataTable
@@ -1456,7 +1460,7 @@ AND MONTH(SaleDate) = 4
  
 ```
 
-### Conditional with Dates Example 2
+### Conditional with Dates Example 2 - `MONTH`, `YEAR`
 ```sql
 SELECT dataTable.*
 FROM dataTable
@@ -1471,7 +1475,7 @@ WHERE grouping = 'Red Shoe'
 
 
 
-### Compute a UNIX timestamp into a date and time
+### Compute a UNIX timestamp into a date and time with `datetime`
 
 
 ```sql
@@ -1493,7 +1497,7 @@ SELECT datetime(1169229733, 'unixepoch');
 
 
 
-### Compute a UNIX timestamp into a date and time and convert to the local timezone.
+### Compute a UNIX timestamp into a date and time and convert to the local timezone. `datetime`
 
 
 ```sql
@@ -1516,9 +1520,9 @@ SELECT datetime(1171904533, 'unixepoch', 'localtime');
 
 
 
-## JOIN Tables
+## `JOIN` Tables
 
-### Inner JOIN
+### `INNER JOIN`
 
 Returns all rows whose merge-on id appears in **both** tables.
 
@@ -1527,7 +1531,7 @@ Returns all rows whose merge-on id appears in **both** tables.
 -- Select everything
 SELECT *
 
--- Left table
+-- LEFT table
 FROM dataTable
 
 -- Right table
@@ -1701,7 +1705,7 @@ ON dataTable.pid = otherDataTable.pid_arrested;
 
 
 
-### Left JOIN
+### `LEFT JOIN`
 
 Returns all rows from the left table but only the rows from the right left that match the left table.
 
@@ -1710,7 +1714,7 @@ Returns all rows from the left table but only the rows from the right left that 
 -- Select everything
 SELECT *
 
--- Left table
+-- LEFT table
 FROM dataTable
 
 -- Right table
@@ -1952,7 +1956,7 @@ WHERE age >
 </table>
 
 
-### Subquery in SELECT Clause
+### Subquery in `SELECT` Clause
 ```sql
 SELECT patronID,
  firstName,
@@ -1967,7 +1971,7 @@ FROM dataTable C
 ```
 
 
-### Subquery in FROM Clause
+### Subquery in `FROM` Clause
 ```sql
 SELECT C.patronID,
  firstName,
@@ -1983,7 +1987,7 @@ FROM dataTable C
  ON C.patronID = SumQuery.patronID
 ```
 
-###  Subqueries in HAVING Clause
+###  Subqueries in `HAVING` Clause
 ```sql
 SELECT grouping,
  AVG(price)
@@ -2084,9 +2088,9 @@ GROUP BY s.city, s.state
 
 ```
 
-## UNIONS
+## `UNION`S
 
-### UNION - View All Unique City Names From Both Tables
+### `UNION` - View All Unique City Names From Both Tables
 
 
 ```sql
@@ -2129,7 +2133,7 @@ FROM otherDataTable;
 
 
 
-### UNION ALL - View All City Names From Both Tables
+### `UNION ALL` - View All City Names From Both Tables
 
 
 ```sql
