@@ -3,6 +3,7 @@
 # Guide to SQL
 Structured Query Language (SQL) is a commonly language for processing relational databases. Below is a beginner's guide to using SQL.
 
+## Command Line
 ### Opening SQL
 One can open SQL from the command line by typing `sqlite3` at the prompt.
 
@@ -35,17 +36,14 @@ To do step 2, type the following:
 .import /path/to/file.csv datname
 ```
 
-It is also possible to accomplish this interactively in a GUI if you have, e.g. SQLite Studio or similar.
+***
+
+## Scripting Examples
 
 ### Printing N observations of your database
 To print N observations of your database, type
 ```python
 SELECT * FROM datname LIMIT N;
-```
-
-To print N observations of a subset of variables, type
-```python
-SELECT var1, var2, ..., varK FROM datname LIMIT N;
 ```
 
 ### Deleting observations (and subsetting statements)
