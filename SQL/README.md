@@ -49,7 +49,7 @@ FROM dataTable LIMIT N;
 
 ### Rules to Aggregate Functions within Aggregate Functions
 * You cannot put an aggregate function in an aggregate function
-* You would need to use a subquery, as seen below in the subquery secion
+* You would need to use a subquery, as seen below in the [subquery secion](https://github.com/Daniel-Carpenter/R-Resources/blob/master/SQL/README.md#subqueries-basically-a-nested-select)
 ```sql
 -- this code is INCORRECT
 SELECT AVG(COUNT(var1)) 
