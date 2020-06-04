@@ -8,13 +8,13 @@
 ### `tidyverse`
 * `tidyverse` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/R%20Cheat%20Sheet.pdf)
 * `tidyverse` [In Depth Notes](https://raw.githack.com/uo-ec607/lectures/master/05-tidyverse/html_document/05-tidyverse.html#tidyverse_basics)
-* `tidyr`'s [Tutorial](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
+* `tidyr`'s [Tutorial](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) 
 
 
 ### `dplyr`
 * `dplyr` [Cheat Sheet - Reshaping, Summarising, Grouping, etc.](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/dplyr%20Cheat%20Sheet.pdf)
 * [Joining Tibbles and Dataframes Together](https://rpubs.com/williamsurles/293454) 
-
+* [`MUTATE` plus `if_else()`](https://rstudio-pubs-static.s3.amazonaws.com/116317_e6922e81e72e4e3f83995485ce686c14.html#/5)
 
 ### Useful Packages
 * `lubridate` [Cheat Sheet - Using and Altering **Dates**](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Lubridate%20Cheat%20Sheet.pdf)
@@ -130,40 +130,6 @@ library(magrittr)
 ```
 
 
-## Git and Command Line
-### Git from the Command Line
-| Functionality                                               | Git Command                                                      |
-|-------------------------------------------------------------|------------------------------------------------------------------|
-| Pull to Fork                                                | `git pull`                                                       |
-| Add and Commit all Changes                                  | `git add -A`                                                     |
-| Push committed changes updstream                            | `git push origin master`                                         |
-		
-	
-	
-### Command Line Functions
-| Command                                              | Unix                                                                                                         | DOS                                                                                                                              |
-|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Change directory                                     | `cd <directory path>` (could be relative path)                                                                 | `cd `                                                                                                                              |
-| List files in directory                              | `ls  `                                                                                                         | `dir`                                                                                                                              |
-| Move up one level in directory structure             | `cd .. `                                                                                                       | `cd ..`                                                                                                                            |
-| Create new directory                                 | `mkdir`                                                                                                        | `md`                                                                                                                              |
-| Create new file                                      | `touch filename`                                                                                               | `copy con filename`                                                                                                               |
-| List current processes                               | `ps`                                                                                                           | `tasklist`                                                                                                                         |
-| Kill a running process                               | `kill <process id>`                                                                                            | `Taskkill /PID <process id> /F  `                                                                                                  |
-| Connect to remote machine via secure shell           | `ssh -p <port number> <user@hostname>`                                                                         | `<path to PuTTY.exe> -ssh <username@host> <port number>  `                                                                         |
-| Transfer files to a remote machine (via Secure Copy) | `scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>` | `pscp -scp [options] <username1@source_host:directory1/filename1> <username2@destination_host:directory2/filename2>`              |
-| Submit a batch script                                | `srun <filename.sh>`                                                                                           | unlikely to do this. If need to, see [here](https://stackoverflow.com/questions/26522789/how-to-run-sh-on-windows-command-prompt) |
-
-
-
-### Git and Command Line Resources
-* [Pimp my Editor](http://slides.com/nicklang/pimp-my-editor#/) (Sublime Text focused, but may similar plug-ins/features available in Npp, Atom, or Vim)
-* [Unix commands](https://files.fosswire.com/2007/08/fwunixref.pdf)
-* [DOS commands](https://en.wikipedia.org/wiki/List_of_DOS_commands)
-* [Git Basics](https://www.youtube.com/watch?v=U8GBXvdmHT4)
-* [Git Workflows](http://blog.endpoint.com/2014/05/git-workflows-that-work.html)
-
-
 ## Some Functions
 
 ### Optimize with `Rglpk` Package
@@ -189,7 +155,7 @@ max <- TRUE
 Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
 ```
 
-## `unique`
+### `unique`
 ```r
 unique(rownames(mtcars))
 ```
@@ -201,6 +167,18 @@ Yields unique categories in the variable, or in this case rows:
 [22] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"          "Pontiac Firebird"    "Fiat X1-9"           "Porsche 914-2"       "Lotus Europa"       
 [29] "Ford Pantera L"      "Ferrari Dino"        "Maserati Bora"       "Volvo 142E"         
 ```
+
+### `group_by` and `summarise`
+```r
+    df <- df %>%
+	# Grouping
+		group_by(department) %>%
+	
+	# Aggregation
+		summarise(wages = sum(Wages)) %>%
+		summarise(hours = sum(Hours))
+```
+
 
 
 ## Other Useful Links
