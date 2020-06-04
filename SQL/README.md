@@ -18,7 +18,7 @@ HAVING		-- total >= 100
 ORDER BY	-- total DESC
 ```
 
-### View All Rows
+### `SELECT` all Rows
 ```sql
 SELECT *
 FROM dataTable
@@ -58,28 +58,28 @@ FROM dataTable;
 
 ***
 
-### View `AVG` Ages by City
+### `SELECT` `AVG` Ages by City
 ```sql
 SELECT city, AVG(age)
 FROM dataTable
 GROUP BY city -- note that you only include non-numeric vars here (that appear in the SELECT statment) 
 ```
 
-### View `MAX` Age by City
+### `SELECT` `MAX` Age by City
 ```sql
 SELECT city, MAX(age)
 FROM dataTable
 GROUP BY city -- note that you only include non-numeric vars here (that appear in the SELECT statment) 
 ```
 
-### View `COUNT` Of Criminals by City
+### `SELECT` `COUNT` Of Criminals by City
 ```sql
 SELECT city, COUNT(name)
 FROM dataTable
 GROUP BY city -- note that you only include non-numeric vars here (that appear in the SELECT statment) 
 ```
 
-### View `SUM` Age by City
+### `SELECT` `SUM` Age by City
 ```sql
 SELECT city, SUM(age)
 FROM dataTable
@@ -103,7 +103,7 @@ SELECT FUNCTION(var1)
 FROM dataTable;
 ```
 
-### Summary statistics with `FUNCTION`
+### Summary Statistics with `FUNCTION`
 ```sql
 SELECT FUNCTION(var1 + var2) 
 FROM dataTable;
@@ -122,7 +122,7 @@ WHERE MONTH(SaleDate) = 12
 
 ## Conditional Statements - `WHERE` Clause
 
-### View Rows `WHERE` Age is 23
+### `SELECT` Rows `WHERE` Age is 23
 ```sql
 --  Select all
 SELECT DISTINCT *
@@ -155,7 +155,7 @@ WHERE age  =  23
 </table>
 
 
-### View Rows `WHERE` Age is `NOT` 23
+### `SELECT` Rows `WHERE` Age is `NOT` 23
 ```sql
 --  Select all
 SELECT DISTINCT *
@@ -214,7 +214,7 @@ WHERE age  !=  23
 </table>
 
 
-### View Rows `WHERE` Age is Greater Than 20 `AND` City is San Francisco
+### `SELECT` Rows `WHERE` Age is Greater Than 20 `AND` City is San Francisco
 ```sql
 --  Select all unique
 SELECT DISTINCT *
@@ -247,7 +247,7 @@ WHERE age > 20 AND city == 'San Francisco'
 
 
 
-### View Rows `WHERE` Age is Greater Than 20 `OR` City is San Francisco
+### `SELECT` Rows `WHERE` Age is Greater Than 20 `OR` City is San Francisco
 ```sql
 --  Select all unique
 SELECT DISTINCT *
@@ -286,7 +286,7 @@ WHERE age > 20 OR city == 'San Francisco'
     </tr>
 </table>
 
-### Drop Row Based On a Conditional
+### `DELETE` Row Based On a Conditional
 ```sql
 -- Delete all rows
 DELETE FROM dataTable
@@ -367,7 +367,7 @@ LIMIT 2;
 </table>
 
 
-### View Rows `WHERE` Age is Greater Than 30
+### `SELECT` Rows `WHERE` Age is Greater Than 30
 ```sql
 --  Select all
 SELECT DISTINCT *
@@ -399,7 +399,7 @@ WHERE age > 30
 </table>
 
 
-### View Rows `WHERE` Age is Greater Than `OR` Equal To 23
+### `SELECT` Rows `WHERE` Age is Greater Than `OR` Equal To 23
 ```sql
 --  Select all
 SELECT DISTINCT *
@@ -439,7 +439,7 @@ WHERE age >= 23
 </table>
 
 
-### All three operators as well as the necessary parentheses (`AND`, `OR`, `NOT`)
+### Multiple Conditional Operations(`AND`, `OR`, `NOT`)
 ```sql
 SELECT *
 FROM dataTable
@@ -450,7 +450,7 @@ WHERE grouping = 'Red Shoe'
 
 ```
 
-### View all rows `WHERE` var1 equals `NULL`
+### `SELECT` all rows `WHERE` a variable equals `NULL`
 ```sql
 SELECT *
 FROM dataTable
@@ -459,7 +459,7 @@ WHERE var1 is NULL
 
 ## Conditional "Like" `%` Operator
 
-### `%` View Rows `WHERE` Name Begins with 'J'
+### `%` `SELECT` Rows `WHERE` Name Begins with 'J'
 ```sql
 --  Select all
 SELECT DISTINCT *
@@ -794,7 +794,7 @@ WHERE age BETWEEN 12 AND 18
 
 ## `ORDER BY` Statement
 
-### `ORDER BY` Ascending Age AND Then Alphabetically by Name
+### `ORDER BY` Ascending Age `AND` Then Alphabetically by Name
 ```sql
 --  Select all unique
 SELECT DISTINCT *
@@ -862,7 +862,7 @@ ORDER BY age ASC, name
 
 
 
-### `ORDER BY` Ascending Age
+### `ORDER BY` Ascending Age (`ASC`)
 ```sql
 --  Select all unique
 SELECT DISTINCT *
@@ -927,7 +927,7 @@ ORDER BY age ASC
 </table>
 
 
-### `ORDER BY` Descending Age
+### `ORDER BY` Descending Age (`DESC`)
 ```sql
 --  Select all unique
 SELECT DISTINCT *
@@ -1060,7 +1060,7 @@ ORDER BY name
 
 ## Working with Strings
 
-### `SUBSTRING` Example (`LEFT()`, `RIGHT`() in Excel)
+### `SUBSTRING` Example (`LEFT()`, `RIGHT()` in Excel)
 ```sql
 Select ID, Name, 
 	SUBSTRING(ColumnName,1,15) AS "Smaller Word", 
@@ -1177,7 +1177,7 @@ SELECT datetime(1169229733, 'unixepoch');
 
 
 
-### Compute a UNIX timestamp into a date and time and convert to the local timezone. `datetime`
+### Compute a UNIX timestamp into a date and time and convert to the local timezone. (`datetime`)
 ```sql
 -- Select the unix time code '1171904533' and convert to the machine's local timezone
 SELECT datetime(1171904533, 'unixepoch', 'localtime');
@@ -1748,7 +1748,7 @@ GROUP BY s.city, s.state
 
 ## `UNION`S
 
-### `UNION` - View All Unique City Names `FROM` Both Tables
+### `UNION` - `SELECT` all Unique City Names `FROM` Both Tables
 ```sql
 -- Select city name
 SELECT city 
@@ -1789,7 +1789,7 @@ FROM otherDataTable;
 
 
 
-### `UNION ALL` - View All City Names `FROM` Both Tables
+### `UNION ALL` - `SELECT` all City Names `FROM` Both Tables
 
 
 ```sql
