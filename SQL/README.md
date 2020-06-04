@@ -8,121 +8,27 @@
 
 ## Basic Scripting Examples
 
+### Starter Code Setup
+```sql
+SELECT 		-- var1, SUM(var2) AS total 
+FROM		-- dataTable
+WHERE		-- var1 = 'tacos'
+GROUP BY	-- var1
+HAVING		-- total >= 100
+ORDER BY	-- total DESC
+```
 
 ### View All Rows
-
 ```sql
---  Select all
 SELECT *
-
--- From the dataTable table
 FROM dataTable
 ```
 
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### View `DISTINCT` Rows
-
-
+### `SELECT` all `DISTINCT` Rows
 ```sql
---  Select all unique
 SELECT DISTINCT *
-
--- From the dataTable table
 FROM dataTable
 ```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-</table>
 
 ### Printing `N` observations of your database
 To print N observations of your database, type
@@ -134,475 +40,84 @@ FROM dataTable LIMIT N;
 
 ## Aggregate Functions
 
-### Create a one-way frequency table
-Create a one-way frequency table as follows:
-```sql
-SELECT var1, COUNT(*) 
-FROM dataTable GROUP BY var1;
-```
-This will then list the unique categories and counts for each category
-
-### Compute summary statistics of a variable `OR` formula of variables
-```sql
-SELECT FUNCTION(var1) 
-FROM dataTable;
-```
-where the following are functions:
-
+### Basic Functions
 * `AVG`: average
 * `COUNT`: count
 * `SUM`: sum
 * `MIN`: minimum
 * `MAX`: maximum
 
-### Summary statistics of functions of variables
-For example:
+### Rules to Aggregate Functions within Aggregate Functions
+* You cannot put an aggregate function in an aggregate function
+* You would need to use a subquery, as seen below in the subquery secion
+```sql
+-- this code is INCORRECT
+SELECT AVG(COUNT(var1)) 
+FROM dataTable;
+```
+
+### Frequency Table (`COUNT`)
+* This will list the unique categories and counts for each category
+* Note that `AS` acts as an alias.
+```sql
+SELECT var1, COUNT(*) AS 'count' 
+FROM dataTable 
+GROUP BY var1
+```
+
+### Summary Statistics of a Variable `OR` formula of variables
+```sql
+SELECT FUNCTION(var1) 
+FROM dataTable;
+```
+
+### Summary statistics with `FUNCTION`
 ```sql
 SELECT FUNCTION(var1 + var2) 
 FROM dataTable;
 ```
-would apply the `AVG` OR `SUM` OR `MIN` to the sum of `var1` and `var2`. More complex functions (like square root) are not supported in SQLite, so something like
-```sql
-SELECT AVG(SQRT(var1)) 
-FROM dataTable;
-```
-will not work.
-
-But
-```sql
-SELECT (var1-var2) AS tempvarname FROM dataTable;
-```
-will. `AS` acts as an alias.
-
-
 
 ### View `AVG` Ages by City
-
-
 ```sql
---  Select name and average age,
-SELECT city, avg(age)
-
---  from the table 'dataTable',
+SELECT city, AVG(age)
 FROM dataTable
-
--- after grouping by city
-GROUP BY city
+GROUP BY city -- note that you only include non-numeric vars here (that appear in the SELECT statment) 
 ```
-
-
-<table>
-    <tr>
-        <th>city</th>
-        <th>avg(age)</th>
-    </tr>
-    <tr>
-        <td>Petaluma</td>
-        <td>21.0</td>
-    </tr>
-    <tr>
-        <td>San Francisco</td>
-        <td>27.5</td>
-    </tr>
-    <tr>
-        <td>Santa Rosa</td>
-        <td>18.5</td>
-    </tr>
-</table>
-
-
 
 ### View `MAX` Age by City
-
-
 ```sql
---  Select name and average age,
 SELECT city, max(age)
-
---  from the table 'dataTable',
 FROM dataTable
-
--- after grouping by city
-GROUP BY city
+GROUP BY city -- note that you only include non-numeric vars here (that appear in the SELECT statment) 
 ```
-
-
-<table>
-    <tr>
-        <th>city</th>
-        <th>max(age)</th>
-    </tr>
-    <tr>
-        <td>Petaluma</td>
-        <td>21</td>
-    </tr>
-    <tr>
-        <td>San Francisco</td>
-        <td>32</td>
-    </tr>
-    <tr>
-        <td>Santa Rosa</td>
-        <td>22</td>
-    </tr>
-</table>
-
-
 
 ### View `COUNT` Of Criminals by City
-
-
 ```sql
---  Select name and average age,
 SELECT city, count(name)
-
---  from the table 'dataTable',
 FROM dataTable
-
--- after grouping by city
-GROUP BY city
+GROUP BY city -- note that you only include non-numeric vars here (that appear in the SELECT statment) 
 ```
-
-
-
-
-<table>
-    <tr>
-        <th>city</th>
-        <th>count(name)</th>
-    </tr>
-    <tr>
-        <td>Petaluma</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>San Francisco</td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>Santa Rosa</td>
-        <td>2</td>
-    </tr>
-</table>
-
-
 
 ### View `SUM` Age by City
-
-
 ```sql
---  Select name and average age,
 SELECT city, total(age)
-
---  from the table 'dataTable',
 FROM dataTable
-
--- after grouping by city
 GROUP BY city
 ```
 
-
-
-
-<table>
-    <tr>
-        <th>city</th>
-        <th>total(age)</th>
-    </tr>
-    <tr>
-        <td>Petaluma</td>
-        <td>21.0</td>
-    </tr>
-    <tr>
-        <td>San Francisco</td>
-        <td>55.0</td>
-    </tr>
-    <tr>
-        <td>Santa Rosa</td>
-        <td>37.0</td>
-    </tr>
-</table>
+## Other Useful Functions
 
 ### `ROUND` Function
 ```sql
 SELECT ROUND(AVG(Shipping + Tax),2) AS AvgShipTax
 FROM dataTable
 WHERE MONTH(SaleDate) = 12
-
 ```
-
 
 
 ## Conditional Statements - `WHERE` Clause
 
-
-
-### View Rows `WHERE` Age is Greater Than 20 `AND` City is San Francisco
-
-
-```sql
---  Select all unique
-SELECT DISTINCT *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 20 and city is San Francisco
-WHERE age > 20 AND city == 'San Francisco'
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### View Rows `WHERE` Age is Greater Than 20 `OR` City is San Francisco
-
-
-```sql
---  Select all unique
-SELECT DISTINCT *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 20 and city is San Francisco
-WHERE age > 20 OR city == 'San Francisco'
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>512</td>
-        <td>Bill Byson</td>
-        <td>21</td>
-        <td>M</td>
-        <td>Petaluma</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### Drop Row Based On a Conditional
-
-
-```sql
--- Delete all rows
-DELETE FROM dataTable
-
--- if the age is less than 18
-WHERE age < 18
-```
-
-
-
-### `SELECT` Name `AND` Ages Only When the Name is Known
-
-
-```sql
---  Select name and average age,
-SELECT name, age
-
---  from the table 'dataTable',
-FROM dataTable
-
--- if age is not a null value
-WHERE name IS NOT NULL
-```
-
-
-
-
-<table>
-    <tr>
-        <th>name</th>
-        <th>age</th>
-    </tr>
-    <tr>
-        <td>James Smith</td>
-        <td>15</td>
-    </tr>
-    <tr>
-        <td>Gordon Ado</td>
-        <td>32</td>
-    </tr>
-    <tr>
-        <td>Bill Byson</td>
-        <td>21</td>
-    </tr>
-</table>
-
-
-
-### Drop Row Based On a Conditional
-
-
-```sql
---  Select all
-SELECT *
-
--- From the dataTable table
-FROM dataTable
-
--- Only return the first two rows
-LIMIT 2;
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>412</td>
-        <td>James Smith</td>
-        <td>15</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>234</td>
-        <td>Bill James</td>
-        <td>22</td>
-        <td>M</td>
-        <td>Santa Rosa</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-### View Rows `WHERE` Age is Greater Than 30
-
-
-```sql
---  Select all
-SELECT DISTINCT *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 30
-WHERE age > 30
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
-### View Rows `WHERE` Age is Greater Than `OR` Equal To 23
-
-
-```sql
---  Select all
-SELECT DISTINCT *
-
--- From the dataTable table
-FROM dataTable
-
--- Where age is greater than 23
-WHERE age >= 23
-```
-
-
-
-
-<table>
-    <tr>
-        <th>pid</th>
-        <th>name</th>
-        <th>age</th>
-        <th>sex</th>
-        <th>city</th>
-        <th>minor</th>
-    </tr>
-    <tr>
-        <td>632</td>
-        <td>Jack Killer</td>
-        <td>23</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>901</td>
-        <td>Gordon Ado</td>
-        <td>32</td>
-        <td>F</td>
-        <td>San Francisco</td>
-        <td>0</td>
-    </tr>
-</table>
-
-
-
 ### View Rows `WHERE` Age is 23
-
-
 ```sql
 --  Select all
 SELECT DISTINCT *
@@ -610,13 +125,11 @@ SELECT DISTINCT *
 -- From the dataTable table
 FROM dataTable
 
--- Where age is greater than 23
+-- Where age is equal to 23
 WHERE age  =  23
 ```
 
 
-
-
 <table>
     <tr>
         <th>pid</th>
@@ -637,10 +150,7 @@ WHERE age  =  23
 </table>
 
 
-
 ### View Rows `WHERE` Age is `NOT` 23
-
-
 ```sql
 --  Select all
 SELECT DISTINCT *
@@ -648,8 +158,8 @@ SELECT DISTINCT *
 -- From the dataTable table
 FROM dataTable
 
--- Where age is greater than 23
-WHERE age <> 23
+-- Where age is NOT equal to 23
+WHERE age  !=  23
 ```
 
 
@@ -698,6 +208,232 @@ WHERE age <> 23
     </tr>
 </table>
 
+
+### View Rows `WHERE` Age is Greater Than 20 `AND` City is San Francisco
+```sql
+--  Select all unique
+SELECT DISTINCT *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 20 and city is San Francisco
+WHERE age > 20 AND city == 'San Francisco'
+```
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+
+### View Rows `WHERE` Age is Greater Than 20 `OR` City is San Francisco
+```sql
+--  Select all unique
+SELECT DISTINCT *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 20 and city is San Francisco
+WHERE age > 20 OR city == 'San Francisco'
+```
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>512</td>
+        <td>Bill Byson</td>
+        <td>21</td>
+        <td>M</td>
+        <td>Petaluma</td>
+        <td>0</td>
+    </tr>
+</table>
+
+### Drop Row Based On a Conditional
+```sql
+-- Delete all rows
+DELETE FROM dataTable
+
+-- if the age is less than 18
+WHERE age < 18
+```
+
+### `SELECT` Name `AND` Ages Only When the Name is Known
+```sql
+--  Select name and average age,
+SELECT name, age
+
+--  from the table 'dataTable',
+FROM dataTable
+
+-- if age is not a null value
+WHERE name IS NOT NULL
+```
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+    </tr>
+    <tr>
+        <td>James Smith</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Gordon Ado</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>Bill Byson</td>
+        <td>21</td>
+    </tr>
+</table>
+
+
+### Drop Row Based On a Conditional
+```sql
+--  Select all
+SELECT *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Only return the first two rows
+LIMIT 2;
+```
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>412</td>
+        <td>James Smith</td>
+        <td>15</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>234</td>
+        <td>Bill James</td>
+        <td>22</td>
+        <td>M</td>
+        <td>Santa Rosa</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+### View Rows `WHERE` Age is Greater Than 30
+```sql
+--  Select all
+SELECT DISTINCT *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 30
+WHERE age > 30
+```
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
+### View Rows `WHERE` Age is Greater Than `OR` Equal To 23
+```sql
+--  Select all
+SELECT DISTINCT *
+
+-- From the dataTable table
+FROM dataTable
+
+-- Where age is greater than 23
+WHERE age >= 23
+```
+
+<table>
+    <tr>
+        <th>pid</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>minor</th>
+    </tr>
+    <tr>
+        <td>632</td>
+        <td>Jack Killer</td>
+        <td>23</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>901</td>
+        <td>Gordon Ado</td>
+        <td>32</td>
+        <td>F</td>
+        <td>San Francisco</td>
+        <td>0</td>
+    </tr>
+</table>
+
+
 ### All three operators as well as the necessary parentheses (`AND`, `OR`, `NOT`)
 ```sql
 SELECT *
@@ -709,18 +445,16 @@ WHERE grouping = 'Red Shoe'
 
 ```
 
-### Conditional `NULL`
+### View all rows `WHERE` var1 equals `NULL`
 ```sql
 SELECT *
 FROM dataTable
-WHERE Color is NULL
+WHERE var1 is NULL
 ```
 
 ## Conditional "Like" `%` Operator
 
 ### `%` View Rows `WHERE` Name Begins with 'J'
-
-
 ```sql
 --  Select all
 SELECT DISTINCT *
@@ -731,9 +465,6 @@ FROM dataTable
 -- Where name starts with 'J'
 WHERE name LIKE 'J%'
 ```
-
-
-
 
 <table>
     <tr>
@@ -765,8 +496,6 @@ WHERE name LIKE 'J%'
 
 
 ### `%` `SELECT` Rows `WHERE` Name Contains the String 'ames'
-
-
 ```sql
 --  Select all
 SELECT DISTINCT *
@@ -777,8 +506,6 @@ FROM dataTable
 -- Where name contains the string 'ames'
 WHERE name LIKE '%ames%'
 ```
-
-
 
 
 <table>
@@ -801,10 +528,7 @@ WHERE name LIKE '%ames%'
 </table>
 
 
-
 ### `%` `SELECT` Rows with Names Starting with `G`
-
-
 ```sql
 --  Select all
 SELECT *
@@ -815,8 +539,6 @@ FROM dataTable
 -- If name starts with G
 WHERE name LIKE 'G%'
 ```
-
-
 
 
 <table>
@@ -839,10 +561,7 @@ WHERE name LIKE 'G%'
 </table>
 
 
-
 ### `%` `SELECT` Rows with Names Ending with `o`
-
-
 ```sql
 --  Select all
 SELECT *
@@ -853,8 +572,6 @@ FROM dataTable
 -- If name starts ends with o
 WHERE name LIKE '%o'
 ```
-
-
 
 
 <table>
@@ -885,10 +602,7 @@ WHERE name LIKE '%o'
 </table>
 
 
-
 ### `%` `SELECT` Rows with Names Starting with Any Character, Then `ordon`
-
-
 ```sql
 --  Select all
 SELECT *
@@ -899,8 +613,6 @@ FROM dataTable
 -- If name starts with any character then continues with 'ordon'
 WHERE name LIKE '_ordon%'
 ```
-
-
 
 
 <table>
@@ -923,12 +635,9 @@ WHERE name LIKE '_ordon%'
 </table>
 
 
-
 ## Conditional - IN 
 
 ### `SELECT` Rows That Contain An Item `IN` a List
-
-
 ```sql
 -- Select everything
 SELECT *
@@ -950,8 +659,6 @@ WHERE grouping IN ('Red Shoe',
  'boots')
 
 ```
-
-
 
 
 <table>
@@ -1014,7 +721,7 @@ WHERE grouping IN ('Red Shoe',
 </table>
 
 
-## BETWEEN
+## `BETWEEN` Statement
 
 ### `SELECT` Every Row `WHERE` Age is `BETWEEN` Two Values
 
@@ -1029,8 +736,6 @@ FROM dataTable
 -- Where 
 WHERE age BETWEEN 12 AND 18
 ```
-
-
 
 
 <table>
@@ -1082,10 +787,9 @@ WHERE age BETWEEN 12 AND 18
 ```
 
 
-## `ORDER BY`
+## `ORDER BY` Statement
 
 ### `ORDER BY` Ascending Age AND Then Alphabetically by Name
-
 ```sql
 --  Select all unique
 SELECT DISTINCT *
@@ -1154,8 +858,6 @@ ORDER BY age ASC, name
 
 
 ### `ORDER BY` Ascending Age
-
-
 ```sql
 --  Select all unique
 SELECT DISTINCT *
@@ -1166,8 +868,6 @@ FROM dataTable
 -- Sort by ascending age
 ORDER BY age ASC
 ```
-
-
 
 
 <table>
@@ -1222,10 +922,7 @@ ORDER BY age ASC
 </table>
 
 
-
 ### `ORDER BY` Descending Age
-
-
 ```sql
 --  Select all unique
 SELECT DISTINCT *
@@ -1236,8 +933,6 @@ FROM dataTable
 -- Sort by descending age
 ORDER BY age DESC
 ```
-
-
 
 
 <table>
@@ -1294,8 +989,6 @@ ORDER BY age DESC
 
 
 ### `ORDER BY` Alphabetically
-
-
 ```sql
 --  Select all unique
 SELECT DISTINCT *
@@ -1306,8 +999,6 @@ FROM dataTable
 -- Sort by name
 ORDER BY name
 ```
-
-
 
 
 <table>
@@ -1374,6 +1065,7 @@ Select ID, Name,
 
 ```
 
+
 ### Find Word in Column with `Charindex`
 ```sql
 -- Show results that include 'Leather' in Composition Column at least one time
@@ -1383,11 +1075,10 @@ Select dataTableID, dataTableName, Composition
 	
 ```
 
+
 ## Dates
 
 ### Get Current `date`
-
-
 ```sql
 -- Select the current date
 SELECT date('now');
@@ -1408,15 +1099,10 @@ SELECT date('now');
 
 
 ### Get Current Date `AND` Time with `datetime`
-
-
 ```sql
 -- Select the unix time code '1200762133'
 SELECT datetime('now', 'unixepoch');
 ```
-
-
-
 
 <table>
     <tr>
@@ -1428,16 +1114,11 @@ SELECT datetime('now', 'unixepoch');
 </table>
 
 
-
 ### Compute the Day Of the `week()`
-
-
 ```sql
 -- Select the the day of this week (0  =  Sunday, 4  =  Thursday)
 SELECT strftime('%w','now');
 ```
-
-
 
 
 <table>
@@ -1475,15 +1156,10 @@ WHERE grouping = 'Red Shoe'
 
 
 ### Compute a UNIX timestamp into a date and time with `datetime`
-
-
 ```sql
 -- Select the unix time code '1169229733'
 SELECT datetime(1169229733, 'unixepoch');
 ```
-
-
-
 
 <table>
     <tr>
@@ -1497,15 +1173,10 @@ SELECT datetime(1169229733, 'unixepoch');
 
 
 ### Compute a UNIX timestamp into a date and time and convert to the local timezone. `datetime`
-
-
 ```sql
 -- Select the unix time code '1171904533' and convert to the machine's local timezone
 SELECT datetime(1171904533, 'unixepoch', 'localtime');
 ```
-
-
-
 
 <table>
     <tr>
@@ -1518,14 +1189,11 @@ SELECT datetime(1171904533, 'unixepoch', 'localtime');
 
 
 
-
 ## `JOIN` Tables
 
 ### `INNER JOIN`
 
-Returns all rows whose merge-on id appears in **both** tables.
-
-
+* Returns all rows whose merge-on id appears in **both** tables.
 ```sql
 -- Select everything
 SELECT *
@@ -1539,9 +1207,6 @@ INNER JOIN otherDataTable
 -- Merged on `pid` in the dataTable table and `pid_arrested` in the otherDataTable table
 ON dataTable.pid = otherDataTable.pid_arrested;
 ```
-
-
-
 
 <table>
     <tr>
@@ -1703,12 +1368,9 @@ ON dataTable.pid = otherDataTable.pid_arrested;
 </table>
 
 
-
 ### `LEFT JOIN`
 
-Returns all rows from the left table but only the rows from the right left that match the left table.
-
-
+* Returns all rows from the left table but only the rows from the right left that match the left table.
 ```sql
 -- Select everything
 SELECT *
@@ -1722,9 +1384,6 @@ LEFT JOIN otherDataTable
 -- Merged on `pid` in the dataTable table and `pid_arrested` in the otherDataTable table
 ON dataTable.pid = otherDataTable.pid_arrested;
 ```
-
-
-
 
 <table>
     <tr>
@@ -1890,11 +1549,9 @@ ON dataTable.pid = otherDataTable.pid_arrested;
 _Note: FULL OUTER and RIGHT JOIN are not shown here because they are not supported by the version of SQL (SQLite) used in this tutorial._
 
 
-
 ## Subqueries (basically a nested SELECT)
 
 ### Simple Example of Subquery
-
 ```sql
 -- Goal: Shoe grouping that have facilityID in OK
 
@@ -1908,8 +1565,6 @@ _Note: FULL OUTER and RIGHT JOIN are not shown here because they are not support
 ```
 
 ### `SELECT` Based On the Result Of a `SELECT` (Subquery)
-
-
 ```sql
 --  Select name and age,
 SELECT name, age
@@ -2052,7 +1707,6 @@ GROUP BY e.company, e.gender;
 ```
 
 ### Subquery - Longer Example 2
-
 ```sql
 -- Which store had the most employees? Please include the city and state.
 
@@ -2090,8 +1744,6 @@ GROUP BY s.city, s.state
 ## `UNION`S
 
 ### `UNION` - View All Unique City Names `FROM` Both Tables
-
-
 ```sql
 -- Select city name
 SELECT city 
@@ -2220,8 +1872,6 @@ FROM otherDataTable;
 
 
 ### Copy Contents Of First Table Into Empty Table
-
-
 ```sql
 -- Insert into the empty table
 INSERT INTO dataTable
@@ -2235,8 +1885,6 @@ FROM otherDataTable;
 
 
 ### Create An Index Using the Column 'pid' As the Unique ID
-
-
 ```sql
 -- Create a index called uid
 CREATE INDEX uid
@@ -2287,11 +1935,4 @@ If one wants to save a database in SQL, the file extension is `.sqlite3` (but in
 .dump
 ```
 the result will be a text file with SQL code in it that will recreate the table you dumped.
-
-
-
-
-
-
-
 
