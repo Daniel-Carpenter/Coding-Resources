@@ -56,6 +56,8 @@ SELECT AVG(COUNT(var1))
 FROM dataTable;
 ```
 
+***
+
 ### View `AVG` Ages by City
 ```sql
 SELECT city, AVG(age)
@@ -83,6 +85,8 @@ SELECT city, SUM(age)
 FROM dataTable
 GROUP BY city
 ```
+
+***
 
 ### Frequency Table (`COUNT`)
 * This will list the unique categories and counts for each category
