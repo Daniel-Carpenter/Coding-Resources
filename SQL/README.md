@@ -56,27 +56,6 @@ SELECT AVG(COUNT(var1))
 FROM dataTable;
 ```
 
-### Frequency Table (`COUNT`)
-* This will list the unique categories and counts for each category
-* Note that `AS` acts as an alias.
-```sql
-SELECT var1, COUNT(*) AS 'count' 
-FROM dataTable 
-GROUP BY var1
-```
-
-### Summary Statistics of a Variable `OR` formula of variables
-```sql
-SELECT FUNCTION(var1) 
-FROM dataTable;
-```
-
-### Summary statistics with `FUNCTION`
-```sql
-SELECT FUNCTION(var1 + var2) 
-FROM dataTable;
-```
-
 ### View `AVG` Ages by City
 ```sql
 SELECT city, AVG(age)
@@ -104,6 +83,28 @@ SELECT city, SUM(age)
 FROM dataTable
 GROUP BY city
 ```
+
+### Frequency Table (`COUNT`)
+* This will list the unique categories and counts for each category
+* Note that `AS` acts as an alias.
+```sql
+SELECT var1, COUNT(*) AS 'count' 
+FROM dataTable 
+GROUP BY var1
+```
+
+### Summary Statistics of a Variable `OR` formula of variables
+```sql
+SELECT FUNCTION(var1) 
+FROM dataTable;
+```
+
+### Summary statistics with `FUNCTION`
+```sql
+SELECT FUNCTION(var1 + var2) 
+FROM dataTable;
+```
+
 
 ## Other Useful Functions
 
