@@ -86,21 +86,21 @@ GROUP BY city -- note that you only include non-numeric vars here (that appear i
 
 ### View `MAX` Age by City
 ```sql
-SELECT city, max(age)
+SELECT city, MAX(age)
 FROM dataTable
 GROUP BY city -- note that you only include non-numeric vars here (that appear in the SELECT statment) 
 ```
 
 ### View `COUNT` Of Criminals by City
 ```sql
-SELECT city, count(name)
+SELECT city, COUNT(name)
 FROM dataTable
 GROUP BY city -- note that you only include non-numeric vars here (that appear in the SELECT statment) 
 ```
 
 ### View `SUM` Age by City
 ```sql
-SELECT city, total(age)
+SELECT city, SUM(age)
 FROM dataTable
 GROUP BY city
 ```
