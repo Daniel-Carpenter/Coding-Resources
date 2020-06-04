@@ -1,5 +1,5 @@
 ## Source Notes
-* *THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'dat MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
+* *THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
 * *Also taken from [Chris Albon](https://github.com/chrisalbon)'s [archived GitHub repository](https://github.com/chrisalbon/mlai) on machine learning and artifical intelligence.*
 * Otherwise, they are [Daniel Carpenter](https://github.com/Daniel-Carpenter)'s additions OR edits
 
