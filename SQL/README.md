@@ -1633,39 +1633,50 @@ FROM dataTable C
 ### Subquery in `FROM` Clause
 ```sql
 SELECT C.patronID,
- firstName,
- lastName,
- countOfSold
-FROM dataTable C
- JOIN (SELECT patronID,
- SUM(quantity * price) AS countOfSold
-	 FROM dataTable dat
-		JOIN otherDataTable oDat
- ON dat.primaryKey = oDat.primaryKey
- GROUP BY patronID) SumQuery
- ON C.patronID = SumQuery.patronID
+	firstName,
+	lastName,
+	countOfSold
+FROM 
+	dataTable C 
+	JOIN(SELECT 
+			patronID,
+			SUM(quantity * price) AS countOfSold	
+		FROM 
+			dataTable dat JOIN 
+			otherDataTable oDat
+				ON dat.primaryKey = oDat.primaryKey
+		GROUP BY patronID) 
+SumQuery
+	ON C.patronID = SumQuery.patronID
 ```
 
 ###  Subqueries in `HAVING` Clause
 ```sql
-SELECT grouping,
- AVG(price)
+SELECT 
+	grouping,
+	AVG(price)
 FROM dataTable
+
 WHERE Color = 'Yellow'
+
 GROUP BY grouping
-HAVING AVG(price) <
-   (SELECT AVG(price)
-    FROM dataTable
-    WHERE Color = 'Yellow')
+
+HAVING AVG(price) <	(SELECT AVG(price)
+					FROM dataTable
+					WHERE Color = 'Yellow')
 ```
 
 ### Subqueries and Aggregate Functions
 ```sql
-SELECT firstName, lastName, taxBracket
-FROM staffTable sT JOIN staffWages sW ON sT.staffID = sW.staffID
-WHERE taxBracket >
- (SELECT AVG(taxBracket)
- FROM staffWages)
+SELECT 
+	firstName, 
+		lastName, 
+		taxBracket
+FROM 
+	staffTable sT JOIN staffWages sW 
+		ON sT.staffID = sW.staffID
+WHERE taxBracket >	(SELECT AVG(taxBracket)
+					FROM staffWages)
 ```
 
 ### Correlated Subqueries
@@ -1676,9 +1687,9 @@ SELECT  facilityID,
         dataTableName, 
         price 
 FROM    dataTable dT1  
-WHERE   price > 	(SELECT AVG(price)
-						FROM   dataTable dT2 
-                        WHERE  dT2.facilityID = dT1.facilityID)
+WHERE   price > (SELECT AVG(price)
+					FROM   dataTable dT2 
+					WHERE  dT2.facilityID = dT1.facilityID)
 ORDER BY facilityID
 ```
 
