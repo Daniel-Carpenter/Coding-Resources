@@ -83,7 +83,12 @@ df <- df %>%
 				hours = sum# Hours))
 ```
 
-
+### `pivot_wider`
+```r
+    df    <- pivot_wider(df, 
+                      names_from = stockName, 
+                      values_from = stockReturn)
+```
 
 ## Other Useful Links / Notes
 

@@ -119,6 +119,12 @@ FROM dataTable
 WHERE MONTH(SaleDate) = 12
 ```
 
+### `ISNULL`
+```sql
+SELECT ISNULL(var1, 0 ) -- replace null with 0 
+FROM dataTable
+```
+
 
 ## Conditional Statements - `WHERE` Clause
 
