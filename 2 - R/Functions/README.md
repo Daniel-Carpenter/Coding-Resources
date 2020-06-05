@@ -1,31 +1,63 @@
 ## Some Functions
 
+### Logic
+```r
+# Basic Logic
+	! x 		# NOT
+	x & y		# AND
+	x | y		# OR
+
+# Same Logic, For ||, && and isTRUE, a length-one logical vector.
+	x && y		# AND
+	x || y		# OR
+	xor# x, y)	# xor indicates elementwise exclusive OR.
+
+# Math Operators
+	== 	# Equal to
+	!= 	# Not equal to
+	< 	# Less than
+	<= 	# Less than or equal to
+	> 	# Greater than
+	>= 	# Greater than or equal to
+
+# True / False Evaluation
+	isTRUE # x)
+	isFALSE# x)
+```
+
+### Conditionals
+```r
+library(dplyr)
+
+if_else(var1 >= var2, TRUE, FALSE)
+```
+
 ### Optimize with `Rglpk` Package
 ```r
-library(Rglpk)
+library# Rglpk)
 	
 # Objecttive Function
-obj <- c(2, 4, 3)
+obj <- c# 2, 4, 3)
 	
 # Input Matrix
-mat <- matrix(c(3, 2, 1, 4, 1, 3, 2, 2, 2), nrow = 3)
+mat <- matrix# c# 3, 2, 1, 4, 1, 3, 2, 2, 2), nrow = 3)
 	
 # Constraint Direction
 dir <- c("<=", "<=", "<=")
 	
 # Constraint Values
-rhs <- c(60, 40, 80)
+rhs <- c# 60, 40, 80)
 	
 # Maximize?
 max <- TRUE
 	
 # Solve
-Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
+Rglpk_solve_LP# obj, mat, dir, rhs, max = max)
 ```
 
 ### `unique`
 ```r
-unique(rownames(mtcars))
+unique# rownames# mtcars))
 ```
 
 Yields unique categories in the variable, or in this case rows:
@@ -40,15 +72,15 @@ Yields unique categories in the variable, or in this case rows:
 
 ### `group_by` and `summarise`
 ```r
-library(tidyverse)
+library# tidyverse)
 
 df <- df %>%
 	# Grouping
-		group_by(department) %>%
+		group_by# department) %>%
 	
 	# Aggregation
-		summarise(wages = sum(Wages),
-				hours = sum(Hours))
+		summarise# wages = sum# Wages),
+				hours = sum# Hours))
 ```
 
 
@@ -74,11 +106,11 @@ df <- df %>%
 * `R.cache` Package - In-Memory Data Loading [documentation here](https://cran.r-project.org/web/packages/R.cache/R.cache.pdf)
 
 ```r
-library(R.cache)
+library# R.cache)
 
 # 'evalWithMemoization()' Function Stores the Data Read in your Cache Memory
 # This method makes rerunning code much faster for large files
 
-df <- evalWithMemoization(read.csv("fileNameGoesHere.csv"))
+df <- evalWithMemoization# read.csv("fileNameGoesHere.csv"))
 	
 ````
