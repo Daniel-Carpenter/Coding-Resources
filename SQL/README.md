@@ -4,7 +4,8 @@
 * Otherwise, they are [Daniel Carpenter](https://github.com/Daniel-Carpenter)'s additions OR edits
 
 # SQL Help Scripts
-* [My Educator Book (not free)](https://app.myeducator.com/reader/web/1376e/) 
+* [My Educator Book (not free)](https://app.myeducator.com/reader/web/1376e/)
+* [Microsoft SQL database functions - SQL Server | Microsoft Docs](https://docs.microsoft.com/en-us/sql/t-sql/functions/functions?view=azuresqldb-current)
 
 ## Basic Scripting Examples
 
