@@ -90,7 +90,26 @@ df <- df %>%
                       values_from = stockReturn)
 ```
 
+### `pivot_longer` ([source](https://tidyr.tidyverse.org/reference/pivot_longer.html))
+```r
+pivot_longer(
+   cols = starts_with("wk"),
+   names_to = "week",
+   names_prefix = "wk",
+   values_to = "rank",
+   values_drop_na = TRUE)
+```
 
+
+### `replace` {base} ([source](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/replace))
+```{r}
+(df <- list(
+  a = rbinom(20, 10, 0.5),
+  b = "this element needs replacing"
+))
+replace(df, "old", "new")
+
+```
 
 ## Other Useful Links / Notes
 
