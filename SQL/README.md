@@ -770,6 +770,19 @@ WHERE age BETWEEN 12 AND 18
 </table>
 
 
+### `IF` `ELSE` Statements
+```sql
+DECLARE @variableName INT;
+SET @variableName = 15;
+
+IF @variableName < 25
+   PRINT 'EXPRESSION IS TRUE';
+ELSE
+   PRINT 'EXPRESSION IS FALSE';
+
+GO
+```
+
 ## Conditional Statements - `HAVING` Clause
 * Use this when you need to filter the variable you created from the aggregate functions
 
