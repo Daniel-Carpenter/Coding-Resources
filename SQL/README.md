@@ -1841,8 +1841,6 @@ FROM otherDataTable;
 ```
 
 
-
-
 <table>
     <tr>
         <th>city</th>
@@ -1907,6 +1905,58 @@ FROM otherDataTable;
 </table>
 
 
+## `PIVOT`ING and `UNPIVOT`ING TABLES [SOURCE](https://www.carTable.org/pivot-and-unpivot-in-sql/)
+
+### `PIVOT`
+```sql
+-- SELECT columns from PIVOT table below
+SELECT 
+	carModel, 
+	Telsa, 
+	Porsche 
+
+FROM carTable 
+
+-- 	Create Pivot Table - New Columns need to be in SELECT Statement at top
+PIVOT 
+( 
+	SUM(price) FOR carMake IN (Telsa, Porsche) 
+) AS PivotTable 
+```
+
+### `UNPIVOT`
+
+```sql
+SELECT -- Use variables Before `FOR` and after `FOR` from the UNPIVOT at bottom 
+	carModel,
+	carMake,
+	Price,
+
+FROM -- this is from the pivot table you just made above
+	(-- SELECT columns from PIVOT table below
+	SELECT 
+		carModel, 
+		Telsa, 
+		Porsche 
+
+	FROM carTable 
+
+	-- 	Create Pivot Table - New Columns need to be in SELECT Statement at top
+	PIVOT 
+	( 
+		SUM(price) FOR carMake IN (Telsa, Porsche) 
+	) AS PivotTable 
+	) AS fromPivotTable
+
+UNPIVOT 
+( 
+	-- Before `FOR` and after `FOR` Vars must be in SELECT Statement at top
+	Price FOR carMake IN (Telsa, Porsche)
+) 
+AS UnpivotTable
+```
+
+
 ### Copy Contents Of First Table Into Empty Table
 ```sql
 -- Insert into the empty table
@@ -1928,6 +1978,12 @@ CREATE INDEX uid
 -- For the table 'dataTable' and the column 'pid'
 ON dataTable (pid)
 ```
+
+
+
+***
+
+
 
 
 ## SQL in the Command Line
