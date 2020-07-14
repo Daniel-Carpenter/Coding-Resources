@@ -36,10 +36,10 @@ ggplot(
 ```
 	
 ## Show Multiple lines in Plot
-	* pivot dataset into one column using `pivot_longer`
-	* Set the desciptive column as the `color` in `ggplot()`
+* pivot dataset into one column using `pivot_longer`
+* Set the desciptive column as the `color` in `ggplot()`
 
-## Sort Axis Vars (Source)[https://sebastiansauer.github.io/ordering-bars/]
+## Sort Axis Vars [Source](https://sebastiansauer.github.io/ordering-bars/)
 ```r
 # Example with Week Days
     df$weekDay <- factor(df$weekDay,
