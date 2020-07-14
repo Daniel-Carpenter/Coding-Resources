@@ -83,6 +83,13 @@ df <- df %>%
 				hours = sum(Hours))
 ```
 
+### `summarise` Aggregation
+	`n()` - number of observations
+	`n_distinct(var)` - number of unique values of var
+	`sum(var)`, `max(var)`, `min(var)`,
+	`mean(var)`, `median(var)`, `sd(var)`, `IQR(var)`
+
+
 ### `pivot_wider` ([source help](https://tidyr.tidyverse.org/reference/pivot_wider.html))
 ```r
     df    <- pivot_wider(df, 

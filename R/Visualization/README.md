@@ -24,13 +24,17 @@ ggplot(
   # Graph Theme
 	theme_minimal() +
 	  
+  # Facet Graph by Variables
+	facet_grid(	rows = vars(var1),
+				cols = vars(var2)) +
+  
   # Graph Labels
 	labs(title = "",
 		 subtitle = "",
 		 caption = "",
 		 tag = "Figure 1",
 		 x = "",
-		 y = "")
+		 y = "") +
 	  
   # Save Image
 	ggsave("imageTitle.pdf", path = "", width = 10, height = 7)	

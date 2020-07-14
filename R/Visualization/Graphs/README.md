@@ -18,6 +18,10 @@ ggplot(
 	  
   # Graph Theme
 	theme_minimal() +
+		  
+  # Facet Graph by Variables
+	facet_grid(	rows = vars(var1),
+				cols = vars(var2)) +
 	  
   # Graph Labels
 	labs(title = "",
@@ -29,6 +33,23 @@ ggplot(
 	  
   # Save Image
 	ggsave("imageTitle.pdf", path = "", width = 10, height = 7)	
+```
+	
+## Show Multiple lines in Plot
+	* pivot dataset into one column using `pivot_longer`
+	* Set the desciptive column as the `color` in `ggplot()`
+
+## Sort Axis Vars (Source)[https://sebastiansauer.github.io/ordering-bars/]
+```r
+# Example with Week Days
+    df$weekDay <- factor(df$weekDay,
+                            levels = c("Monday", 
+                                       "Tuesday", 
+                                       "Wednesday", 
+                                       "Thursday",
+                                       "Friday",
+                                       "Saturday",
+                                       "Sunday"))
 ```
 	
 
