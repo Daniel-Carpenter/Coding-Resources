@@ -1,4 +1,7 @@
-* [Ultimate Guide to ggplot2](https://ggplot2-book.org/facet.html)
+* [Ultimate Guide to ggplot2](https://ggplot2-book.org)
+* [Color Themes](https://rpubs.com/seslezak/color_schemes)
+* [seq, div, and qual aruguments](https://ggplot2.tidyverse.org/reference/scale_brewer.html)
+* [Change Facet Labels](https://www.datanovia.com/en/blog/how-to-change-ggplot-facet-labels/)
 
 ## ggplot2 Quick Code for Copying and Pasting
 ```r
