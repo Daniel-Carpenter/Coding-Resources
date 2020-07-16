@@ -2,8 +2,6 @@
 
 ### Graphs - `ggplot2` Starter Code
 
-* `ggplot2` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/GGPlot%20Cheat%20Sheet.pdf) 
-
 ```r
 library(tidyverse) 	# Includes ggplot2
 library(ggthemes)	# Optional Themes
@@ -42,7 +40,7 @@ ggplot(
 	
 ### User Interfaces - `shiny` Starter Code [from Wickham](https://mastering-shiny.org/action-workflow.html#getting-help)
 * [Link to Wickham's `shiny` Tutorial](https://mastering-shiny.org/)
-* `shiny` [Cheat Sheet](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/Shiny%20Cheat%20Sheet.pdf)
+
 
 ```r
 library(shiny)
