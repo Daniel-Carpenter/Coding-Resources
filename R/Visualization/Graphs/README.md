@@ -1,4 +1,4 @@
-* (Ultimate Guide to ggplot2)[https://ggplot2-book.org/facet.html]
+* [Ultimate Guide to ggplot2](https://ggplot2-book.org/facet.html)
 
 ## ggplot2 Quick Code for Copying and Pasting
 ```r
