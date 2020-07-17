@@ -1,4 +1,4 @@
-*THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
+* [Guide to Saving and Creating Files and Directories](http://theautomatic.net/2018/07/11/manipulate-files-r/)
 
 ## Storing Objects in Cache
 ```r
@@ -9,7 +9,6 @@
 # Example
 	df <- evalWithMemoization(mtcars)
 ```
-
 
 ## Sources
 
