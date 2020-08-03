@@ -2,6 +2,7 @@
 * [Color Themes](https://rpubs.com/seslezak/color_schemes)
 * [seq, div, and qual aruguments](https://ggplot2.tidyverse.org/reference/scale_brewer.html)
 * [Change Facet Labels](https://www.datanovia.com/en/blog/how-to-change-ggplot-facet-labels/)
+* [Heat Maps](https://www.r-graph-gallery.com/79-levelplot-with-ggplot2.html)
 
 ## ggplot2 Quick Code for Copying and Pasting
 ```r
