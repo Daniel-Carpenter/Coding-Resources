@@ -1,3 +1,21 @@
+## Packages List
+```r
+install.packages("ggthemes")
+install.packages("gridExtra")	# Arrange ggplots in pdf
+install.packages("scales")		# Color scales for ggplot2
+install.packages("R.cache")		# Store data in ca
+install.packages("zoo")
+install.packages("readxl")
+install.packages("Rglpk")		# Linear Optimization
+install.packages("rvest")		
+install.packages("stargazer")	# LaTeX tables
+install.packages("stringr")		# Trim, capitalize, etc. strings
+install.packages("skimr")		# Skim df's
+install.packages("formattable")
+install.packages("BatchGetSymbols")	# Stock pull overtime
+install.packages("quantmod")		# Money market pull with many parameters
+```
+
 ## Other Useful Links / Notes
 
 ### `tidyverse`
