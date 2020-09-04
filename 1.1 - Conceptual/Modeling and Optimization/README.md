@@ -1,4 +1,4 @@
-*THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
+*THE BELOW INFORMATION IS REPRODUCED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
 
 # Intro to statistical modeling 
 These notes will show an overview of statistical modeling. We will cover how to model outcomes of various varieties and briefly discuss the pros and cons of various modeling approaches. 
