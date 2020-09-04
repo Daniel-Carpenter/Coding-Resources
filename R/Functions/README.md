@@ -31,11 +31,11 @@ install.packages("quantmod")		# Money market pull with many parameters
 * `R.cache` Package - In-Memory Data Loading [documentation here](https://cran.r-project.org/web/packages/R.cache/R.cache.pdf)
 
 ```r
-library# R.cache)
+library(R.cache)
 
 # 'evalWithMemoization()' Function Stores the Data Read in your Cache Memory
 # This method makes rerunning code much faster for large files
 
-df <- evalWithMemoization# read.csv("fileNameGoesHere.csv"))
+df <- evalWithMemoization(read.csv("fileNameGoesHere.csv"))
 	
 ````
