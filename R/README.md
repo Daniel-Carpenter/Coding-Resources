@@ -32,6 +32,8 @@
 
 
 ### Linear Algebra
+***
+
 #### Linear Algebra Books
 * [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
 * [No bullshit guide to linear algebra](https://minireference.com/static/excerpts/noBSguide2LA_preview.pdf)
