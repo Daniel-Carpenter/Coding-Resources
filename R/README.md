@@ -1,8 +1,5 @@
 # Quick Resources Below
 
-*PLEASE NOTE THAT THIS REPO HAS SOME EXAMPLES AND MANY CONCEPTUAL NOTES FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). I have indicated when it is not my own work. Othwerwise, this repo is unlinked with my personal additions for my personal reference.*
-
-
 ## Data Cleaning and Mutation
 
 ### `tidyverse`
@@ -64,6 +61,9 @@
 
 
 ## Materials from ([Tyler Ransom](http://tyleransom.github.io)'s [DScourseS20](https://github.com/tyleransom/DScourseS20).
+
+*PLEASE NOTE THAT THIS REPO HAS SOME EXAMPLES AND MANY CONCEPTUAL NOTES FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20). I have indicated when it is not my own work. Othwerwise, this repo is unlinked with my personal additions for my personal reference.*
+
 |Topic|
 |--------------------------------------------------------------|
 |What is data science / big data / why is it important? ([Slides](https://github.com/tyleransom/DScourseS20/blob/master/CourseIntro/WhatIsDataScience.pdf))|
