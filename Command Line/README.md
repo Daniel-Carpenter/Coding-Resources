@@ -1,4 +1,4 @@
-*THIS REPO IS PARSED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
+*THE BELOW INFORMATION IS REPRODUCED FROM [TYLER RANSOM](http://tyleransom.github.io)'S MASTER REPO LOCATED [HERE](https://github.com/tyleransom/DScourseS20).*
 
 * [Data Science at the Command Line](https://www.datascienceatthecommandline.com/1e/chapter-3-obtaining-data.html) book
 
