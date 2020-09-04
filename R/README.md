@@ -15,6 +15,7 @@
 * [Advanced R ed. 2 | Wickham](https://adv-r.hadley.nz/)
 * [R for Data Science | Wickham](https://r4ds.had.co.nz/)
 * [Data Analytics in R | Interactive Zybook](https://learn.zybooks.com/zybook/FundamentalsOfDataAnalyticsRR2)
+* [Object Oriented Programming in R](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Daniel-Carpenter/Coding-Resources/master/R/Coding%20Performance%20Techniques/Object%20Oriented%20Programming%20Review/Object%20Oriented%20Programming.html)
 	
 
 ### R Packages
