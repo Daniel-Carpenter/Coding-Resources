@@ -1122,6 +1122,13 @@ SELECT date('now');
 </table>
 
 
+### `FORMAT` Date 
+```sql
+-- Get Week Day Names
+SELECT GETDATE() 'Today', FORMAT(GETDATE(),'dddd') 'Day Name'
+
+```
+
 
 ### Get Current Date `AND` Time with `datetime`
 ```sql
