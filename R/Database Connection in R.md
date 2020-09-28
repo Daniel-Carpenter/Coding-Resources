@@ -52,7 +52,7 @@ isTrustedCon	= TRUE
 ```
 
 
-#### `SQL` Script Portion (2/2(
+#### `SQL` Script Portion (2/2)
 
 	```sql
 	SELECT *
