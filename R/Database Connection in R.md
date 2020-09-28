@@ -23,32 +23,30 @@ library(glue)
 selectMinDate = Sys.Date() - 365
 selectMaxDate = Sys.Date()
 
-driverName		= "SQL Server"
-serverName		= "00.00.0.00"
+driverName	"SQL Server"
+serverName	"00.00.0.00"
 databaseName	= "databaseName
 isTrustedCon	= TRUE
 
 
 # Setup connection (with Windows Authentication)
 	databaseName <- dbConnect(odbc(), 
-									  Driver	= driverName, 
-									  Server	= serverName, 
-									  Database	= databaseName,
-									  Trusted_Connection = isTrustedCon)
+	Driver	= driverName, 
+	Server	= serverName, 
+	Database	= databaseName,
+	Trusted_Connection = isTrustedCon)
 								  
 # Access SQL Script from some file (file contains full sql pull)
 	sqlPull_fromFile <- read_file("queryFile.sql") 
 
 # Update File to include User Input   
     sqlPull_withUserInput <- glue_sql(sqlPull_fromFile, 
-                                          selectMinDate_SQL    = selectMinDate,
-                                          selectMaxDate_SQL    = selectMaxDate,
-                                          .con = databaseName)
+                                          selectMinDate_SQL    	= selectMinDate,
+                                          selectMaxDate_SQL    	= selectMaxDate,
+                                          .con 			= databaseName)
         
 # Send Query to Database and Store in `df` (Main Payroll Data)
-	df <- dbGetQuery(databaseName, sqlPull_withUserInput)
-
-								  
+	df <- dbGetQuery(databaseName, sqlPull_withUserInput)							  
 ```
 
 
