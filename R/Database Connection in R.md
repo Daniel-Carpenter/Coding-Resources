@@ -54,15 +54,15 @@ isTrustedCon	= TRUE
 
 #### `SQL` Script Portion (2/2)
 
-	```sql
-	SELECT *
+```sql
+SELECT *
 
-    FROM [dataBaseName].[table]
-    
-    WHERE
-            [StartDateTime]   >= {selectMinDate_SQL*}
-        AND [StartDateTime]    < {selectMaxDate_SQL*}
-	```
+FROM [dataBaseName].[table]
+
+WHERE
+		[StartDateTime]   >= {selectMinDate_SQL*}
+	AND [StartDateTime]    < {selectMaxDate_SQL*}
+```
 
 
 
