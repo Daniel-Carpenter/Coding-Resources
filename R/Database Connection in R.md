@@ -10,6 +10,9 @@
 ***
 
 ### Example Reprex ([Source](https://db.rstudio.com/databases/microsoft-sql-server/))
+
+
+#### `R` Script Portion (1/2)
 ```r
 library(dbplyr)
 library(odbc)
@@ -47,3 +50,19 @@ isTrustedCon	= TRUE
 
 								  
 ```
+
+
+#### `SQL` Script Portion (2/2(
+
+	```sql
+	SELECT *
+
+    FROM [dataBaseName].[table]
+    
+    WHERE
+            [StartDateTime]   >= {selectMinDate_SQL*}
+        AND [StartDateTime]    < {selectMaxDate_SQL*}
+	```
+
+
+
