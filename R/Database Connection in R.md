@@ -9,7 +9,7 @@
 
 ***
 
-### Example Reprex ([Source](https://db.rstudio.com/databases/microsoft-sql-server/))
+### Example Reprex ([Additional Help](https://db.rstudio.com/databases/microsoft-sql-server/))
 ```r
 library(dbplyr)
 library(odbc)
