@@ -35,6 +35,10 @@ Using `.csv` files, here is an example:
 > copy *.csv combinedFileName_withoutQuotes.csv
 ```
 
-Done!
+#### Go back one folder
+```cmd
+cd ..
+```
+
 
 ***
