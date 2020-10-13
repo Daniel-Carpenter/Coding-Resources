@@ -1,0 +1,50 @@
+# All Font  Size
+  text                = element_text(size  = 11),
+
+# Panel
+  panel.background    = element_rect(fill    = "white", 
+									 colour  = "white"),
+  panel.border= element_rect(fill    = NA,
+							 color   = "grey90"),
+  panel.grid.major.x  = element_line(linetype = "solid",
+									 color   = "grey95",
+									 size    = 0.2),
+  panel.grid.major.y  = element_line(linetype = "solid",
+									 color   = "grey90", 
+								   size    = 0.2),
+
+# Main Title
+  plot.title          = element_text(colour  = "grey15",
+									 size    = 16,
+									 hjust   = 0),
+  plot.subtitle       = element_text(colour  = "grey15",
+									 size    = 13,
+									 hjust   = 0),
+  
+# Axis Titles
+  axis.text           = element_text(colour  = "grey15",
+									 size    = 11),
+  axis.title          = element_text(colour  = "grey15",
+									 size    = 12),
+
+# Facet Titles
+  strip.text          = element_text(colour  = "grey15",
+									 size    = 12),
+  strip.background    = element_rect(fill    = "grey95",
+									 color   = "grey90",
+									 size    = .40),
+
+# Legend
+  legend.background   = element_rect(fill    = "grey99",
+									 colour  = "grey85",
+									 size    = .40),
+  legend.text         = element_text(colour  = "grey15"),
+  legend.position     = "top",
+  legend.title        = element_blank(),
+
+# Margin
+  plot.margin         = margin(t = 15, 
+							   b = 30, 
+							   r = 30, 
+							   l = 30, 
+							   unit = "pt")
