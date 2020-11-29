@@ -7,6 +7,7 @@
 
 
 ### `dplyr`
+* [Intro to `dplyr`](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
 * `dplyr` [Cheat Sheet - Reshaping, Summarising, Grouping, etc.](https://github.com/Daniel-Carpenter/R-Resources/blob/master/-%20Cheat%20Sheets/dplyr%20Cheat%20Sheet.pdf)
 * [Joining Tibbles and Dataframes Together](https://rpubs.com/williamsurles/293454) 
 * [`MUTATE` plus `if_else()`](https://rstudio-pubs-static.s3.amazonaws.com/116317_e6922e81e72e4e3f83995485ce686c14.html#/5)
