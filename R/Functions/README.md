@@ -39,3 +39,6 @@ library(R.cache)
 df <- evalWithMemoization(read.csv("fileNameGoesHere.csv"))
 	
 ````
+
+### `lubridate`
+* [Helpful Date calculations reference](https://bookdown.org/Tazinho/Tidyverse-Cookbook/dates-and-times.html) 
