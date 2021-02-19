@@ -35,7 +35,7 @@ A `for` loop is used to apply the same function calls to a collection of objects
 ```r
 library(tidyverse)
 
-df <- mtcars
+df <- mtcars %>% select(vs, am)
 
 # Use `which()` to get column indeces to `apply` function to
   begCol <- which(colnames(df) == "vs")
@@ -58,13 +58,13 @@ head(df)
 ```txt
 > head(df)
 
-   mpg cyl disp  hp drat    wt  qsec vs am gear carb maxOf_vs_am
-1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4           1
-2 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4           1
-3 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1           1
-4 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1           1
-5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2           0
-6 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1           1
+  vs am maxOf_vs_am
+1  0  1           1
+2  0  1           1
+3  1  1           1
+4  1  0           1
+5  0  0           0
+6  1  0           1
 ```
 
 ***
