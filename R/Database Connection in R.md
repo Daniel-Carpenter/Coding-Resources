@@ -2,10 +2,14 @@
 
 ### Helpful Links
 
-* [Connect to Databse](https://db.rstudio.com/getting-started/connect-to-database)
+#### Basic Setup
+* [Connect to Database](https://db.rstudio.com/getting-started/connect-to-database)
 * [Querying syntax with dplyr/other](https://db.rstudio.com/getting-started/database-queries)
 * [Safe quering practices](https://db.rstudio.com/best-practices/run-queries-safely/)
 * [Securing Credentials (if not Windows Auth.)](https://db.rstudio.com/best-practices/managing-credentials/)
+
+#### Advanced Topics
+* [Inserting data into database]()
 
 ***
 
@@ -25,16 +29,16 @@ selectMaxDate = Sys.Date()
 
 driverName	= "SQL Server"
 serverName	= "00.00.0.00"
-databaseName	= "databaseName
+databaseName	= "databaseName"
 isTrustedCon	= TRUE
 
 
 # Setup connection (with Windows Authentication)
 	databaseName <- dbConnect(odbc(), 
-	Driver			= driverName, 
-	Server			= serverName, 
-	Database		= databaseName,
-	Trusted_Connection 	= isTrustedCon)
+							Driver			= driverName, 
+							Server			= serverName, 
+							Database		= databaseName,
+							Trusted_Connection 	= isTrustedCon)
 								  
 # Access SQL Script from some file (file contains full sql pull)
 	sqlPull_fromFile <- read_file("queryFile.sql") 
@@ -62,5 +66,15 @@ WHERE
 	AND [StartDateTime]    < {selectMaxDate_SQL*}
 ```
 
+#### Write table to database
 
+```r
+# Make sure to have the datbase connection established from above
+	databaseName = databaseName
+
+# Write a table
+	dbWriteTable(conn = con, 
+				name = "TableName", 
+				value = df)  ## df is any data frame
+```
 
