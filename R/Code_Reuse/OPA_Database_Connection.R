@@ -8,4 +8,5 @@
 
   
   df.OPABusiness <- dbGetQuery(OPA_Database, 'SELECT * FROM [OPA].[LABOR_MODEL].[BusinessCognosToSourceProp] ')
+  df.departmentNames <- dbGetQuery(OPA_Database, 'SELECT * FROM [OPA].[LABOR_MODEL].[departmentNames] ')
   
