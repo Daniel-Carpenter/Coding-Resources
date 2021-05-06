@@ -5,3 +5,7 @@
                             Database  = "OPA", 
                             Trusted_Connection = TRUE)
   
+
+  
+  df.OPABusiness <- dbGetQuery(OPA_Database, 'SELECT * FROM [OPA].[LABOR_MODEL].[BusinessCognosToSourceProp] ')
+  
