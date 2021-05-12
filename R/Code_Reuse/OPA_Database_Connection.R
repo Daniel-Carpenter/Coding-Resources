@@ -5,8 +5,9 @@
                             Database  = "OPA", 
                             Trusted_Connection = TRUE)
   
+# Read in Facility Name Attributes
+  df.OPAFacilitySummary <- dbGetQuery(OPA_Database, 'SELECT * FROM [OPA].[dbo].[OPAFacilitySummary] ')
 
-  
-  df.OPABusiness <- dbGetQuery(OPA_Database, 'SELECT * FROM [OPA].[LABOR_MODEL].[BusinessCognosToSourceProp] ')
-  df.departmentNames <- dbGetQuery(OPA_Database, 'SELECT * FROM [OPA].[LABOR_MODEL].[departmentNames] ')
+# Read in Department Name Attributes
+  df.OPADepartmentNames <- dbGetQuery(OPA_Database, 'SELECT * FROM [OPA].[dbo].[OPADepartmentNames] ')
   
