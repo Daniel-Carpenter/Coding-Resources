@@ -1,0 +1,1 @@
+"C:\Program Files\R\R-4.0.5\bin\R.exe" CMD BATCH "C:\Users\daniel.carpenter\OneDrive - the Chickasaw Nation\Documents\GitHub\Coding-Resources\Command Line\Creating Batch Files\Batch Example.R"

@@ -1,0 +1,26 @@
+
+R version 4.0.5 (2021-03-31) -- "Shake and Throw"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> setwd('C:/Users/daniel.carpenter/OneDrive - the Chickasaw Nation/Documents/GitHub/Coding-Resources/Command Line/Creating Batch Files')
+> 
+> write.csv(file = 'batchExample.csv', x = mtcars)
+> 
+> proc.time()
+   user  system elapsed 
+   0.15    0.01    0.23 
