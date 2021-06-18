@@ -12,6 +12,10 @@ df <- df %>%
 				hours = sum(Hours))
 ```
 
+```r
+df %>% ungroup(x) #  remove x from the grouping variables
+```
+
 ### `summarise` Aggregation
 	`n()` - number of observations
 	`n_distinct(var)` - number of unique values of var
