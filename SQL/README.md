@@ -1162,6 +1162,12 @@ SELECT strftime('%w','now');
     </tr>
 </table>
 
+### Add to Date
+```sql
+SELECT DATEADD(year, 1, '2017/08/25')
+
+```
+
 
 ### Conditional with Dates Example 1 - `MONTH`
 ```sql
