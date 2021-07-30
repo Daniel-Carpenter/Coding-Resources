@@ -37,13 +37,25 @@ Using `.csv` files, here is an example:
 
 #### Go back one folder
 ```cmd
-cd ..
+> cd ..
 ```
 
 #### Change Drives
 
 ```cmd
-C:
+> C:
 ```
 
 ***
+
+## Compare two `.txt` files
+
+### Compare two files
+```cmd
+> fc filename1.txt filename2.txt
+```
+
+### Show Diff in files, ignoring `whitespace`
+```cmd
+> fc /w filename1.txt filename2.txt
+```
