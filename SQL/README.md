@@ -373,6 +373,11 @@ LIMIT 2;
     </tr>
 </table>
 
+### Drop table
+```sql
+DROP TABLE Shippers;
+```
+
 
 ### `SELECT` Rows `WHERE` Age is Greater Than 30
 ```sql
@@ -2040,4 +2045,57 @@ If one wants to save a database in SQL, the file extension is `.sqlite3` (but in
 .dump
 ```
 the result will be a text file with SQL code in it that will recreate the table you dumped.
+
+# DBA (Admin)
+
+## General DBA Links
+* [Increase size of database](https://docs.microsoft.com/en-us/sql/relational-databases/databases/increase-the-size-of-a-database?view=sql-server-ver15)
+
+## Meta Data
+* Get Summary of Storage Capacity
+    ```sql
+    DBCC SQLPERF(logspace)
+    ```
+
+
+## Moving Data
+
+### Move (Copy) `Table` from OldDatabase to NewDataBase
+```sql
+SELECT * INTO NewDataBase.TableName FROM OldDatabase.[SchemaName].[TableName]
+```
+###
+
+### Move (Copy) `View` from Database1 to Database2
+```sql
+USE OldDatabase;
+GO
+
+DECLARE @sql NVARCHAR(MAX);
+
+SELECT @sql = definition
+FROM sys.sql_modules
+WHERE [object_id] = OBJECT_ID('SchemaName.TableName');
+
+EXEC NewDataBase..sp_executesql @sql;
+```
+
+### Move from a Schema to Another
+```sql
+USE DatabaseName;
+ALTER SCHEMA NewSchema 
+    TRANSFER OldSchema.TargetTable;
+```
+
+## Altering Data
+
+### Delete Tables or View
+```sql
+DROP TABLE TableName;
+```
+```sql
+DROP VIEW ViewName;
+```
+
+
 
