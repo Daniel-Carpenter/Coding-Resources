@@ -2,6 +2,7 @@
 
 ## General DBA Links
 * [Increase size of database](https://docs.microsoft.com/en-us/sql/relational-databases/databases/increase-the-size-of-a-database?view=sql-server-ver15)
+* [Clustered indexes vs Heaps](https://www.sqlshack.com/clustered-index-vs-heap/)
 
 ## Meta Data
 
