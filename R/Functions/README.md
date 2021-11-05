@@ -1,17 +1,29 @@
 ## Packages List
 ```r
-install.packages("ggthemes")
+# Core Packages
+install.packages("tidyverse")   # Most known package in R. Use for most functions. You will see "dplyr" some places, this packages has dplyr. Use it as much as possible
+install.packages("readxl")      # Read in excel file - function: readxl(pathOfFileHere)
+install.packages("skimr")		# Quick stats of a table - function: skim(tableNameHere)
+install.packages("stringr")		# Trim, capitalize, etc. strings
+
+# Visuals 
+install.packages("ggthemes")    # Themes for package called ggplot (create visuals)
 install.packages("gridExtra")	# Arrange ggplots in pdf
 install.packages("scales")	# Color scales for ggplot2
+install.packages("formattable")
+
+# Data Manipulation
 install.packages("R.cache")	# Store data in ca
-install.packages("zoo")
-install.packages("readxl")
+install.packages("zoo")         # some general useful functions
+
+# Optimization
 install.packages("Rglpk")	# Linear Optimization
+
+# LaTEX
 install.packages("rvest")		
 install.packages("stargazer")	# LaTeX tables
-install.packages("stringr")	# Trim, capitalize, etc. strings
-install.packages("skimr")	# Skim df's
-install.packages("formattable")
+
+# Finance
 install.packages("BatchGetSymbols")	# Stock pull overtime
 install.packages("quantmod")		# Money market pull with many parameters
 ```
