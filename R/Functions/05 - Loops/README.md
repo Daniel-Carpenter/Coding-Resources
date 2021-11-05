@@ -3,6 +3,21 @@
 
 ## `for` Techniques
 
+### Most Common Version
+```r
+START_INDEX = 1
+END_INDEX   = 10
+
+# Reads as: for every indexNum from the start index to the end index
+for (indexNum in START_INDEX : END_INDEX) 
+{
+  # Print the Index
+  print(paste('Index Number: ', indexNum))
+}
+```
+
+
+### Alternative Version
 ```r
 for (i in seq_along(df)) {
     ...
