@@ -58,6 +58,30 @@
                         avgDistanceInKM     = mean(totalDistanceInKM)) # use average
   
   # 6. Pivot the data frame into fewer columns (useful for filtering dashboard filtering)
+    df.new.pivotedLonger <- df.new %>%
+      
+    # Pivot the all of the numeric columns into single column
+    # Pivot the names of the numeric into single column
+      pivot_longer(cols      = driversKilled:numKilledInVan,
+                   names_to  = "attributes",
+                   values_to = "values")  %>%
+    
+    # Example of multiplying two columns together
+      mutate(seasonality = 1.05,
+             adjValues   = values * seasonality)
+    
+    # Pivot Wider (should be the same as the original dataset)
+      df.new.pivotedWider <- df.new.pivotedLonger %>%
+        
+        # Pivot single attribute and values columns into separate columns
+          pivot_wider(names_from  = "attributes",
+                      values_from = c("values", 
+                                      "adjValues")) %>%
+      
+        # Keep only adjusted values
+          select(-starts_with("values"))
+          
+          
   # 7. Join parts of another dataset to our dataset
   # 7. Create a basic visual
   # 9. Output data to a CSV file (while sorting/present)
