@@ -153,5 +153,38 @@
               file = "R/Examples/Output Data.csv")
 
 # Extras =====================================================
-  # For Loops
+    
+  FIRST_ROW = 1
+  LAST_ROW  = nrow(df.yearlySummary)
+    
+  # Basic For Loops
+    for (row in FIRST_ROW : LAST_ROW) {
+      
+      # Print out each year
+        print(df.yearlySummary$yearNum[row])
+    }
   
+  # Nested for loop with only print statement
+
+  # Roman, Reece, Wacey, Daniel
+  seats = list('Roman', 'Daniel', 'Reece', 'Wacey')
+  
+  FIRST_PERSON = 1
+  LAST_PERSON  = length(seats)
+
+  
+  # First loop  
+  for (person in FIRST_PERSON : LAST_PERSON) {
+    
+    # Nested Loop
+    for (otherPerson in FIRST_PERSON : LAST_PERSON) {
+      print(paste(seats[person], " -> ", seats[otherPerson]))
+    }
+  }
+    
+    
+    
+    
+    
+    
+    
