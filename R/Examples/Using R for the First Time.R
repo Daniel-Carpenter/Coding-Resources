@@ -83,7 +83,22 @@
           
           
   # 7. Join parts of another dataset to our dataset
-  # 7. Create a basic visual
+      
+      # Read in a CSV file
+        df.lawInEffectRaw <- read_csv(file = "R/Examples/lawInEffect.csv") %>%
+    
+        # Change the monthOfDate column in new file to date format
+        # Need to change the type of the date to DATE or else it won't join
+          mutate(monthOfDate = mdy(monthOfDate))
+        
+      df.lawInEffect <- df.base %>%
+            
+        # Join the law new dataset to the base (or the left)
+          left_join(df.lawInEffectRaw,
+                    by = c("monthOfDate" = "monthOfDate"))
+        
+        
+  # 8. Create a basic visual
   # 9. Output data to a CSV file (while sorting/present)
 
 # Extras =====================================================
