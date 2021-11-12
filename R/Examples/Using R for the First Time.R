@@ -82,7 +82,7 @@
           select(-starts_with("values"))
           
           
-  # 7. Join parts of another dataset to our dataset
+  # 7. Join parts of another dataset to our dataset ==========
       
       # Read in a CSV file
         df.lawInEffectRaw <- read_csv(file = "R/Examples/lawInEffect.csv") %>%
@@ -98,16 +98,16 @@
                     by = c("monthOfDate" = "monthOfDate"))
         
         
-  # 8. Create a basic visual
+  # 8. Create a basic visual =================================
       
     # 8.1 - Basic scatter plot with R's Base plotting 
       plot(x = df.new$totalDistanceInKM,
            y = df.new$driversKilled)
       
       
-    # 8.2 - More advanced/customizable plotting in ggplot
+    # 8.2 - More advanced/customizable plotting in ggplot ---
       
-      # Define the dataset
+      # Define the dataset and x/y variables
         ggplot(data = df.new,
                aes(x = totalDistanceInKM,
                    y = driversKilled)) +
@@ -116,7 +116,7 @@
         geom_point(aes(color = monthOfDate)) +
         
       # Linear regression line
-        geom_smooth(method = "lm") +
+        geom_smooth(method = "lm") + # linear model method
         # geom_quantile()
         
       # Add theme
@@ -128,12 +128,12 @@
       # Save the last plot
         ggsave(filename = "Scatter Plot.pdf",
                path     = "R/Examples",
-               plot = last_plot(),
-               height = 8.5,
-               width  = 11)
+               plot     = last_plot(),
+               height   = 8.5,
+               width    = 11)
         
         
-    # 8.3 - One more Plot example of coloring
+    # 8.3 - One more Plot example of coloring -----------------
         
       # Get rid of this variable because irrelevant in analysis
       df.new.pivotedLonger <- df.new.pivotedLonger %>%
@@ -148,40 +148,55 @@
                        color = attributes))
           
       
-  # 9. Output data to a CSV file (while sorting/present)
+  # 9. Output data to a CSV file =============================
     write.csv(df.lawInEffect,
               file = "R/Examples/Output Data.csv")
 
 # Extras =====================================================
     
-  FIRST_ROW = 1
-  LAST_ROW  = nrow(df.yearlySummary)
+  # Basic For Loop -------------------------------------------
     
-  # Basic For Loops
-    for (row in FIRST_ROW : LAST_ROW) {
+    # Define the first and last row
+      FIRST_ROW = 1
+      LAST_ROW  = nrow(df.yearlySummary) # num rows in data frame
+    
+    # Actual loop
+      for (row in FIRST_ROW : LAST_ROW) {
+        
+        # Print out each year
+          print(df.yearlySummary$yearNum[row])
+      }
+  
       
-      # Print out each year
-        print(df.yearlySummary$yearNum[row])
-    }
-  
-  # Nested for loop with only print statement
+  # Nested for loop with only print statement ----------------
 
-  # Roman, Reece, Wacey, Daniel
-  seats = list('Roman', 'Daniel', 'Reece', 'Wacey')
-  
-  FIRST_PERSON = 1
-  LAST_PERSON  = length(seats)
-
-  
-  # First loop  
-  for (person in FIRST_PERSON : LAST_PERSON) {
+    # Create the seats for Roman, Reece, Wacey, Daniel
+    seats = c('Roman', 'Daniel', 'Reece', 'Wacey')
     
-    # Nested Loop
-    for (otherPerson in FIRST_PERSON : LAST_PERSON) {
-      print(paste(seats[person], " -> ", seats[otherPerson]))
+    # Define the first and last row
+      FIRST_PERSON = 1
+      LAST_PERSON  = length(seats)
+    
+    # Loop through possible seats of the first person
+    for (person in FIRST_PERSON : LAST_PERSON) {
+      
+      # Loop through possible seats of the second person
+      for (otherPerson in FIRST_PERSON : LAST_PERSON) {
+        
+        # Store the person in a variable
+          p1 <- seats[person]
+          p2 <- seats[otherPerson]
+        
+        # Make sure the person is not themselves
+          if (p1 != p2) {
+            
+            # Print the names of the people
+            # Note that you concatenate with "paste"
+            print(paste(seats[person], " -> ", seats[otherPerson]))
+          }
+      }
     }
-  }
-    
+      
     
     
     
