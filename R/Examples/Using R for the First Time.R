@@ -99,7 +99,58 @@
         
         
   # 8. Create a basic visual
+      
+    # 8.1 - Basic scatter plot with R's Base plotting 
+      plot(x = df.new$totalDistanceInKM,
+           y = df.new$driversKilled)
+      
+      
+    # 8.2 - More advanced/customizable plotting in ggplot
+      
+      # Define the dataset
+        ggplot(data = df.new,
+               aes(x = totalDistanceInKM,
+                   y = driversKilled)) +
+        
+      # The type of graph and the variables
+        geom_point(aes(color = monthOfDate)) +
+        
+      # Linear regression line
+        geom_smooth(method = "lm") +
+        # geom_quantile()
+        
+      # Add theme
+        theme_minimal() +
+          
+      # Title of the chart
+        labs(title = "Scatter Plot of Death")
+        
+      # Save the last plot
+        ggsave(filename = "Scatter Plot.pdf",
+               path     = "R/Examples",
+               plot = last_plot(),
+               height = 8.5,
+               width  = 11)
+        
+        
+    # 8.3 - One more Plot example of coloring
+        
+      # Get rid of this variable because irrelevant in analysis
+      df.new.pivotedLonger <- df.new.pivotedLonger %>%
+        filter(attributes != "totalDistanceInKM")
+        
+      # Define the data
+        ggplot(data = df.new.pivotedLonger) +
+          
+      # Scatter
+        geom_point(aes(x = monthOfDate,
+                       y = values,
+                       color = attributes))
+          
+      
   # 9. Output data to a CSV file (while sorting/present)
+    write.csv(df.lawInEffect,
+              file = "R/Examples/Output Data.csv")
 
 # Extras =====================================================
   # For Loops
