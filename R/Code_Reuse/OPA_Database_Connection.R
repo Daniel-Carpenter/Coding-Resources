@@ -1,3 +1,7 @@
+library(dbplyr)
+library(odbc)
+library(DBI)
+
 # OPA Database Connection (with Windows Authentication - MUST ALREADY HAVE ACCESS)
   OPA_Database <- dbConnect(odbc(), 
                             Driver    = "SQL Server", 
