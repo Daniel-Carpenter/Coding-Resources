@@ -1,3 +1,6 @@
+## Resources:
+* [Data Visualization Best Practices](https://socviz.co/lookatdata.html)
+
 ## Visualization and User Interfaces (Quick Code)
 
 ### Graphs - `ggplot2` Starter Code
