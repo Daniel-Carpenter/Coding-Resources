@@ -1,0 +1,61 @@
+---
+title: "Interative Plotting with `plotly` & `ggplot2`"
+author: "Daniel Carpenter"
+date: "`r Sys.Date()`"
+output: 
+  # html_document: 
+  #   toc: yes
+  #   toc_float: yes
+  #   toc_depth: 2
+  #   theme: yeti
+  github_document:
+    toc: yes
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+ 	echo    = TRUE, # Default only show output (not code)
+	message = FALSE,
+	warning = FALSE 
+)
+```
+
+## Create a plot using `ggplot2`
+
+### Libraries
+```{r lib}
+library(ggplot2)  # ggplot plotting
+library(plotly)   # For Dynamic Plots
+```
+
+
+### Create the plot with `ggplot`
+```{r basePlot}
+thePlot <- mtcars %>% 
+  
+  # Variable Mapping
+  ggplot(aes(x=wt,
+             y=mpg,
+             shape=factor(am),
+             color=factor(am) ) 
+         ) +
+  
+  # Smoother, Points, and theme
+  geom_smooth(method='loess', fill='grey90') +
+  geom_point(size=3, alpha=0.6) +
+  theme_minimal()
+```
+
+## Take a look at the Default `ggplot`
+```{r ggplotBase}
+thePlot # a regular static plot (see "Plots" pane)
+```
+
+## Now Convert to Dynamic Plot using `plotly`
+> Included interation controls and tooltips, etc.
+
+```{r plotlyEx}
+ggplotly(thePlot) # a iterative plot (hover over graph)
+```
+
