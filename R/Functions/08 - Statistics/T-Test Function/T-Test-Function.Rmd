@@ -1,0 +1,76 @@
+---
+title:  "GEC Expansion Reporting"
+author: "CNDC Analytics"
+date:   "Data through `r format(Sys.Date() - 2, '%B %d, %Y')`"
+output: 
+  github_document:
+    toc: yes
+    number_sections: yes
+    toc_depth: 3
+---
+
+```{r defaultRendering, include=FALSE}
+knitr::opts_chunk$set(
+	echo    = TRUE, # Default only show output (not code)
+	message = TRUE,
+	warning = TRUE
+)
+```
+
+
+# Function to create normal distributions and test the difference
+```{r}
+tTestNormalDist <- function(n = 10000, y_mu, y_sd, x_mu, x_sd, ...) {
+  
+  ## Create the distributions
+  y = rnorm(n, y_mu, y_sd)
+  x = rnorm(n, x_mu, x_sd)
+  
+  df <- data.frame(y,x)
+  head(df)
+  
+  # Confidence Level 
+  confLevel = 0.95
+
+  # Plot the distributions
+  
+  ## Plot margins
+  minX = min(y_mu, x_mu) - 3*max(x_sd)
+  maxX = max(y_mu, x_mu) + 3*max(x_sd)
+  maxY = max(max(density(y)$y, density(x)$y))+0.0025
+  
+  ## Plot Title
+  plotTitle = paste0('Comparing Distributions:\n',
+                     'y ~ N(',y_mu,', ',y_sd, '), x ~ N(',x_mu,', ', x_sd, ')')
+  
+  ## The actual Plot
+  plot(density(y),  col = 'tomato3', 
+       xlim = c(minX, maxX), ylim = c(0, maxY), main = plotTitle)
+  lines(density(x), col = 'steelblue3')
+  
+  ## Add a legend to the plot
+  legend(minX, maxY, legend=c("y", "x"), lty = 1,
+         col=c("tomato3", "steelblue3"))
+  
+  # Compute the T Test  
+  tTest <- t.test(y, x,conf.level = confLevel, ...)
+  
+  # Print the results
+  print(tTest)
+  print(paste('Diference should be around', y_mu-x_mu))
+  print(paste('With 95% confidence, the t-test shows difference between', tTest$conf.int[1], 'and', tTest$conf.int[2]))
+  
+  return(list('testResults' = tTest, 
+              'lowerBoundDifference' = tTest$conf.int[1], 
+              'upperBoundDifference' = tTest$conf.int[2]))
+}
+```
+
+
+# Call 
+```{r}
+tTestNormalDist(n = 50000,
+                y_mu = 125, y_sd = 10,
+                x_mu = 100, x_sd = 12)
+```
+
