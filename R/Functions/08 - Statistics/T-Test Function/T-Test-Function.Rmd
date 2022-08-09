@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 
 
 # Function to create normal distributions and test the difference
+
 ```{r}
 tTestNormalDist <- function(n = 10000, y_mu, y_sd, x_mu, x_sd, ...) {
   
@@ -67,7 +68,10 @@ tTestNormalDist <- function(n = 10000, y_mu, y_sd, x_mu, x_sd, ...) {
 ```
 
 
-# Call 
+# Call Function
+> Note differences in group means  
+> This will result in statistically significant difference
+
 ```{r}
 tTestNormalDist(n = 50000,
                 y_mu = 125, y_sd = 10,
