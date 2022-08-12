@@ -1,0 +1,9 @@
+
+-- USE DatabaseName;
+
+-- CREATE SCHEMA SchemaName
+
+-- GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CONTROL ON SCHEMA :: TDI TO "INT\User.Name";
+
+-- GRANT CREATE TABLE TO "INT\User.Name";
+
