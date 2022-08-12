@@ -22,10 +22,10 @@ tableToPutOnDatabase <- mtcars # This could be any dataframe you want
     # Writing to database and schema: https://db.rstudio.com/best-practices/schema/
     # Querying like you are using `dbplyr` package: https://dbplyr.tidyverse.org/articles/dbplyr.html
 
-library(odbc)   # Create connection
-library(DBI)    # Upload to database - https://db.rstudio.com/best-practices/schema/
-library(dbplyr) # Functions for altering pullin data like using dplyr
-library(tidyverse)
+require(odbc)   # Create connection
+require(DBI)    # Upload to database - https://db.rstudio.com/best-practices/schema/
+require(dbplyr) # Functions for altering pullin data like using dplyr
+require(tidyverse)
 
 
 # Database Connection (with Windows Authentication - MUST ALREADY HAVE ACCESS)
