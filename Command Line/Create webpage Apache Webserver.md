@@ -9,17 +9,9 @@
     sudo mkdir NewFolder
     cd NewFolder
     ```
-2. Create `link` to the desired `html` webpage and name it `index.html` in new folder. Note `~/` indicates your home directory. Remove `~` to go straight to the path.
+2. Create `link` to the desired `html` webpage in NewFolder directory. Note `~/` indicates your home directory. Remove `~` to go straight to the path.
     ```cmd
-    sudo ln -s ~/Link/To/The-File.html index.html
-    ```
-
-3. Allow read only access to the folder
-    ```cmd
-    chmod 0755 /var/www/html/NewFolder/
-    ```
-4. Add the new folder to the apache configuration file
-    ```cmd
+    sudo ln -s ~/Link/To/The-File.html The-File.html
     ```
 
 5. Add login security by linking the .htaccess and .htpasswd in the category directory, or make a new credential
@@ -39,18 +31,50 @@
         AuthUserFile "/var/www/html/NewFolder/.htpasswd"
         ```
 
-        Now create a password
+        Now create a password. Enter password when prompted.
         ```cmd
         sudo htpasswd -c .htpasswd new_user
         ```
-    - Linking to other credential:
+    - Otherwise, if you wanted to link to another credential. You would do this if you were creating something like a user group login:
         ```cmd
         sudo ln -s ~/Link/To/.htaccess .htaccess
         sudo ln -s ~/Link/To/.htpasswd .htpasswd
         ```
-6. Restart the server etc.
-    ```cmd
+
+6. Check to make sure the webpage works with passwords by pasting URL in browser
     ```
-7. Check to make sure the webpage works by pasting URL in browser
-    ```cmd
+    http://adavena01.int.chickasaw.net/NewFolder/The-File.html
     ```
+
+<br>
+
+## What if the above steps do not work?
+1. Restart the apache server. This usually fixes most issues
+    ```cmd
+    sudo systemctl restart httpd
+    ```
+2. Add the new folder to the apache configuration file. **Then restart the server from step 1 command.**  
+    Edit the file
+    ```cmd
+    sudo nano /etc/httpd/conf/httpd.conf
+    ```
+
+    Copy and paste under the last configured webpage
+    ```cmd
+    # Allow access and security option to content 
+    # within /var/www/html/NewFolder
+    <Directory "/var/www/html/NewFolder">
+        
+        # Allow security with .htaccess file
+        AllowOverride All
+        
+        # Allow open access (while on VPN):
+        Require all granted
+
+    </Directory>
+    ```
+
+<br>
+
+## Areas to stay away from?
+* Try avoiding changing the read write access using `chmod`. You should not need to do this. There was potentially an issue in the past with the server crashing when running this command.
