@@ -7,3 +7,4 @@
 
 -- GRANT CREATE TABLE TO "INT\User.Name";
 
+-- GRANT CREATE VIEW TO "INT\User.Name";
