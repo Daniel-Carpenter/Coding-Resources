@@ -1,0 +1,47 @@
+---
+title: "Access Data Frame Column in Function"
+author: "Daniel Carpenter"
+format: 
+  gfm:
+    toc: true
+    toc-depth: 2
+editor: visual
+---
+
+## Dynamic Columns with Numeric Data
+
+```{r}
+library(dplyr)
+
+data(starwars)
+head(starwars)
+
+# Function that uses a dataframe and column with dplyr
+sumByColumn <- function(df, valueCol) {
+  
+  df %>%
+    group_by(species) %>%
+    summarize(totalValue = sum( {{valueCol}} )) # uses a column in df, based on function
+}
+
+# Call function 
+sumByColumn(df       = starwars,  # The data
+            valueCol = mass )     # THe value columns
+```
+
+## Dynamic Columns with Categorical data
+
+```{r}
+# Function that uses a dataframe and column with dplyr
+sumByColumn <- function(df, categoricalCol) {
+  
+  df %>%
+    # uses a column in df, based on function
+    group_by( {{categoricalCol}} ) %>%
+    summarize(totalValue = sum( mass )) # note static
+}
+
+# Call function 
+sumByColumn(df             = starwars,  # The data
+            categoricalCol = species )     # THe value columns
+```
