@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"<Unnamed>","l":"DateTimeAbstract"},{"p":"<Unnamed>","l":"DateTimeInherit"},{"p":"<Unnamed>","l":"Driver"},{"p":"<Unnamed>","l":"LetterAvg"},{"p":"<Unnamed>","l":"MesoAbstract"},{"p":"<Unnamed>","l":"MesoInherit"},{"p":"<Unnamed>","l":"MesoStation"},{"p":"<Unnamed>","l":"PosAvg"}]
