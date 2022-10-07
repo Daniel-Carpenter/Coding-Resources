@@ -7,7 +7,7 @@ if(!require(ggplot2)) install.packages('ggplot2'); library(ggplot2)
 
 
 #' Function that returns palettes or individual colors
-#' @param aesthetic Color aesthetic in 'fill', 'fill_low', 'color', 'base', 'text','border','background', or 'grayedOut'
+#' @param aesthetic Color aesthetic in 'fill', 'color', 'base', 'text','border','background', or 'grayedOut'
 #' @param ... Individual colors, like 'blue', 'red', 'orange'. Or an integer to return a number of colors
 #' @param displayNames TRUE if you want to see the names of each color. Default FALSE.
 scale_dbc <- function(aesthetic = NULL, ..., displayNames = FALSE) {
@@ -64,76 +64,65 @@ scale_dbc <- function(aesthetic = NULL, ..., displayNames = FALSE) {
         return (paste0(thePalette[colors]))
     }
   }
-
-  # Fill Colors ----------------------------------------------------------------
-
-  # For example, the fill colors on a bar chart. These are displayed in the style guide
-
-  # Function to retrieve all, some, or one fill color
-  # Default returns the entire list of fill colors
-  getFillCol <- function(..., displayNames = FALSE) {
-    colors <- c(...) # get colors from function params
-    
-    # Define the fill colors  
-    fillPalette <- c(
-      'blue'   = '#B8D8EE', 'red'    = '#FFBFBD',
-      'green'  = '#B8E3AF', 'purple' = '#E4C6DC',
-      'orange' = '#FFCB97', 'blue1'  = '#BFDBD8',
-      'yellow' = '#F6E1A4', 'grey'   = '#D9D5D5',
-      'pink'   = '#FBC9DA', 'tan'    = '#EBD9D1'
-    )
-      
-    # Based on inputs, return one or all colors, either displaying the names or not
-    return ( formatReturnColors(colors, fillPalette, displayNames) )
-  }
-
-      
-  # Fill Colors - Low Contrast -------------------------------------------------
-
-  # For example, the fill colors on a bar chart. These are displayed in the style guide
-  # Low contrast with the line palette
   
-  # Function to retrieve all, some, or one fill color
-  # Default returns the entire list of fill colors
-  getFillColLowContrast <- function(..., displayNames = FALSE) {
-    colors <- c(...) # get colors from function params
-    
-    # Define the fill colors(low contrast)
-    fillPalette <- c(
-      'blue'   = '#A0CBE8', 'red'    = '#FF9D9A',
-      'green'  = '#8CD17D', 'purple' = '#D4A6C8',
-      'orange' = '#FFBE7D', 'blue1'  = '#86BCB6',
-      'yellow' = '#F4DB92', 'grey'   = '#BFB8B7',
-      'pink'   = '#FABFD2', 'tan'    = '#D7B5A6'
-    )
-    
-    # Based on inputs, return one or all colors, either displaying the names or not
-    return ( formatReturnColors(colors, fillPalette, displayNames) )
-  }
-    
-    
+  
   # Line Colors ------------------------------------------------------------------
-
+  
   # For example, the lines (or accents) on a chart. These are just a bit darker than the fills
   
   # Function to retreive all, some, or one line color
   # Default returns the entire list of line colors
   getLineCol <- function(..., displayNames = FALSE) {
     colors <- c(...) # get colors from function params
-    
+
     # Define the line colors  
+    # https://davidmathlogic.com/colorblind/#%236388B4-%23E68900-%23EB4B43-%2354AC88-%23B07AA1-%233C9DAA-%23C5A952-%238A807E-%23D16D91-%23945430
     linePalette <- c(
-      'blue'   = '#4E79A7', 'red'    = '#E15759', 
-      'green'  = '#59A14F', 'purple' = '#B07AA1', 
-      'orange' = '#F1800F', 'blue1'  = '#499894', 
-      'yellow' = '#D8B23E', 'grey'   = '#79706E',
-      'pink'   = '#D37295', 'tan'    = '#9D7660'
+      'blue'   = '#6388B4', 
+      'orange' = '#E68900', 
+      'red'    = '#EB4B43', 
+      'green'  = '#54AC88', 
+      'purple' = '#B07AA1', 
+      'blue1'  = '#3C9DAA', 
+      'yellow' = '#C5A952', 
+      'grey'   = '#8A807E',
+      'pink'   = '#D16D91', 
+      'tan'    = '#945430'
     )
-      
+    
     # Based on inputs, return one or all colors, either displaying the names or not
     return ( formatReturnColors(colors, linePalette, displayNames) )
   }
   
+  
+  # Fill Colors ----------------------------------------------------------------
+
+  # For example, the fill colors on a bar chart. These are displayed in the style guide
+
+  # Function to retrieve all, some, or one fill color
+  # Default returns the entire list of fill colors
+  # https://davidmathlogic.com/colorblind/#%23BECDE0-%23FFD597-%23F6B7B4-%23BEE0D2-%23E4C6DC-%23BDDBE1-%23F7E5B3-%23DCDADA-%23FCC8DA-%23E5CFC5
+  getFillCol <- function(..., displayNames = FALSE) {
+    colors <- c(...) # get colors from function params
+    
+    # Define the fill colors  
+    fillPalette <- c(
+      'blue'   = '#BECDE0',
+      'orange' = '#FFD597',
+      'red'    = '#F6B7B4',
+      'green'  = '#BEE0D2',
+      'purple' = '#E4C6DC',
+      'blue1'  = '#BDDBE1',
+      'yellow' = '#F7E5B3',
+      'grey'   = '#DCDADA',
+      'pink'   = '#FCC8DA',
+      'tan'    = '#E5CFC5'
+    )
+      
+    # Based on inputs, return one or all colors, either displaying the names or not
+    return ( formatReturnColors(colors, fillPalette, displayNames) )
+  }
+
   
   # Base Colors ------------------------------------------------------------------
 
@@ -165,7 +154,7 @@ scale_dbc <- function(aesthetic = NULL, ..., displayNames = FALSE) {
   # RETURN A PALETTE -------------------------------------------------------------
   
   # Options for palettes: 
-  paletteOptions <- c('fill', 'fill_low', 'color', 'base',
+  paletteOptions <- c('fill', 'color', 'base',
                       'text','border','background','grayedOut')
 
   # If no aesthetic given
@@ -183,20 +172,17 @@ scale_dbc <- function(aesthetic = NULL, ..., displayNames = FALSE) {
     # If wanting fill aesthetic
     if (aesthetic == paletteOptions[1]) { return(getFillCol(..., displayNames=displayNames)) }
     
-    # If wanting fill low contrast aesthetic
-    if (aesthetic == paletteOptions[2]) { return(getFillColLowContrast(..., displayNames=displayNames)) }
-    
     # If wanting line aesthetic
-    if (aesthetic == paletteOptions[3]) { return(getLineCol(..., displayNames=displayNames)) }
+    if (aesthetic == paletteOptions[2]) { return(getLineCol(..., displayNames=displayNames)) }
     
     # If wanting base aesthetic
-    if (aesthetic == paletteOptions[4]) { return(getBaseCol(..., displayNames=displayNames)) }
+    if (aesthetic == paletteOptions[3]) { return(getBaseCol(..., displayNames=displayNames)) }
     
     # The single values color return functions:
-    if (aesthetic == paletteOptions[5]) { return(getTextCol()) }
-    if (aesthetic == paletteOptions[6]) { return(getBorderCol()) }
-    if (aesthetic == paletteOptions[7]) { return(getBackgroundCol()) }
-    if (aesthetic == paletteOptions[8]) { return(getGrayedOutCol()) }
+    if (aesthetic == paletteOptions[4]) { return(getTextCol()) }
+    if (aesthetic == paletteOptions[5]) { return(getBorderCol()) }
+    if (aesthetic == paletteOptions[6]) { return(getBackgroundCol()) }
+    if (aesthetic == paletteOptions[7]) { return(getGrayedOutCol()) }
   }
 }
 
@@ -211,12 +197,6 @@ scale_color_dbc <- function()  {
 scale_fill_dbc <- function()  {
   scale_fill_manual(values = scale_dbc('fill'))
 }
-
-## ggplot Fill Scale (low contrast)
-scale_fillLowContrast_dbc <- function()  {
-  scale_fill_manual(values = scale_dbc('fill_low'))
-}
-
 
 # ggplot Theme -----------------------------------------------------------------
 
@@ -291,16 +271,18 @@ theme_dbc <- function() {
 
 # # To test out the function -----------------------------------------------------
 # library(tidyverse)
-# mtcars$carb <- fct_lump(as.factor(mtcars$carb), 3)
-# numColors <- length(unique(mtcars$carb))
+# library(datasets)
+# data(CO2)
+# CO2 <- CO2 %>% filter(!(Plant %in% c('Mc2', 'Mc3')))
+# numColors <- length(unique(CO2$Plant))
 # 
 # 
-# ggplot(mtcars,
-#        aes(x     = carb,
-#            color = carb,
-#            fill  = carb,
-#            y     = mpg) ) +
-#   geom_boxplot() +
-#   theme_dbc() + 
+# ggplot(CO2,
+#        aes(x     = Plant,
+#            color = Plant,
+#            fill  = Plant,
+#            y     = uptake) ) +
+#   geom_boxplot(size = 7/10) +
+#   theme_dbc() +
 #   scale_color_dbc() +
 #   scale_fill_dbc()
