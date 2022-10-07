@@ -5,7 +5,11 @@
 # Install ggplot2 since you will be using it
 if(!require(ggplot2)) install.packages('ggplot2'); library(ggplot2)
 
-# Function that returns palettes
+
+#' Function that returns palettes or individual colors
+#' @param aesthetic Color aesthetic in 'fill', 'fill_low', 'color', 'base', 'text','border','background', or 'grayedOut'
+#' @param ... Individual colors, like 'blue', 'red', 'orange'. Or an integer to return a number of colors
+#' @param displayNames TRUE if you want to see the names of each color. Default FALSE.
 scale_dbc <- function(aesthetic = NULL, ..., displayNames = FALSE) {
   
   # ----------------------------------------------------------------------------
@@ -31,6 +35,12 @@ scale_dbc <- function(aesthetic = NULL, ..., displayNames = FALSE) {
     # Return a certain number of colors
     } else if (is.numeric(colors)) { 
       
+      # If there are more needed colors than the number of colors in the palette
+      if (colors > length(thePalette)) {
+        warning(paste('There are more bins than there are colors.',
+                      'Considering reducing factor count, or remapping to different color aesthetic.') 
+        )
+      }
       # If you need want to see which colors are associated with a hex code
       # Only use this if you just need to know the names
       if (displayNames) 
@@ -190,14 +200,31 @@ scale_dbc <- function(aesthetic = NULL, ..., displayNames = FALSE) {
   }
 }
 
+# ggplot2 Scale Functions ------------------------------------------------------
+
+## ggplot Color Scale 
+scale_color_dbc <- function()  {
+  scale_color_manual(values = scale_dbc('color'))
+}
+
+## ggplot Fill Scale 
+scale_fill_dbc <- function()  {
+  scale_fill_manual(values = scale_dbc('fill'))
+}
+
+## ggplot Fill Scale (low contrast)
+scale_fillLowContrast_dbc <- function()  {
+  scale_fill_manual(values = scale_dbc('fill_low'))
+}
+
 
 # ggplot Theme -----------------------------------------------------------------
 
 # Access via ggplot() + theme_dbc()
 theme_dbc <- function() {
   
-  textCol   = '#585858'
-  borderCol = '#E6E6E6'
+  textCol   = scale_dbc('text')
+  borderCol = scale_dbc('border')
   
   dbcTheme <- theme(
     
@@ -262,19 +289,18 @@ theme_dbc <- function() {
   return(dbcTheme)
 }
 
-
-
-# To test out the function  
+# # To test out the function -----------------------------------------------------
+# library(tidyverse)
+# mtcars$carb <- fct_lump(as.factor(mtcars$carb), 3)
 # numColors <- length(unique(mtcars$carb))
 # 
-# ggplot(mtcars,
-#        aes(x = as.factor(carb),
-#            color = as.factor(carb),
-#            fill = as.factor(carb),
-#            y = mpg) ) +
-#   geom_boxplot() +
-#   theme_dbc() +
-#   scale_color_manual(values = scale_dbc('color', numColors)) + 
-#   scale_fill_manual(values = scale_dbc('fill', numColors))
 # 
-# scale_dbc('fill', 'red', 'blue', 'orange', displayNames = TRUE)
+# ggplot(mtcars,
+#        aes(x     = carb,
+#            color = carb,
+#            fill  = carb,
+#            y     = mpg) ) +
+#   geom_boxplot() +
+#   theme_dbc() + 
+#   scale_color_dbc() +
+#   scale_fill_dbc()
