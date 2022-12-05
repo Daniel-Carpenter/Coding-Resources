@@ -1,3 +1,5 @@
+# Main Packages ----------------------------------------------------------------
+
 # My Package list
 myPackages <- c('tidyverse',
                 'lubridate',
@@ -16,7 +18,7 @@ for (thePackage in packagesToInstall) {
 }
 
 # Load library
-lapply(myPackages, function(thePackage) suppressMessages(require(thePackage, 
+lapply(myPackages, function(thePackage) suppressMessages(require(thePackage,
                                                                  character.only = TRUE,
                                                                  quietly=TRUE,
                                                                  warn.conflicts = FALSE)))
@@ -24,7 +26,17 @@ lapply(myPackages, function(thePackage) suppressMessages(require(thePackage,
 rm(thePackage, packagesToInstall, myPackages)
 
 
-# Others
+# Palette and color Styles -----------------------------------------------------
+
+# Install devtools if not installed (for GitHub Package)
+if (!require("devtools")) install.packages("devtools")
+
+# Install the styles repository
+if (!require("styles")) install_github("Daniel-Carpenter/styles")
+
+
+# Others -----------------------------------------------------------------------
+
 # library(data.table)
 # library(R.cache) # Used to store data in memory on code execution
 # library(magrittr)
@@ -33,9 +45,47 @@ rm(thePackage, packagesToInstall, myPackages)
 # library(formattable)
 # library(grid)
 
-# SQL Connection ---------------------------------------------------------------------------------------------------
+
+# SQL Connection ---------------------------------------------------------------
 
 # library(dbplyr)
 # library(odbc)
 # library(DBI)
 # library(glue)
+
+
+# Data Wrangling
+# library(tidyverse)
+# library(skimr)
+# library(lubridate) # dates
+
+# Modeling
+# library(MASS)
+# library(caret) # Modeling variants like SVM
+# library(earth) # Modeling with Mars
+# library(pls)   # Modeling with PLS
+# library(glmnet) # Modeling with LASSO
+
+# Aesthetics
+# library(knitr)
+# library(cowplot)  # multiple ggplots on one plot with plot_grid()
+# library(scales)
+# library(kableExtra)
+# library(ggplot2)
+# library(inspectdf)
+
+# Hold-out Validation
+# library(caTools)
+
+# Data Correlation
+# library(GGally)
+# library(regclass)
+
+# RMSE Calculation
+# library(Metrics)
+
+# p-value for OLS model
+# library(broom)
+
+# ncvTest
+# library(car)
