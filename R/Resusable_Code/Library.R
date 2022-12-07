@@ -33,7 +33,7 @@ if (!require("devtools")) install.packages("devtools")
 
 # Install the styles repository
 if (!require("styles")) install_github("Daniel-Carpenter/styles")
-
+require('styles')
 
 # Others -----------------------------------------------------------------------
 
