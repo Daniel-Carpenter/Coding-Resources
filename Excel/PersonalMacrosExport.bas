@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+Attribute VB_Name = "PersonalMacros_DBC"
 ' Daniel Carpenter Personal Excel Macros for Formatting and other Repeated functions
 
 
