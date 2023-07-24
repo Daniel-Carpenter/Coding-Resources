@@ -1,0 +1,26 @@
+---
+title: 'Udemy Notes: Mastering Data Visualization: Theory and Foundations'
+author:   Daniel Carpenter
+date:     today
+date-format: 'MMM YYYY'
+
+format:
+  gfm:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+---
+
+[*Link to Udemy Class here*](https://www.udemy.com/course/mastering-data-visualization)
+
+# Intro
+
+# Graphical Perception
+
+# Golden Rules of Data Viz
+
+# Statistical Traps
+
+# Correct Plot Usage
+
+# Plot Crimes
