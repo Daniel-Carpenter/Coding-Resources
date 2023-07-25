@@ -13,21 +13,41 @@ format:
 
 [*Link to Udemy Class here*](https://www.udemy.com/course/mastering-data-visualization)
 
+# Overview
+
+-   Use "ink" only where you have data (density vs. line area)
+
+-   Remove elements if there is no information lost
+
+-   Proportions matter: Smaller plots are okay because it focuses the eye
+
+-   Highlight single element and gray the rest if that is the message
+
 # Graphical Perception
 
-## **How do users interpret the main types of visual categories?**
+## **How do users interpret the main dimensions?**
 
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | Type                             | Easy to Hard Rank | Digestability                                                                                                                              | Avoid                                                                                                      |
-|------------------------|------------|------------------------|------------------------|
++==================================+===================+============================================================================================================================================+============================================================================================================+
 | **Position with common scale**   | 1                 | Easy                                                                                                                                       |                                                                                                            |
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Position in non-common scale** | 2                 | Hard, especially when adjacent.                                                                                                            | small multiples with multiple rows without constant scale                                                  |
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Length**                       | 3                 | Easy when aligned. otherwise not.                                                                                                          | Wide bar charts or widths of bars that are uneven                                                          |
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Direction**                    | 3                 | Easy if aligned with same length. otherwise not.                                                                                           | Try not to mix with uneven position and length                                                             |
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Angle**                        | 3                 | Hard to encode especially when making rotated comparisons                                                                                  | Pie charts                                                                                                 |
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Area**                         | 4                 | Circular area has a non-linear relationship, so very difficult to compare two bubbles of differing size                                    | Bubbles sparingly?                                                                                         |
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Curvature**                    | 5                 | Brain wants to calculate the horizonal difference, not the vertical, which is correct                                                      | Line comparisons with function comparisons                                                                 |
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Volume**                       | 5                 | Relationships are usually non-linear, so tend to expect a smaller change.                                                                  | If a cube looks a little larger than another cube, it is likely more since a cube is $x^3$ compared to $x$ |
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Color and Shading**            | 6                 | Interpretation of individual shade strongly depends on surrounding shading. Surrounding colors could cause misinterpretation or shading.   | A county heat map could be hard to analyze one individual county, vs. the overall trend                    |
++----------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 ## How to redesign bad visuals?
 
@@ -41,10 +61,178 @@ format:
 | Stacked Bar Chart | Length, position in non-common scale.       | Faceted Lollipop | Position in common scale                    |
 | Shaded Map        | Area, shading, Position in non-common scale | Map with Peaks   | Position in non-common scale                |
 
-# Golden Rules of Data Viz
+------------------------------------------------------------------------
+
+# Golden Rules of Data Visualization
+
+## Dimensions
+
+1.  The number of dimensions should $\leq$ the number of dimensions in the data (i.e., do not make it 3D, or add length, etc.)
+
+2.  Do not use a dimension if you do not need it
+
+3.  Do not use 3D unless it is something like a map
+
+4.  Do not use color unless it means something
+
+5.  Do not alter the perspective (orientation, angle, etc.)
+
+### Dimension Questionnaire: 
+
+1.  Do you need it, or does it look nice?
+
+2.  Are you showing the relationship or just trying to save space?
+
+## How to limit distractions
+
+1.  Identify what is absolutely essential for the graph
+2.  Identify and remove what is not essential (including axis, gridlines, etc.).
+3.  If using data labels, but the y axis title in the subtitle of the plot
+4.  Stay away from dark borders
+
+## Data Density
+
+> Show as much as you can with the least amount of space, *within reason*
+>
+> It is okay to have a small plot because it emphasizes relationships.
+
+## Proportion and Scale
+
+-   X-axis should almost always be longer than the y-axis
+
+-   Ratios: aim to have the lines in a graph have a 45-degree ratio
+
+Ratio Recommendations:
+
+-   Wide infer you should read it horizontally (time series)
+
+-   Long infers vertically (heatmap)
+
+-   Square is none
+
+## Other
+
+-   Don't distort intentionally
+
+-   Annotations are good
+
+-   "Range frame" can help show where the coordinates are in a x-axis
+
+------------------------------------------------------------------------
 
 # Statistical Traps
 
+-   Selection Bias: "*What you see depends on where you look"*
+
+-   Attrition Bias: Inferences on data that has not happened yet
+
+-   Normalization: If normalizing, show both raw and normalized. Make sure to normalize if relevant.
+
+-   Simpson's paradox: trends may exist in a subset of the data, but no trend when aggregated.
+
+------------------------------------------------------------------------
+
 # Correct Plot Usage
 
+## Distributions
+
+### Violin or Boxplots
+
+-   Order by median value.
+
+-   It is okay to overlay the two.
+
+-   Show sample size if largely different.
+
+### Ridgeline
+
+-   If data is discrete, then use histogram not density
+
+## Relationships
+
+### Line/Area Charts
+
+-   If low amount of data points then use dots
+
+-   No area shading: Only shade areas IF it is a distribution.
+
+-   Never use a stacked area plot
+
+## Ranking
+
+-   Always order
+
+-   Do not stack
+
+-   Lollipops over bars
+
+-   Dumbells for ranges
+
+-   Avoid word plots (many concepts violated)
+
+### Parallel Plots
+
+-   Only use if patterns in data
+
+-   highlight changes in patterns with 2 colors
+
+## Part of Whole
+
+-   Election cycle tracking has good examples
+
+-   Modern touches on bars
+
+### Maps
+
+-   Use for the bigger picture trends, not for the detail
+
+-   Combine with other charts to help fill in the detail
+
+-   Remember that larger regions will cause distortion and get more weight
+
+-   Hexbin or cartograms could help account for distortion of area.
+
+-   Left/right arrows: vector field diagram.
+
+------------------------------------------------------------------------
+
 # Plot Crimes
+
++------------------------+---------------------------------------------------------------------+-------------------------------------+
+| Crime                  | When it is good                                                     | When it is bad                      |
++========================+=====================================================================+=====================================+
+| Cutting y-axis         | -   Compare relative positions in a time series within single group | -   Comparing groups in bar charts. |
+|                        |                                                                     |                                     |
+|                        | -   Line charts, dumbell charts                                     | -   If these are verticle lines     |
+|                        |                                                                     |                                     |
+|                        |                                                                     | -   Bar charts                      |
+|                        |                                                                     |                                     |
+|                        |                                                                     | -   Shaded charts                   |
++------------------------+---------------------------------------------------------------------+-------------------------------------+
+| When to shade an area? | -   Shade only where you have data.                                 | Time series                         |
+|                        |                                                                     |                                     |
+|                        | ```{=html}                                                          |                                     |
+|                        | <!-- -->                                                            |                                     |
+|                        | ```                                                                 |                                     |
+|                        | -   I.e., Distributions                                             |                                     |
++------------------------+---------------------------------------------------------------------+-------------------------------------+
+
+## Avoiding Noise
+
+1.  Highlight a single element and gray the rest
+
+2.  Separate data into small multiples, but this could be hard to be adjacent. Keep a fixed scale
+
+3.  Combine the two above
+
+## Choosing Color
+
+1.  Encode another variable (discrete message that shows a message).
+2.  Reinforce the message (color the y axis on continuous scale).
+3.  Do not conflict with your message.
+4.  Try not to encode the most important variable with color.
+5.  Be consistent with the same variable.
+6.  Use human intuition if approproate
+7.  Use `colorblindr` to see what the plot looks like in the color blind types
+
+## 
