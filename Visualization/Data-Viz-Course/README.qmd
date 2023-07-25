@@ -13,9 +13,33 @@ format:
 
 [*Link to Udemy Class here*](https://www.udemy.com/course/mastering-data-visualization)
 
-# Intro
-
 # Graphical Perception
+
+## **How do users interpret the main types of visual categories?**
+
+| Type                             | Easy to Hard Rank | Digestability                                                                                                                              | Avoid                                                                                                      |
+|------------------------|------------|------------------------|------------------------|
+| **Position with common scale**   | 1                 | Easy                                                                                                                                       |                                                                                                            |
+| **Position in non-common scale** | 2                 | Hard, especially when adjacent.                                                                                                            | small multiples with multiple rows without constant scale                                                  |
+| **Length**                       | 3                 | Easy when aligned. otherwise not.                                                                                                          | Wide bar charts or widths of bars that are uneven                                                          |
+| **Direction**                    | 3                 | Easy if aligned with same length. otherwise not.                                                                                           | Try not to mix with uneven position and length                                                             |
+| **Angle**                        | 3                 | Hard to encode especially when making rotated comparisons                                                                                  | Pie charts                                                                                                 |
+| **Area**                         | 4                 | Circular area has a non-linear relationship, so very difficult to compare two bubbles of differing size                                    | Bubbles sparingly?                                                                                         |
+| **Curvature**                    | 5                 | Brain wants to calculate the horizonal difference, not the vertical, which is correct                                                      | Line comparisons with function comparisons                                                                 |
+| **Volume**                       | 5                 | Relationships are usually non-linear, so tend to expect a smaller change.                                                                  | If a cube looks a little larger than another cube, it is likely more since a cube is $x^3$ compared to $x$ |
+| **Color and Shading**            | 6                 | Interpretation of individual shade strongly depends on surrounding shading. Surrounding colors could cause misinterpretation or shading.   | A county heat map could be hard to analyze one individual county, vs. the overall trend                    |
+
+## How to redesign bad visuals?
+
+> **Goal**: Identify visual elements involved, and reduce them to as little as possible while conveying same results.
+>
+> **Tradeoff**: sometimes more complex is better if it draws attention to goal of graph.
+
+| Graph             | Elements Involved                           | Redesign         | Redesign Elements                           |
+|-------------------|---------------------------------------------|------------------|---------------------------------------------|
+| Pie               | Angle, direction, and area                  | Lollipop         | Position in common scale. Note *no length.* |
+| Stacked Bar Chart | Length, position in non-common scale.       | Faceted Lollipop | Position in common scale                    |
+| Shaded Map        | Area, shading, Position in non-common scale | Map with Peaks   | Position in non-common scale                |
 
 # Golden Rules of Data Viz
 
