@@ -6,7 +6,7 @@ Created on Thu Oct 12 09:20:05 2023
 
 @author: Daniel Carpenter
 
-Resources: https://www.w3schools.com/python/default.asp
+Most examples below have examples here: https://www.w3schools.com/python/default.asp
 """
 
 
@@ -25,9 +25,6 @@ Resources: https://www.w3schools.com/python/default.asp
 
 # =============================================================================
 # (2) Basic Arithmetic Operations
-# 
-# Resources:
-#     https://www.w3schools.com/python/python_operators.asp
 # =============================================================================
 
 ## (2.1) Single-Valued Variables (PEMDAS)
